@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AlertingEvent {
     private Long userId;
+    private Long deviceId;
     private String message;
+    private String alertType;
     private double threshold;
     private double energyConsumed;
     private String email;

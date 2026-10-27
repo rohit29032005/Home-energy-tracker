@@ -1,7 +1,5 @@
 package com.hometracker.alert_service.service;
 
-import com.hometracker.alert_service.entity.Alert;
-import com.hometracker.alert_service.repository.AlertRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -13,18 +11,13 @@ import org.springframework.stereotype.Service;
 public class EmailService {
 
     private final JavaMailSender mailSender;
-    private final AlertRepository alertRepository;
-
-    public EmailService(JavaMailSender mailSender,
-                        AlertRepository alertRepository) {
+    public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
-        this.alertRepository = alertRepository;
     }
 
-    public void sendEmail(String to,
-                          String subject,
-                          String body,
-                          Long userId) {
+    public boolean sendEmail(String to,
+                             String subject,
+                             String body) {
         log.info("Sending email to: {}, subject: {}", to, subject);
 
         SimpleMailMessage message = new SimpleMailMessage();
@@ -35,27 +28,12 @@ public class EmailService {
 
         try {
             mailSender.send(message);
-
-            final Alert alertSent = Alert.builder()
-                    .sent(true)
-                    .createdAt(java.time.LocalDateTime.now())
-                    .userId(userId)
-                    .build();
-
-            alertRepository.saveAndFlush(alertSent);
-
         } catch (MailException e) {
             log.error("Failed to send email to: {}", to, e);
-
-            final Alert alertSent = Alert.builder()
-                    .sent(false)
-                    .createdAt(java.time.LocalDateTime.now())
-                    .userId(userId)
-                    .build();
-            alertRepository.saveAndFlush(alertSent);
-            return;
+            return false;
         }
 
         log.info("Email sent to: {}", to);
+        return true;
     }
 }

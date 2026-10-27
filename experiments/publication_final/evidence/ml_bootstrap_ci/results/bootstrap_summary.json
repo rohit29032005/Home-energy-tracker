@@ -1,0 +1,68 @@
+{
+  "experiment_id": "publication_final_experiment_1_stratified_bootstrap_test_ci",
+  "classification": "newly_generated_offline_statistical_analysis",
+  "execution_boundary": [
+    "No Docker command, HTTP request, Kafka action, database, volume, credential, or existing model artifact was used.",
+    "The model and threshold came from the isolated reproduced artifact; the forest was set to one in-memory worker for prediction only.",
+    "The test interval was not used to select the threshold or retrain the model."
+  ],
+  "input": {
+    "dataset_sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588",
+    "model_sha256": "22f66d7dd3f5d0bd282620e05ece6b28bb33c6a4964d1b3758608088f52f592e",
+    "model_version": "random_forest-csv-20261015T080547Z",
+    "threshold": 0.31000000000000005,
+    "test_rows": 750,
+    "test_normal": 710,
+    "test_abnormal": 40,
+    "bootstrap_iterations": 1000,
+    "bootstrap_seed": 42,
+    "resampling": "stratified within observed normal and abnormal held-out test classes"
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Normal",
+      "Abnormal"
+    ],
+    "rows_actual_columns_predicted": [
+      [
+        705,
+        5
+      ],
+      [
+        3,
+        37
+      ]
+    ]
+  },
+  "metrics_with_95_ci": {
+    "precision": {
+      "point_estimate": 0.8809523809523809,
+      "ci_95_lower": 0.7872340425531915,
+      "ci_95_upper": 0.972972972972973
+    },
+    "recall": {
+      "point_estimate": 0.925,
+      "ci_95_lower": 0.825,
+      "ci_95_upper": 1.0
+    },
+    "f1": {
+      "point_estimate": 0.9024390243902439,
+      "ci_95_lower": 0.8354430379746836,
+      "ci_95_upper": 0.9629629629629629
+    },
+    "roc_auc": {
+      "point_estimate": 0.9974295774647887,
+      "ci_95_lower": 0.9944718309859155,
+      "ci_95_upper": 0.9994718309859154
+    },
+    "pr_auc": {
+      "point_estimate": 0.9485317975626696,
+      "ci_95_lower": 0.8906818427870477,
+      "ci_95_upper": 0.9908335218126616
+    }
+  },
+  "interpretation": [
+    "Intervals describe sampling uncertainty conditional on the supplied held-out CSV, fixed feature pipeline, fixed threshold, and fixed model artifact.",
+    "They do not resolve undocumented data provenance, label provenance, causal availability of Avg_Past_Consumption, or real-household generalization."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "input": "C:\\Users\\anju2\\Downloads\\project documentation.docx",
+  "fonts_by_char_count": {},
+  "direct_run_formatting_runs": 50,
+  "direct_paragraph_formatting_paragraphs": 57,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 10,
+      "text": "Keywords:                          8 words",
+      "style": "Normal"
+    },
+    {
+      "para_index": 14,
+      "text": "1.1 Research Objectives ",
+      "style": "Normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 1,
+        "text": "Title",
+        "style": "Title"
+      },
+      {
+        "para_index": 2,
+        "text": "Name1, Syamasudha Veeragandham2",
+        "style": "Normal"
+      },
+      {
+        "para_index": 3,
+        "text": "1,2School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, Tamil Nadu, India \u2013 632014",
+        "style": "Normal"
+      },
+      {
+        "para_index": 4,
+        "text": "Email: 1@vitstudent.ac.in, 2syamasudha.v@vit.ac.in",
+        "style": "Normal"
+      },
+      {
+        "para_index": 5,
+        "text": "2 Corresponding author",
+        "style": "Normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 7,
+        "run_text": "One page and not exceeding 300 words ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 10,
+        "run_text": "Keywords: ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 10,
+        "run_text": "                         ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 10,
+        "run_text": "8 words",
+        "style": "Normal"
+      },
+      {
+        "para_index": 12,
+        "run_text": "  ",
+        "style": "Normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

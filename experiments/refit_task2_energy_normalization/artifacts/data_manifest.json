@@ -1,0 +1,182 @@
+{
+  "cohorts": {
+    "primary": [
+      1,
+      2,
+      4
+    ],
+    "solar_sensitivity": [
+      3,
+      11
+    ]
+  },
+  "config_path": "experiments/refit_task2_energy_normalization/preprocessing_config.yaml",
+  "config_sha256": "1cc71af477e9be668182fa1ed08a257c22d3060f93c13339081e18e3ec70e772",
+  "determinism": "No generated-at timestamp is embedded, so identical inputs/configuration should yield byte-identical named outputs.",
+  "input_files": [
+    {
+      "cohort": "primary",
+      "filename": "CLEAN_House1.csv",
+      "header": [
+        "Time",
+        "Unix",
+        "Aggregate",
+        "Appliance1",
+        "Appliance2",
+        "Appliance3",
+        "Appliance4",
+        "Appliance5",
+        "Appliance6",
+        "Appliance7",
+        "Appliance8",
+        "Appliance9",
+        "Issues"
+      ],
+      "household_id": 1,
+      "md5": "f5336d80c700f866af0d997ea8d39146",
+      "selected_window_end_utc": "2014-10-15T00:00:02Z",
+      "selected_window_start_utc": "2014-10-01T00:00:02Z",
+      "sha256": "15b8c60c0bf32f1fccfafae81a9bb04e1a24937cfb29840d5b955310df25ff30",
+      "size_bytes": 400840083
+    },
+    {
+      "cohort": "primary",
+      "filename": "CLEAN_House2.csv",
+      "header": [
+        "Time",
+        "Unix",
+        "Aggregate",
+        "Appliance1",
+        "Appliance2",
+        "Appliance3",
+        "Appliance4",
+        "Appliance5",
+        "Appliance6",
+        "Appliance7",
+        "Appliance8",
+        "Appliance9",
+        "Issues"
+      ],
+      "household_id": 2,
+      "md5": "13957fd139bf8f6ba8bceea36e85bb3d",
+      "selected_window_end_utc": "2014-10-15T00:00:03Z",
+      "selected_window_start_utc": "2014-10-01T00:00:03Z",
+      "sha256": "5e3b8b30734070692bb6ac12504a26f5a1394aabe050199a1f7b7c5f88065561",
+      "size_bytes": 325391201
+    },
+    {
+      "cohort": "solar_sensitivity",
+      "filename": "CLEAN_House3.csv",
+      "header": [
+        "Time",
+        "Unix",
+        "Aggregate",
+        "Appliance1",
+        "Appliance2",
+        "Appliance3",
+        "Appliance4",
+        "Appliance5",
+        "Appliance6",
+        "Appliance7",
+        "Appliance8",
+        "Appliance9",
+        "Issues"
+      ],
+      "household_id": 3,
+      "md5": "ab6e34ea386eb4563bfcb9762619dc8f",
+      "selected_window_end_utc": "2014-10-15T00:00:01Z",
+      "selected_window_start_utc": "2014-10-01T00:00:01Z",
+      "sha256": "3694186fd607a779d90dc34f834db908c152a86cfb0fd32e4bf009d86e444e97",
+      "size_bytes": 407273065
+    },
+    {
+      "cohort": "primary",
+      "filename": "CLEAN_House4.csv",
+      "header": [
+        "Time",
+        "Unix",
+        "Aggregate",
+        "Appliance1",
+        "Appliance2",
+        "Appliance3",
+        "Appliance4",
+        "Appliance5",
+        "Appliance6",
+        "Appliance7",
+        "Appliance8",
+        "Appliance9",
+        "Issues"
+      ],
+      "household_id": 4,
+      "md5": "efbfab2b04a61fbf7595422f15cacfb1",
+      "selected_window_end_utc": "2015-05-06T00:00:02Z",
+      "selected_window_start_utc": "2015-04-22T00:00:02Z",
+      "sha256": "a231e256a0c600a09c9f67103f665a55595b85b3cd54176aa9b503aa98153b41",
+      "size_bytes": 395763806
+    },
+    {
+      "cohort": "solar_sensitivity",
+      "filename": "CLEAN_House11.csv",
+      "header": [
+        "Time",
+        "Unix",
+        "Aggregate",
+        "Appliance1",
+        "Appliance2",
+        "Appliance3",
+        "Appliance4",
+        "Appliance5",
+        "Appliance6",
+        "Appliance7",
+        "Appliance8",
+        "Appliance9",
+        "Issues"
+      ],
+      "household_id": 11,
+      "md5": "5b41bae97ab28871fcfe5167b41c0347",
+      "selected_window_end_utc": "2015-05-01T00:00:04Z",
+      "selected_window_start_utc": "2015-04-17T00:00:04Z",
+      "sha256": "e06bff467bf771191610670f2b6ae3f71acfad7aad37f1a16e0163305cdda113",
+      "size_bytes": 255832544
+    }
+  ],
+  "manifest_self_hash_included": false,
+  "measurement_semantics": {
+    "aggregate_field": "Aggregate",
+    "canonical_chronology": "Unix",
+    "human_time_policy": "Retain Time verbatim; derive UTC only from Unix.",
+    "is_interval_energy": false,
+    "unit": "active power W"
+  },
+  "normalization": {
+    "energy_method": "left_rectangle_sample_hold_using_aggregate_power_at_interval_start",
+    "formula": "estimated_interval_energy_kwh = interval_start_aggregate_power_w * interval_seconds / 3600000",
+    "long_gap_policy": "Exclude a cross-gap interval when delta_seconds > 16; do not interpolate, fill, cap duration, or synthesize energy.",
+    "negative_power_policy": "Retain the raw value in the exclusion log; exclude it from additive interval-energy output as unresolved.",
+    "outlier_policy": "IQR diagnostic flag only; do not clip or remove a valid aggregate measurement.",
+    "source_is_interval_energy": false,
+    "source_issues_policy": "Preserve verbatim as a context flag; do not use as anomaly label or automatic exclusion.",
+    "source_measurement": "whole-house active power in watts"
+  },
+  "output_hashes_sha256": {
+    "cleaned_primary_cohort.csv": "dfdba435f35a1548661309fd67b267548f419edd489cacf25c7566098f189163",
+    "cleaned_solar_sensitivity_cohort.csv": "79fd722bad1abf6fabf2d2e8a1981f75ae14f201d7c04602abcecc7f3ece35e1",
+    "excluded_records_log.csv": "7065849ad71c4c9dc00040bc9182933a4eb037b27eb5da1de874f33b999da128",
+    "per_household_quality_report.csv": "06774437db358dee5e8152a9956a8f590b3cc8f931a7483c39af22ac74020949",
+    "preprocessing_summary.md": "f57320312ed4e5ac6e1192b30eb653b7084324da019347c1014adc37004435ab",
+    "timestamp_interval_report.csv": "6c132e43bcf4e4edf74f8ee0ae5c3f36c525e856ce8f339ed7b6c939f4fbe514"
+  },
+  "sampling": {
+    "estimated_missing_slot_method": "max(0, round(delta_seconds / 8) - 1)",
+    "maximum_integratable_interval_seconds": 16,
+    "native_interval_max_seconds": 9,
+    "native_interval_min_seconds": 7,
+    "nominal_interval_seconds": 8
+  },
+  "scope": "Local cleaning and energy normalization only; no replay, ML, anomalies, alerting, backend, Docker, device-token, or paper change.",
+  "script_path": "experiments/refit_task2_energy_normalization/preprocess_refit.py",
+  "script_sha256": "f92fdcac5e00aa8e1a8f6f92417785053eb77159449f34699a7339b8bad1d4a5",
+  "task": "Task 2 \u2014 REFIT Data Cleaning and Energy Normalization",
+  "task1_selection_file": "evidence/16_refit_dataset_audit/household_selection.csv",
+  "task1_selection_file_sha256": "dd9d47ca50eeefd6d3c0f62f6a573d2dcb823169b747612d610a38bc7510615d"
+}

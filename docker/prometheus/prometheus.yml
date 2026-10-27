@@ -1,0 +1,23 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: api-gateway
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["api-gateway:8080"]
+  - job_name: java-services
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets:
+          - "user-service:8081"
+          - "device-service:8082"
+          - "ingestion-service:8083"
+          - "usage-service:8084"
+          - "alert-service:8085"
+          - "insight-service:8086"
+  - job_name: ml-inference-service
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["ml-inference-service:8090"]

@@ -1,0 +1,226 @@
+{
+  "evidenceType": "Controlled local end-to-end functional verification",
+  "runId": "review2-20260930-215401-66ff74c6",
+  "startedAtUtc": "2026-09-30T16:24:01.9432401Z",
+  "baseUrl": "http://127.0.0.1:8080/api/v1",
+  "testBoundary": "Synthetic REST telemetry was submitted through the same ingestion endpoint used by the Wokwi ESP32 simulator. Values are not calibrated physical-meter measurements.",
+  "expectedAnalytics": {
+    "totalUsageKwh": 1.5,
+    "currentEstimatedCost": 0.18,
+    "dailyRateKwh": 0.5,
+    "projectedMonthlyKwh": 15.0,
+    "projectedMonthlyCost": 11.8,
+    "rankingPercent": 100.0,
+    "standbyBaselineWatts": 4.17,
+    "standbyDailyKwh": 0.1,
+    "standbyMonthlyKwh": 3.0,
+    "standbyMonthlyCost": 0.36,
+    "standbyRisk": "LOW"
+  },
+  "gatewayHealth": {
+    "status": "UP",
+    "components": {
+      "discoveryComposite": {
+        "description": "Discovery Client not initialized",
+        "status": "UNKNOWN",
+        "components": {
+          "discoveryClient": {
+            "description": "Discovery Client not initialized",
+            "status": "UNKNOWN"
+          }
+        }
+      },
+      "diskSpace": {
+        "status": "UP",
+        "details": {
+          "total": 1081101176832,
+          "free": 978039062528,
+          "threshold": 10485760,
+          "path": "/app/.",
+          "exists": true
+        }
+      },
+      "ping": {
+        "status": "UP"
+      },
+      "reactiveDiscoveryClients": {
+        "description": "Discovery Client not initialized",
+        "status": "UNKNOWN",
+        "components": {
+          "Simple Reactive Discovery Client": {
+            "description": "Discovery Client not initialized",
+            "status": "UNKNOWN"
+          }
+        }
+      },
+      "refreshScope": {
+        "status": "UP"
+      },
+      "ssl": {
+        "status": "UP",
+        "details": {
+          "validChains": [],
+          "invalidChains": []
+        }
+      }
+    }
+  },
+  "analyticsCase": {
+    "user": {
+      "id": 4,
+      "name": "Review2 Analytics 20260930-215401",
+      "surname": "Verification",
+      "email": "review2.analytics.20260930-215401@example.test",
+      "address": "Controlled local verification",
+      "alerting": false,
+      "energyAlertingThreshold": 999999.0
+    },
+    "device": {
+      "id": 303,
+      "name": "Controlled Analytics Device 20260930-215401",
+      "type": "GENERAL",
+      "location": "Verification Lab",
+      "userId": 4
+    },
+    "submissions": [
+      {
+        "payload": {
+          "deviceId": 303,
+          "energyConsumed": 0.25,
+          "timestamp": "2026-09-30T16:24:10.9245225Z"
+        },
+        "statusCode": 201,
+        "submittedAtUtc": "2026-09-30T16:24:14.6117106Z"
+      },
+      {
+        "payload": {
+          "deviceId": 303,
+          "energyConsumed": 0.5,
+          "timestamp": "2026-09-30T16:24:14.6130373Z"
+        },
+        "statusCode": 201,
+        "submittedAtUtc": "2026-09-30T16:24:14.6631075Z"
+      },
+      {
+        "payload": {
+          "deviceId": 303,
+          "energyConsumed": 0.75,
+          "timestamp": "2026-09-30T16:24:14.6640456Z"
+        },
+        "statusCode": 201,
+        "submittedAtUtc": "2026-09-30T16:24:14.7068189Z"
+      }
+    ],
+    "usage": {
+      "userId": 4,
+      "devices": [
+        {
+          "id": 303,
+          "name": "Controlled Analytics Device 20260930-215401",
+          "type": "GENERAL",
+          "location": "Verification Lab",
+          "userId": 4,
+          "energyConsumed": 1.5
+        }
+      ]
+    },
+    "observedUsageTotalKwh": 1.5,
+    "forecast": {
+      "userId": 4,
+      "periodDays": 3,
+      "currentKwh": 1.5,
+      "currentEstimatedCost": 0.18,
+      "dailyRateKwh": 0.5,
+      "projectedMonthlyKwh": 15.0,
+      "projectedMonthlyCost": 11.8,
+      "tariffSummary": "Fixed: $10.00/mo | Slab 1 (0-100kWh): $0.12/kWh | Slab 2 (100-300kWh): $0.18/kWh | Slab 3 (>300kWh): $0.25/kWh"
+    },
+    "ranking": {
+      "userId": 4,
+      "periodDays": 3,
+      "totalKwh": 1.5,
+      "totalEstimatedCost": 0.18,
+      "rankings": [
+        {
+          "deviceId": 303,
+          "name": "Controlled Analytics Device 20260930-215401",
+          "type": "GENERAL",
+          "location": "Verification Lab",
+          "energyConsumedKwh": 1.5,
+          "percentageOfTotal": 100.0,
+          "estimatedCost": 0.18
+        }
+      ]
+    },
+    "standby": {
+      "userId": 4,
+      "baselineWatts": 4.17,
+      "standbyDailyKwh": 0.1,
+      "standbyMonthlyKwh": 3.0,
+      "standbyMonthlyCost": 0.36,
+      "riskLevel": "LOW",
+      "recommendations": [
+        "Plug standby electronics into smart surge protectors or switchable power strips.",
+        "Unplug game consoles, soundbars, and second TVs when not in use for extended periods."
+      ],
+      "probableCategories": [
+        "Entertainment Systems (TVs, Soundbars, Gaming Consoles)",
+        "Home Office Setup (Desktop PCs, Monitors, Printers)",
+        "Kitchen Appliances with Digital Displays / Clocks",
+        "Continuous Water Dispensers & Idle Chargers"
+      ],
+      "baselineAssumptions": "Baseline load computed as ~20% continuous idle power during low-activity windows over 3 days. Target threshold: <50W continuous idle."
+    },
+    "endToEndAvailabilityLatencySeconds": 10.58,
+    "passed": {
+      "usageTotal": true,
+      "currentCost": true,
+      "dailyRate": true,
+      "projectedKwh": true,
+      "projectedCost": true,
+      "ranking": true,
+      "standby": true
+    }
+  },
+  "alertCase": {
+    "user": {
+      "id": 5,
+      "name": "Review2 Alert 20260930-215401",
+      "surname": "Verification",
+      "email": "review2.alert.20260930-215401@example.test",
+      "address": "Controlled local verification",
+      "alerting": true,
+      "energyAlertingThreshold": 0.1
+    },
+    "device": {
+      "id": 304,
+      "name": "Controlled Alert Device 20260930-215401",
+      "type": "GENERAL",
+      "location": "Verification Lab",
+      "userId": 5
+    },
+    "submission": {
+      "payload": {
+        "deviceId": 304,
+        "energyConsumed": 1.0,
+        "timestamp": "2026-09-30T16:24:21.6665247Z"
+      },
+      "statusCode": 201,
+      "submittedAtUtc": "2026-09-30T16:24:21.7354280Z"
+    },
+    "expectedCondition": "1.00 kWh > 0.10 kWh",
+    "alertRecords": [
+      []
+    ],
+    "observedAlertRecordCount": 1,
+    "alertObservationLatencySeconds": 6.85,
+    "alertingDisabledStatusCode": 200,
+    "passed": true
+  },
+  "completedAtUtc": "2026-09-30T16:24:28.5615867Z",
+  "error": {
+    "message": "The property 'Count' cannot be found on this object. Verify that the property exists.",
+    "type": "System.Management.Automation.PropertyNotFoundException"
+  },
+  "overallPassed": false
+}

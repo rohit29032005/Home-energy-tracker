@@ -1,0 +1,11 @@
+{
+  "classification": "newly_generated_validation_metadata",
+  "dataset_copy": "experiments\\publication_final\\evidence\\ml_validation\\input\\smart_meter_data.csv",
+  "generated_at_utc": "2026-10-15T08:05:56.552398+00:00",
+  "raw_rows": 5000,
+  "retained_rows": 5000,
+  "sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588",
+  "size_bytes": 619684,
+  "timestamp_max": "2024-04-14T03:30:00",
+  "timestamp_min": "2024-01-01T00:00:00"
+}

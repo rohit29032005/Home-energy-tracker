@@ -1,0 +1,108 @@
+{
+  "checks": [
+    "manifest input and generated artifact hashes",
+    "all frozen Task 2 source columns preserved",
+    "source and derived row counts aligned",
+    "per-household chronological 70/15/15 split boundaries recomputed from manifest fractions",
+    "positive labels only in held-out test records",
+    "negative labels numerically unchanged",
+    "positive labels numerically changed, non-negative, and replayable",
+    "source-quality / material-gap guard windows not injected",
+    "episode duration, contiguity, type, household, non-overlap guard, IDs, sums and timestamps reconcile"
+  ],
+  "household_positive_type_rows": {
+    "1": {
+      "sustained_high": 624,
+      "sustained_low": 111
+    },
+    "11": {
+      "sustained_high": 583,
+      "sustained_low": 281
+    },
+    "2": {
+      "sustained_high": 691,
+      "sustained_low": 71
+    },
+    "3": {
+      "sustained_high": 697,
+      "sustained_low": 85
+    },
+    "4": {
+      "sustained_high": 600,
+      "sustained_low": 171
+    }
+  },
+  "household_split_counts": {
+    "H11_test": {
+      "normal": 25081,
+      "synthetic_anomaly": 864,
+      "total": 25945
+    },
+    "H11_train": {
+      "normal": 121075,
+      "total": 121075
+    },
+    "H11_validation": {
+      "normal": 25945,
+      "total": 25945
+    },
+    "H1_test": {
+      "normal": 22302,
+      "synthetic_anomaly": 735,
+      "total": 23037
+    },
+    "H1_train": {
+      "normal": 107504,
+      "total": 107504
+    },
+    "H1_validation": {
+      "normal": 23037,
+      "total": 23037
+    },
+    "H2_test": {
+      "normal": 22486,
+      "synthetic_anomaly": 762,
+      "total": 23248
+    },
+    "H2_train": {
+      "normal": 108489,
+      "total": 108489
+    },
+    "H2_validation": {
+      "normal": 23248,
+      "total": 23248
+    },
+    "H3_test": {
+      "normal": 22225,
+      "synthetic_anomaly": 782,
+      "total": 23007
+    },
+    "H3_train": {
+      "normal": 107362,
+      "total": 107362
+    },
+    "H3_validation": {
+      "normal": 23006,
+      "total": 23006
+    },
+    "H4_test": {
+      "normal": 23272,
+      "synthetic_anomaly": 771,
+      "total": 24043
+    },
+    "H4_train": {
+      "normal": 112198,
+      "total": 112198
+    },
+    "H4_validation": {
+      "normal": 24043,
+      "total": 24043
+    }
+  },
+  "injection_episode_count": 40,
+  "rows_verified": 795187,
+  "semantic_boundary": "Labels verified as controlled synthetic perturbations only; no genuine REFIT anomaly-label claim is made.",
+  "source_sha256": "1675be53ffe9ab5b89bc34316fc0459c8bd59bc03700288e8001230140e24c62",
+  "synthetic_positive_rows": 3914,
+  "verification_status": "PASS"
+}

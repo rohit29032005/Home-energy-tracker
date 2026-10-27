@@ -1,0 +1,205 @@
+{
+  "checks": [
+    {
+      "check": "expected_schema",
+      "expected_columns": [
+        "Timestamp",
+        "Electricity_Consumed",
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption",
+        "Anomaly_Label"
+      ],
+      "observed_columns": [
+        "Timestamp",
+        "Electricity_Consumed",
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption",
+        "Anomaly_Label"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "timestamp_parse",
+      "invalid_rows": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "numeric_feature_parse",
+      "invalid_rows": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "negative_energy",
+      "invalid_rows": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "complete_duplicate_rows",
+      "duplicate_rows": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "supported_binary_labels",
+      "status": "PASS",
+      "unsupported_labels": []
+    },
+    {
+      "check": "input_timestamp_monotonic",
+      "note": "The training code performs a stable chronological sort before splitting.",
+      "status": "PASS"
+    },
+    {
+      "check": "clean_timestamp_monotonic",
+      "status": "PASS"
+    },
+    {
+      "check": "timestamp_overlap_train_validation",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_row_fingerprint_overlap_train_validation",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "feature_row_fingerprint_overlap_train_validation",
+      "note": "Identical feature vectors at distinct times are not necessarily leakage; this check is a guardrail.",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "timestamp_overlap_train_test",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_row_fingerprint_overlap_train_test",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "feature_row_fingerprint_overlap_train_test",
+      "note": "Identical feature vectors at distinct times are not necessarily leakage; this check is a guardrail.",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "timestamp_overlap_validation_test",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_row_fingerprint_overlap_validation_test",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "feature_row_fingerprint_overlap_validation_test",
+      "note": "Identical feature vectors at distinct times are not necessarily leakage; this check is a guardrail.",
+      "overlap_count": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "strict_chronological_split_order",
+      "endpoints": [
+        {
+          "end": "2024-03-13T21:30:00",
+          "split": "train",
+          "start": "2024-01-01T00:00:00"
+        },
+        {
+          "end": "2024-03-29T12:30:00",
+          "split": "validation",
+          "start": "2024-03-13T22:00:00"
+        },
+        {
+          "end": "2024-04-14T03:30:00",
+          "split": "test",
+          "start": "2024-03-29T13:00:00"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "target_column_excluded_from_feature_contract",
+      "feature_contract": [
+        "Electricity_Consumed",
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption",
+        "Hour",
+        "DayOfWeek",
+        "ConsumptionDeviation"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "direct_target_feature_equality",
+      "matching_features": [],
+      "status": "PASS"
+    },
+    {
+      "check": "derived_deviation_formula",
+      "status": "PASS"
+    },
+    {
+      "check": "dataset_provided_history_causal_provenance",
+      "feature": "Avg_Past_Consumption",
+      "note": "The CSV does not document how this historical field was calculated. Row-level checks cannot prove it excludes future information.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "check": "label_generation_provenance",
+      "note": "Historical repository evidence explicitly states that source and label-generation provenance are unavailable.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "check": "historical_dataset_hash_match",
+      "dataset_sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588",
+      "historical_sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588",
+      "status": "PASS"
+    }
+  ],
+  "classification": "newly_generated_split_and_leakage_validation",
+  "interpretation_boundary": [
+    "PASS checks establish properties of the copied CSV and the static training contract, not external-data generalization.",
+    "UNRESOLVED findings are not treated as passes.",
+    "The baseline labels and their provenance are not independently verifiable from repository content."
+  ],
+  "split_rule": "stable chronological sort followed by 70% train, 15% validation, 15% test",
+  "splits": [
+    {
+      "abnormal": 165,
+      "both_classes_present": true,
+      "end": "2024-03-13T21:30:00",
+      "normal": 3335,
+      "rows": 3500,
+      "split": "train",
+      "start": "2024-01-01T00:00:00"
+    },
+    {
+      "abnormal": 45,
+      "both_classes_present": true,
+      "end": "2024-03-29T12:30:00",
+      "normal": 705,
+      "rows": 750,
+      "split": "validation",
+      "start": "2024-03-13T22:00:00"
+    },
+    {
+      "abnormal": 40,
+      "both_classes_present": true,
+      "end": "2024-04-14T03:30:00",
+      "normal": 710,
+      "rows": 750,
+      "split": "test",
+      "start": "2024-03-29T13:00:00"
+    }
+  ]
+}

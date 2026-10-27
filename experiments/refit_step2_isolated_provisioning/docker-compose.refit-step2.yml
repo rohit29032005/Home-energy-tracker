@@ -1,0 +1,270 @@
+# Step 2 isolated experiment deployment. This file never references the
+# existing Home Energy Tracker network, volumes, Keycloak realm, database, or
+# credentials. Runtime values are supplied only through a protected external
+# environment file, never from the repository.
+name: refit-step2
+
+services:
+  mysql:
+    image: mysql:8.3.0
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${REFIT2_MYSQL_ROOT_PASSWORD:?protected runtime value required}"
+      MYSQL_DATABASE: "${REFIT2_MYSQL_DATABASE:-refit_step2}"
+      MYSQL_USER: "${REFIT2_MYSQL_APP_USER:-refit_step2_app}"
+      MYSQL_PASSWORD: "${REFIT2_MYSQL_APP_PASSWORD:?protected runtime value required}"
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p\"$${MYSQL_ROOT_PASSWORD}\" --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    volumes:
+      - refit-step2-mysql-data:/var/lib/mysql
+    networks: [refit-step2-network]
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0.7
+    command: start-dev --http-enabled=true --health-enabled=true
+    restart: "no"
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: "${REFIT2_KEYCLOAK_BOOTSTRAP_ADMIN_USERNAME:-refit_step2_platform_admin}"
+      KC_BOOTSTRAP_ADMIN_PASSWORD: "${REFIT2_KEYCLOAK_BOOTSTRAP_ADMIN_PASSWORD:?protected runtime value required}"
+      KC_DB: dev-file
+      KC_HEALTH_ENABLED: "true"
+      KC_METRICS_ENABLED: "false"
+      # The issuer is internal-only and intentionally distinct from the
+      # existing development issuer. Provisioning uses the loopback port only.
+      KC_HOSTNAME: "http://keycloak:8080"
+      KC_HOSTNAME_STRICT: "true"
+    ports:
+      - "127.0.0.1:${REFIT2_KEYCLOAK_HOST_PORT:-18081}:8080"
+    volumes:
+      - refit-step2-keycloak-data:/opt/keycloak/data
+    networks: [refit-step2-network]
+
+  user-service:
+    image: home-energy-tracker-user-service:latest
+    restart: "no"
+    environment:
+      PORT: "8081"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/${REFIT2_MYSQL_DATABASE:-refit_step2}?useSSL=false"
+      MYSQL_USER: "${REFIT2_MYSQL_APP_USER:-refit_step2_app}"
+      MYSQL_PASSWORD: "${REFIT2_MYSQL_APP_PASSWORD:?protected runtime value required}"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT2_INTERNAL_GATEWAY_TOKEN:?protected runtime value required}"
+      INTERNAL_SERVICE_TOKEN: "${REFIT2_INTERNAL_SERVICE_TOKEN:?protected runtime value required}"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks: [refit-step2-network]
+
+  device-service:
+    image: home-energy-tracker-device-service:latest
+    restart: "no"
+    environment:
+      PORT: "8082"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/${REFIT2_MYSQL_DATABASE:-refit_step2}?useSSL=false"
+      MYSQL_USER: "${REFIT2_MYSQL_APP_USER:-refit_step2_app}"
+      MYSQL_PASSWORD: "${REFIT2_MYSQL_APP_PASSWORD:?protected runtime value required}"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT2_INTERNAL_GATEWAY_TOKEN:?protected runtime value required}"
+      INTERNAL_SERVICE_TOKEN: "${REFIT2_INTERNAL_SERVICE_TOKEN:?protected runtime value required}"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks: [refit-step2-network]
+
+  api-gateway:
+    image: home-energy-tracker-api-gateway:latest
+    restart: "no"
+    ports:
+      - "127.0.0.1:${REFIT2_GATEWAY_HOST_PORT:-18080}:8080"
+    environment:
+      PORT: "8080"
+      SECURITY_ENABLED: "true"
+      KEYCLOAK_ISSUER_URI: "http://keycloak:8080/realms/${REFIT2_REALM:-refit-experiment}"
+      KEYCLOAK_JWK_SET_URI: "http://keycloak:8080/realms/${REFIT2_REALM:-refit-experiment}/protocol/openid-connect/certs"
+      USER_SERVICE_URL: "http://user-service:8081"
+      DEVICE_SERVICE_URL: "http://device-service:8082"
+      INGESTION_SERVICE_URL: "http://ingestion-service:8083"
+      USAGE_SERVICE_URL: "http://usage-service:8084"
+      ALERT_SERVICE_URL: "http://alert-service:8085"
+      INSIGHT_SERVICE_URL: "http://127.0.0.1:9"
+      IOT_INGESTION_DEVICE_TOKENS: "${REFIT2_IOT_INGESTION_DEVICE_TOKENS:-}"
+      WOKWI_INGESTION_TOKEN: ""
+      INTERNAL_GATEWAY_TOKEN: "${REFIT2_INTERNAL_GATEWAY_TOKEN:?protected runtime value required}"
+    depends_on:
+      keycloak:
+        condition: service_started
+      user-service:
+        condition: service_started
+      device-service:
+        condition: service_started
+    networks: [refit-step2-network]
+
+  kafka:
+    image: apache/kafka@sha256:77e3df9054047a88b520d0cc46e16696d3b22022e1d580aeccd2632df6532837
+    profiles: [telemetry]
+    restart: "no"
+    mem_limit: 768m
+    environment:
+      KAFKA_HEAP_OPTS: "-Xms256m -Xmx384m"
+      KAFKA_NODE_ID: "1"
+      KAFKA_CLUSTER_ID: "RefitStep2ClusterId001"
+      KAFKA_PROCESS_ROLES: "broker,controller"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LISTENERS: "PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:9092"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "PLAINTEXT"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: "1"
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: "0"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_NUM_PARTITIONS: "1"
+    healthcheck:
+      test: ["CMD-SHELL", "kafka-topics.sh --bootstrap-server localhost:9092 --list >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 25s
+    volumes:
+      - refit-step2-kafka-data:/var/lib/kafka/data
+    networks: [refit-step2-network]
+
+  influxdb:
+    image: influxdb:2.7
+    profiles: [telemetry]
+    restart: "no"
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: "setup"
+      DOCKER_INFLUXDB_INIT_USERNAME: "${REFIT2_INFLUX_ADMIN_USERNAME:-refit_step2_admin}"
+      DOCKER_INFLUXDB_INIT_PASSWORD: "${REFIT2_INFLUX_ADMIN_PASSWORD:?protected runtime value required}"
+      DOCKER_INFLUXDB_INIT_ORG: "${REFIT2_INFLUX_ORG:-refit_step2}"
+      DOCKER_INFLUXDB_INIT_BUCKET: "${REFIT2_INFLUX_BUCKET:-refit_step2_usage}"
+      DOCKER_INFLUXDB_INIT_RETENTION: "30d"
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: "${REFIT2_INFLUX_ADMIN_TOKEN:?protected runtime value required}"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8086/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    volumes:
+      - refit-step2-influx-data:/var/lib/influxdb2
+    networks: [refit-step2-network]
+
+  mailpit:
+    image: axllent/mailpit:latest
+    profiles: [telemetry]
+    restart: "no"
+    ports:
+      - "127.0.0.1:${REFIT2_MAILPIT_HOST_PORT:-18025}:8025"
+    networks: [refit-step2-network]
+
+  ml-inference-service:
+    image: home-energy-tracker-ml-inference-service:latest
+    profiles: [telemetry]
+    restart: "no"
+    environment:
+      KAFKA_ENABLED: "true"
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+      KAFKA_CONNECTION_RETRY_SECONDS: "5"
+      KAFKA_MAX_PROCESSING_ATTEMPTS: "3"
+      ML_MODEL_N_JOBS: "1"
+      REFIT_CONTROLLED_EXPERIMENTAL_ENABLED: "false"
+      REFIT_CONTROLLED_KAFKA_ENABLED: "false"
+    depends_on:
+      kafka:
+        condition: service_healthy
+    networks: [refit-step2-network]
+
+  ingestion-service:
+    image: home-energy-tracker-ingestion-service:latest
+    profiles: [telemetry]
+    restart: "no"
+    environment:
+      PORT: "8083"
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+      SIMULATION_ENABLED: "false"
+      INGESTION_AUTH_REQUIRED: "true"
+      DEVICE_SERVICE_URL: "http://device-service:8082/api/v1/device"
+      IOT_INGESTION_DEVICE_TOKENS: "${REFIT2_IOT_INGESTION_DEVICE_TOKENS:-}"
+      IOT_INGESTION_LEGACY_GLOBAL_TOKEN_ENABLED: "false"
+      WOKWI_INGESTION_TOKEN: ""
+      INTERNAL_GATEWAY_TOKEN: "${REFIT2_INTERNAL_GATEWAY_TOKEN:?protected runtime value required}"
+    depends_on:
+      kafka:
+        condition: service_healthy
+      device-service:
+        condition: service_started
+    networks: [refit-step2-network]
+
+  usage-service:
+    image: home-energy-tracker-usage-service:latest
+    profiles: [telemetry]
+    restart: "no"
+    environment:
+      PORT: "8084"
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+      INFLUX_URL: "http://influxdb:8086"
+      INFLUX_TOKEN: "${REFIT2_INFLUX_ADMIN_TOKEN:?protected runtime value required}"
+      INFLUX_ORG: "${REFIT2_INFLUX_ORG:-refit_step2}"
+      INFLUX_BUCKET: "${REFIT2_INFLUX_BUCKET:-refit_step2_usage}"
+      DEVICE_SERVICE_URL: "http://device-service:8082/api/v1/device"
+      USER_SERVICE_URL: "http://user-service:8081/api/v1/user"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT2_INTERNAL_GATEWAY_TOKEN:?protected runtime value required}"
+      INTERNAL_SERVICE_TOKEN: "${REFIT2_INTERNAL_SERVICE_TOKEN:?protected runtime value required}"
+    depends_on:
+      kafka:
+        condition: service_healthy
+      influxdb:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      device-service:
+        condition: service_started
+    networks: [refit-step2-network]
+
+  alert-service:
+    image: home-energy-tracker-alert-service:latest
+    profiles: [telemetry]
+    restart: "no"
+    environment:
+      PORT: "8085"
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/${REFIT2_MYSQL_DATABASE:-refit_step2}?useSSL=false"
+      MYSQL_USER: "${REFIT2_MYSQL_APP_USER:-refit_step2_app}"
+      MYSQL_PASSWORD: "${REFIT2_MYSQL_APP_PASSWORD:?protected runtime value required}"
+      MAIL_HOST: "mailpit"
+      MAIL_PORT: "1025"
+      DEVICE_SERVICE_URL: "http://device-service:8082/api/v1/device"
+      USER_SERVICE_URL: "http://user-service:8081/api/v1/user"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT2_INTERNAL_GATEWAY_TOKEN:?protected runtime value required}"
+      INTERNAL_SERVICE_TOKEN: "${REFIT2_INTERNAL_SERVICE_TOKEN:?protected runtime value required}"
+      ALERT_DEDUPLICATION_ENABLED: "true"
+      ALERT_DEDUPLICATION_WINDOW_MINUTES: "15"
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
+    networks: [refit-step2-network]
+
+networks:
+  refit-step2-network:
+    name: refit-step2-network
+    driver: bridge
+
+volumes:
+  refit-step2-mysql-data:
+    name: refit-step2-mysql-data
+  refit-step2-keycloak-data:
+    name: refit-step2-keycloak-data
+  refit-step2-kafka-data:
+    name: refit-step2-kafka-data
+  refit-step2-influx-data:
+    name: refit-step2-influx-data

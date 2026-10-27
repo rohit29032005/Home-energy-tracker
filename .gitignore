@@ -1,0 +1,75 @@
+# Target & build outputs
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Local dependency caches
+.maven-cache/
+.m2*/
+.venv/
+**/__pycache__/
+*.pyc
+**/.pytest_cache/
+.docker-config-validation/
+
+# Temporary files & working renders
+.tmp/
+tmp/
+paper-audit-render/
+rohittestit_render*/
+tmp_doc_*
+
+# IDE & Editor files
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Environment & Secret files
+.env
+.env.local
+.env.*
+!.env.example
+!.env.production.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+
+# Persistent storage & Data directories
+/influxdb_data/
+/docker/kafka_data/
+
+# Large externally sourced research datasets (retain manifests and audit reports only)
+/data/
+/datasets/
+*.7z
+*.zip
+experiments/**/artifacts/*.csv
+evidence/18_refit_controlled_ml*/
+ml-service/models/refit-controlled-v1*/
+
+# Logs
+*.log
+logs/
+
+# Local real-data replay configuration and per-run receipts
+/real_data_replay/replay.env
+/real_data_replay/device-map.json
+/real_data_replay/logs/
+
+# Frontend generated files
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+
+# Operating system files
+.DS_Store
+Thumbs.db

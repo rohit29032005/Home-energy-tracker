@@ -1,0 +1,6 @@
+scope,file,observed_test_focus,execution_state,evidence_classification,reason
+legacy_supervised_api,ml-service/tests/test_api.py,Input validation and FastAPI TestClient health/prediction routes,NOT_EXECUTED,static_inventory,Task boundary prohibited endpoint invocation even through TestClient.
+refit_controlled_trainer,ml-service/training/test_train_refit_controlled.py,Feature-contract exclusion of labels/split/quality fields and causal feature behavior,NOT_EXECUTED,static_inventory,Separate REFIT controlled benchmark was not reproduced because labelled inputs were access-restricted.
+refit_controlled_runtime,ml-service/tests/test_refit_controlled_runtime.py,Explicit profile handling bin accounting warm-up and persistence behavior,NOT_EXECUTED,static_inventory,Experiment 1 was limited to the supervised baseline and did not run REFIT machinery.
+refit_controlled_kafka,ml-service/tests/test_refit_kafka_worker.py,Isolated topic routing explicit profile requirements and commit ordering using test doubles,NOT_EXECUTED,static_inventory,No Kafka or replay validation was authorized in this experiment.
+kafka_reconnect,ml-service/tests/test_kafka_reconnect.py,Worker reconnect and cleanup behavior using fakes/mocks,NOT_EXECUTED,static_inventory,Not part of the supervised baseline experiment.

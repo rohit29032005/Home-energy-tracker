@@ -1,0 +1,46 @@
+{
+  "classification": "newly_generated_schema_and_quality_validation",
+  "duplicate_rows": 0,
+  "expected_columns": [
+    "Timestamp",
+    "Electricity_Consumed",
+    "Temperature",
+    "Humidity",
+    "Wind_Speed",
+    "Avg_Past_Consumption",
+    "Anomaly_Label"
+  ],
+  "invalid_numeric_rows": 0,
+  "invalid_timestamp_rows": 0,
+  "label_counts": {
+    "Abnormal": 250,
+    "Normal": 4750
+  },
+  "label_percentages": {
+    "Abnormal": 5.0,
+    "Normal": 95.0
+  },
+  "negative_energy_rows": 0,
+  "raw_columns": [
+    "Timestamp",
+    "Electricity_Consumed",
+    "Temperature",
+    "Humidity",
+    "Wind_Speed",
+    "Avg_Past_Consumption",
+    "Anomaly_Label"
+  ],
+  "raw_dtypes": {
+    "Anomaly_Label": "object",
+    "Avg_Past_Consumption": "float64",
+    "Electricity_Consumed": "float64",
+    "Humidity": "float64",
+    "Temperature": "float64",
+    "Timestamp": "object",
+    "Wind_Speed": "float64"
+  },
+  "row_counts": {
+    "raw": 5000,
+    "retained": 5000
+  }
+}

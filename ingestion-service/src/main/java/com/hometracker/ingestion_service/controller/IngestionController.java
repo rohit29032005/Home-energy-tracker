@@ -2,6 +2,8 @@ package com.hometracker.ingestion_service.controller;
 
 import com.hometracker.ingestion_service.dto.EnergyUsageDto;
 import com.hometracker.ingestion_service.service.IngestionService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +22,7 @@ public class IngestionController {
 
     @PostMapping
     @ResponseStatus(org.springframework.http.HttpStatus.CREATED)
-    public void ingestData(@RequestBody EnergyUsageDto usageDto) {
-        ingestionService.ingestEnergyUsage(usageDto);
+    public void ingestData(@Valid @RequestBody EnergyUsageDto usageDto, HttpServletRequest request) {
+        ingestionService.ingestEnergyUsage(usageDto, request);
     }
 }

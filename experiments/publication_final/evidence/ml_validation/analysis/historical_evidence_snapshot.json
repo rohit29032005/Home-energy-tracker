@@ -1,0 +1,113 @@
+{
+  "available": {
+    "model_comparison": true,
+    "model_metadata": true,
+    "provenance": true,
+    "training_config": true
+  },
+  "classification": "historical_evidence_read_only",
+  "limitations": [],
+  "values": {
+    "model_comparison": [
+      {
+        "decision_threshold": 0.31,
+        "model": "random_forest",
+        "test_f1": 0.902439024390244,
+        "test_pr_auc": 0.9485317975626696,
+        "test_precision": 0.8809523809523809,
+        "test_recall": 0.925,
+        "test_roc_auc": 0.9974295774647888,
+        "validation_f1": 0.9148936170212766
+      },
+      {
+        "decision_threshold": 0.28,
+        "model": "logistic_regression",
+        "test_f1": 0.1012658227848101,
+        "test_pr_auc": 0.0597096013075526,
+        "test_precision": 0.0533333333333333,
+        "test_recall": 1.0,
+        "test_roc_auc": 0.4228521126760562,
+        "validation_f1": 0.1132075471698113
+      }
+    ],
+    "model_metadata": {
+      "decision_threshold": 0.31000000000000005,
+      "feature_defaults": {
+        "Avg_Past_Consumption": 0.46512662841006613,
+        "Electricity_Consumed": 0.378522951530735,
+        "Humidity": 0.49570190163932004,
+        "Temperature": 0.5222973556474515,
+        "Wind_Speed": 0.4660851881585455
+      },
+      "features": [
+        "Electricity_Consumed",
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption",
+        "Hour",
+        "DayOfWeek",
+        "ConsumptionDeviation"
+      ],
+      "model_parameters": {
+        "class_weight": "balanced_subsample",
+        "min_samples_leaf": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "model_version": "random_forest-csv-20261003T205417Z",
+      "random_seed": 42,
+      "selected_model": "random_forest",
+      "selection_criterion": "validation F1; test metrics are reported but not used as the primary selection criterion",
+      "split_strategy": "chronological 70% train, 15% validation, 15% held-out test",
+      "test_metrics": {
+        "decision_threshold": 0.31000000000000005,
+        "model": "random_forest",
+        "test_f1": 0.9024390243902439,
+        "test_pr_auc": 0.9485317975626696,
+        "test_precision": 0.8809523809523809,
+        "test_recall": 0.925,
+        "test_roc_auc": 0.9974295774647887,
+        "validation_f1": 0.9148936170212766
+      },
+      "test_rows": 750,
+      "training_rows": 3500,
+      "validation_rows": 750
+    },
+    "provenance": {
+      "dataset_version_or_date": "Not available in repository metadata.",
+      "filename": "smart_meter_data.csv",
+      "sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588",
+      "size_bytes": 619684,
+      "source": "Not available in repository metadata; source and license cannot be verified from the file alone."
+    },
+    "training_config": {
+      "candidate_models": {
+        "logistic_regression": {
+          "class_weight": "balanced",
+          "max_iter": 1000,
+          "random_state": 42
+        },
+        "random_forest": {
+          "class_weight": "balanced_subsample",
+          "min_samples_leaf": 2,
+          "n_estimators": 300,
+          "random_state": 42
+        }
+      },
+      "class_imbalance_handling": "class weights applied during training; no resampling was used",
+      "features": [
+        "Electricity_Consumed",
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption",
+        "Hour",
+        "DayOfWeek",
+        "ConsumptionDeviation"
+      ],
+      "random_seed": 42,
+      "split_strategy": "chronological 70% train, 15% validation, 15% held-out test"
+    }
+  }
+}

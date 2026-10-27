@@ -1,0 +1,1100 @@
+{
+  "file": "C:\\Users\\anju2\\Desktop\\Advance_java_research\\23BCE0052-23BCE0050-23BCE0080.docx",
+  "sha256": "bcbc548cdd5281425bb65ac9a4ef176a2e7f10f22fd787090d1046a196ab2839",
+  "core_properties": {
+    "title": "",
+    "author": "ROHIT SHRIVASTAVA",
+    "subject": "",
+    "keywords": ""
+  },
+  "paragraph_count": 175,
+  "nonempty_paragraph_count": 141,
+  "table_count": 5,
+  "image_count": 4,
+  "styles": [
+    "List Paragraph",
+    "Normal"
+  ],
+  "sections": [
+    {
+      "index": 1,
+      "page_width_inches": 8.268,
+      "page_height_inches": 11.693,
+      "left_margin_inches": 1.0,
+      "right_margin_inches": 1.0,
+      "top_margin_inches": 1.0,
+      "bottom_margin_inches": 1.0,
+      "columns": 1,
+      "columns_xml": ""
+    }
+  ],
+  "references_start_index": 152,
+  "paragraphs": [
+    {
+      "index": 0,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "A Microservices-Based Home Energy Tracker for Event-Driven Monitoring, Deduplicated Alerting, and ML-Based Anomaly Detection"
+    },
+    {
+      "index": 1,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "Rohit Shrivastava¹, Harsh Gupta², Anshika Rai³, Syamasudha Veeragandham⁴"
+    },
+    {
+      "index": 2,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": ", Vellore Institute of Technology, Vellore,"
+    },
+    {
+      "index": 3,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "Tamil Nadu, India – 632014"
+    },
+    {
+      "index": 4,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "Email: ¹rohit.lalbahadur2023@vitstudent.ac.in, ²harsh.gupta2023@vitstudent.ac.in,"
+    },
+    {
+      "index": 5,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "³anshika.rai2023@vitstudent.ac.in, ⁴syamasudha.v@vit.ac.in"
+    },
+    {
+      "index": 6,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "⁴Corresponding author"
+    },
+    {
+      "index": 8,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Abstract"
+    },
+    {
+      "index": 9,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Residential energy monitoring can only take place if there is a complete and traceable chain of custody that extends from the moment telemetry data is admitted until it is stored, analysed, and then subjected to controlled notification. This paper presents a local Home Energy Tracker realised as a set of event-driven microservices, including gateway-mediated access control, the collection of device tokens, Apache Kafka, InfluxDB, MySQL, deterministic insights, alert deduplication, baseline inference using Random Forest, and service observability. The legacy classifier previously used in the repository was tested on a labelled CSV file that was provided, the file containing 5,000 records, and has been reproduced offline with the same results; the held-out F1 score of 0.902439 is therefore evidence that is specific to the historical dataset and not one that was obtained through REFIT or in the field. A separate request compatible with Wokwi is made merely to confirm that the model can be loaded and that responses can be generated. In order to improve data provenance, five official REFIT cleaned files were verified using checksums and the H1/H2/H4 categories were converted into 468,847 interval-energy records, the total estimated amount being 386.398411389 kWh as calculated by applying an actual-delta sample-hold rule. The H3/H11 group still makes up a cohort affected by solar effects. End-to-end REFIT ingestion, replay, alert-deduplication validation, and REFIT anomaly-accuracy evaluation have not been carried out. The contribution of this study therefore lies in its focus on implementation and reproducibility, together with clearly stated limitations concerning the evidence."
+    },
+    {
+      "index": 10,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Keywords: Home energy management, microservices, Apache Kafka, anomaly detection, REFIT, reproducibility, IoT telemetry, alert deduplication."
+    },
+    {
+      "index": 11,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "1. Introduction"
+    },
+    {
+      "index": 12,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "A residential energy monitoring system does not merely display the amount of energy consumed; a useful one should make it possible to use telemetry, keep traceable records, derive information, and send bounded notifications, at the same time ensuring that the software records do not compromise the accuracy of the actual meter. Monitoring systems for homes which are based on microservices achieve the separation of these various responsibilities into different components that can be examined independently. [1], [2]"
+    },
+    {
+      "index": 13,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The study is concerned with a local Home Energy Tracker and not one that is a utility-metering product having been calibrated. The reason why the device's telemetry can be used with simulators is that the study looks at software-path evidence, reproducibility, and data preparation rather than carrying out physical sensor calibration or guaranteeing the accuracy of billing. [13], [15]"
+    },
+    {
+      "index": 14,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "A design based on events should be adopted since there is no need for coupling between the admission of telemetry data and the various downstream tasks, such as aggregation, storage, inference, and the transmission of alerts. Even though microservices and hybrid communication architectures have been mentioned in connection with energy-management applications as providing an appropriate architectural foundation for such a separation, the deployment conditions linked to them are not considered to be numerical baselines in this study. [1], [3]"
+    },
+    {
+      "index": 15,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The system makes use of the JWT, role, and ownership features provided by Keycloak in order to manage user-facing requests and will accept telemetry that is compatible with the simulator when using a device-bound token. These mechanisms set up a clearly defined admission boundary prior to the following event processing. [1], [3]"
+    },
+    {
+      "index": 16,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The telemetry that is accepted is forwarded to Kafka, where the Usage Service records both the time-series usage and the windowed aggregations; the time-series usage is stored in InfluxDB and the information relating to the household, the device, and the alert state is stored in MySQL. This arrangement enables the processing pathway to be examined and separates the relational state from the time-series storage. [1], [2]"
+    },
+    {
+      "index": 17,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The system also includes deterministic bill forecasting, appliance ranking, standby detection, saving tips, and other related insights. However, these features are of no use if their inputs cannot be connected to the available telemetry; the project thus places more emphasis on record handling and evidence boundaries than simply on the presentation of the dashboard. [11], [12]"
+    },
+    {
+      "index": 18,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "One reason why anomaly detection is carried out is that research in this field considers the relationship between the measurement source, the definition of the label, the method employed to construct the features, and the evaluation protocol. Recent studies have examined faults, misuse, and immediate anomaly detection in the context of smart electricity, demonstrating that the output of a model by itself does not amount to a validated result for a household. [8]–[10]"
+    },
+    {
+      "index": 19,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The Random Forest which has been installed is obtained from a legacy repository; even though it is possible to reconstruct it by following the protocol as locally documented, the source, the licence, the method used to generate the labels, and the causal provenance of the historically labelled CSV file remain incomplete. That is why the metrics connected with it are considered to be evidence of reproducibility and not evidence of generalisation. [4], [8]"
+    },
+    {
+      "index": 20,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "REFIT offers a more thoroughly documented source of household data for future evaluations; even though the origin of the data is clear from the published household measurements and the records in the cleaned dataset, the aggregate-power pre-processing and the alignment of the anomaly labels still need to be verified before they can be used to support the claims of end-to-end anomalies. [5]–[7]"
+    },
+    {
+      "index": 21,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The paper provides information on the architecture that has been put into place, along with a reproducible historical baseline and a preprocessing procedure for REFIT which has been verified by means of a checksum. It clearly separates the work that has already been carried out from that which still remains to be done, namely isolated provisioning, replay, alert-deduplication validation, and REFIT anomaly-accuracy evaluation. [1]–[3], [5]–[7]"
+    },
+    {
+      "index": 22,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "1.1 Research Objectives"
+    },
+    {
+      "index": 23,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Design a data pipeline that is secure and is based on microservices, incorporating validation of the device telemetry, checking of the device tokens, assurance of event traceability, and proper handling of invalid messages."
+    },
+    {
+      "index": 24,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Get event-driven processing and monitoring achieved by integrating individual microservices with Kafka so that telemetry processing, baseline inference, and alert handling can take place, and ensure that failures, message replay, consumer lag, and event tracing are all monitored."
+    },
+    {
+      "index": 25,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Set up a reproducible baseline for anomaly detection by reconstructing and recording the Random Forest baseline using the given features, random seed, and train-test split, making it clear at what point the offline performance metrics end and at what point real-world validation begins."
+    },
+    {
+      "index": 26,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Prepare the dataset items for USE OF THE REFIT dataset and check their integrity using SHA-256 checksums, and also record the results of the data quality checks together with the evaluation steps for use in future end-to-end anomaly detection validation."
+    },
+    {
+      "index": 28,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "2. Related Work"
+    },
+    {
+      "index": 30,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The use of a microservices architecture in order to monitor residential energy efficiency is appropriate since it involves the deliberate splitting up of the responsibilities associated with residential monitoring; the present study applies this architectural principle to a local prototype which is evidence aware rather than trying to reproduce the reported deployment scenario. [1]"
+    },
+    {
+      "index": 31,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The paper offers a conceptual cloud architecture for home energy-management systems and reinforces the difference between acquisition, operational processing, and analytical use, a distinction that is shown by the way the responsibilities associated with admission, usage, inference, and alert are dealt with. [2]"
+    },
+    {
+      "index": 32,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "In a smart-grid environment using an energy-management solution built on microservices and incorporating hybrid communication, it may be necessary to determine which of the individual services have actually been verified in a local prototype, even if the work involves the use of decoupled components. [3]"
+    },
+    {
+      "index": 33,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The study carried out by Hernández et al. on the detection of anomalies in daily activities using data from smart meters indicates that any conclusions drawn about anomalies must be supported by a properly documented measurement and evaluation context, a criterion which restricts the way in which the CSV file that had previously been labelled and used in this project can be interpreted. [4]"
+    },
+    {
+      "index": 34,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The dataset that REFIT is based on, one that has been studied by Murray et al. and others and which includes household load measurements collected over a two-year period and published in the UK, might be employed in a reproducible recorded-data preparation procedure, even if the fact that the dataset is available does not imply that there is an established aggregate anomaly ground truth. [5]"
+    },
+    {
+      "index": 35,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The data set used in the current preprocessing task comes from the cleaned-data records held at the University of Strathclyde and on Zenodo. In the case of the local study, these records are employed to perform file-level checksum verification and to define the cohort, making sure that the difference between the source data and the final replay experiment is maintained. [6], [7]"
+    },
+    {
+      "index": 36,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "It is pointed out in reference [8] that the present paper does not state that its fixed legacy Random Forest has been tested on the same fault or misuse issue concerning anomaly detection in smart electric meters, since this is related to the alerting aim of the present study."
+    },
+    {
+      "index": 37,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Maitra and the others have suggested using a convolutional-autoencoder method in conjunction with a dynamic threshold as part of an IoT–AI framework for the real-time detection of energy anomalies; yet their method still leaves the Random Forest artifact in the repository. [9], [10]"
+    },
+    {
+      "index": 38,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Karthika et al. and Liu and Hsiao look at the application of IoT and anomaly detection to smart energy monitoring and home energy management through the use of smart plugs; their work focuses on the user-facing monitoring aspect, while the present study places greater emphasis on traceable service boundaries and controlled evidence interpretation. [11], [12]"
+    },
+    {
+      "index": 39,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Hidayat and Al-Faris, along with Hossain and Hassan, have also created IoT-based or real-time electrical power-monitoring systems. The fact that this kind of work demonstrates the practical value of meter-facing telemetry does not imply that the implementation of the simulator-compatible system described in this paper involves any actual hardware calibration or physical comparison of the meters. [13], [15]"
+    },
+    {
+      "index": 40,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Sirisumrannukul et al. have combined a cooling-management control system with an ANNs–PSO data-analytics microservice platform; the study, however, does not propose an optimisation method and makes no claims as to control performance. [14]"
+    },
+    {
+      "index": 41,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "All the existing methods that involve tracking energy consumption using IoT technology, smart city energy management, and real-time alert systems place a strong emphasis on monitoring, the ability to make energy-saving decisions, and the ability to send out alerts. By contrast, the paper in question considers alert deduplication and recovery testing as evidence-gated requirements, rather than treating a configured alert pathway as though it had been empirically verified. [16]–[18]"
+    },
+    {
+      "index": 42,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "Table I. Representative prior works and their relationship to the present study"
+    },
+    {
+      "index": 44,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "2.1 Research Gaps Identified"
+    },
+    {
+      "index": 45,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Research Gap 1: Traceability across the monitoring pipeline"
+    },
+    {
+      "index": 46,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Research carried out in the past has resulted in the creation of modular energy-monitoring architectures, but it is still necessary to have a local prototype in order to demonstrate how telemetry admission, event processing, persistence, analytics, and alert delivery are linked together in an inspectable chain. In this study, some of the gap is narrowed by adopting a gateway-to-Kafka-to-service architecture and by defining clear boundaries at the component level. [1]–[3]"
+    },
+    {
+      "index": 47,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Research Gap 2: Evidence boundaries in anomaly-detection evaluation"
+    },
+    {
+      "index": 48,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The historical baseline metrics, the endpoint smoke tests, and the data-preprocessing checks all have different functions: the historical Random Forest metrics pertain to a specific labelled CSV, the smoke test confirms that the interface has been carried out, and the REFIT preparation procedure demonstrates that the source material is intact and that the transformation is deterministic. It would be equivalent to overestimating the evidence if any one of these were substituted for the others. [4], [8]–[10]"
+    },
+    {
+      "index": 49,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Research Gap 3: Reproducible recorded-household evaluation"
+    },
+    {
+      "index": 50,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Presently, most existing home-energy systems treat telemetry collection, storage, anomaly detection, and alert generation as individual functions rather than as part of one continuous and traceable process. Consequently, it is often not possible to track a particular device reading from the moment it enters the gateway through Kafka processing, onwards to time-series storage, model inference, and finally to the alert decision. This lack of traceability makes it difficult to establish whether a faulty or missing alert was the result of an issue with authentication, event delivery, data persistence, inference, or deduplication. The new system addresses this deficiency by setting up an event path based on evidence and by clearly specifying the boundaries of each service; nevertheless, complete alert reconciliation, recovery testing, and fault validation are still lacking."
+    },
+    {
+      "index": 51,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Summary of Research Gaps"
+    },
+    {
+      "index": 52,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The architecture together with the exact copy of the existing system makes it possible to keep both software-level and historical-baseline traceability and reproducibility. Normalisation, achieved through the use of checksum verification, considers the data's provenance. The one remaining gap is the controlled, isolated and evidence-producing transition from the prepared REFIT records to a verified end-to-end evaluation."
+    },
+    {
+      "index": 53,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Problem Statement"
+    },
+    {
+      "index": 54,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The problem in this case is to create and prepare documentation for a residential energy-monitoring system that enables simulator-compatible telemetry, event processing, storage, analytics, inference, and alert handling to be traced without confusing an implemented component with a full scientific evaluation; in order to satisfy this requirement the project has to include an evidence-aware system description, a reproducible baseline, and a recorded-household data-preparation procedure, even though the rest of the components remain open for possible future end-to-end validation."
+    },
+    {
+      "index": 56,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "3. Materials and Methods"
+    },
+    {
+      "index": 58,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "3.1 Overall System Methodology"
+    },
+    {
+      "index": 59,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The system accepts as input a telemetry payload which is compatible with Wokwi and contains the deviceId, energyConsumed, and timestamp fields; user requests are governed by JWT, role, and ownership criteria, and with regard to those that are compatible with the simulator the device-bound-token method is used; the Ingestion Service verifies that the telemetry contract agreed upon is satisfied before publishing the energy-usage events to Kafka."
+    },
+    {
+      "index": 60,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The Usage Service accepts energy-usage events and records both time-stamped usage data and aggregated data for defined time periods. InfluxDB looks after the time-series usage data while MySQL is in charge of storing details about households, devices, and alerts. The baseline inference service simply receives the correct event type and then generates anomaly results. The Alert Service manages both the threshold and anomaly pathways and includes a 15-minute deduplication window. Prometheus and Grafana are supported as tools for monitoring the services."
+    },
+    {
+      "index": 61,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The study treats the architecture implementation, the historical-baseline reproduction, the live interface smoke testing, and the REFIT preprocessing as separate evidence streams because, otherwise, a successful service start-up or a single inference response would be counted as an accuracy, reliability, or alert-correctness result."
+    },
+    {
+      "index": 62,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "3.2 Proposed System Architecture"
+    },
+    {
+      "index": 64,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The architecture for the Home Energy Tracker has been developed and the REFIT branch has been set up but is not yet linked to the runtime."
+    },
+    {
+      "index": 65,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Figure 1 illustrates the difference between the solid line, which shows the implemented paths, and the dashed REFIT preparation path. The solid line covers the route from simulator-compatible telemetry through gateway admission, ingestion, Kafka, usage aggregation, time-series storage, baseline inference, anomaly results, alert processing, relational state, and finally arrives at observability. On the other hand, the dashed REFIT path does not have isolated provisioning, replay, reconciliation, and labelled evaluation."
+    },
+    {
+      "index": 66,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "Table II. System components deployed and evidence limits"
+    },
+    {
+      "index": 68,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "3.3 Identity, Admission, and Event Processing"
+    },
+    {
+      "index": 69,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The gateway sets up the API boundary so that when users access various routes they use JWTs to check both role and ownership, while device telemetry—which is suitable for use with a simulator—uses a token that is connected to the device. In the design, the REFIT household identifier is not regarded as being the same as the backend device identifier, and if data recording is to be replayed at a later stage, then the households, devices, and credentials all have to be given separately."
+    },
+    {
+      "index": 70,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Once the contract has been validated, the energy-usage events are passed on to Kafka, after which each of the consumers performs its own usage aggregation and baseline inference. The fact that these processes are decoupled allows downstream services to be examined without it being necessary to provide evidence that Kafka connectivity exists or that the components are available in order to prove end-to-end event reconciliation."
+    },
+    {
+      "index": 71,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "3.4 Baseline Model and Alerting Boundary"
+    },
+    {
+      "index": 72,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The Random Forest artifact remaining is called random_forest-csv-20261003T205417Z and it makes use of the following variables: Electricity_Consumed, Temperature, Humidity, Wind_Speed, Avg_Past_Consumption, Hour, DayOfWeek, and ConsumptionDeviation; in the case of the historical protocol a chronological split was carried out with 3,500 cases in the training set, 750 in the validation set and 750 in the test set, the decision threshold being set on the basis of the validation F1."
+    },
+    {
+      "index": 73,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The model used has 300 trees, a min_samples_leaf value of 2, applies balanced_subsample when calculating the class_weight, sets the random_state to 42, and has a threshold of 0.31; with respect to the payloads compatible with Wokwi, four of the contextual inputs are excluded, for which the service carries out median imputation and also computes temporal features from the timestamp; thus, the prediction functions only as an interface smoke test and not as a statistical test of the historical model."
+    },
+    {
+      "index": 74,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "A deduplication window of 15 minutes has been set up by the Alert Service for use with both the threshold and anomaly pathways. Nevertheless, there is currently no evidence to prove that deduplication works, that the notifications actually get through, that an acceptable level of latency is achieved, what the recovery behaviour will be, or what fault tolerance means since tests involving isolated replay and fault conditions have not yet been carried out."
+    },
+    {
+      "index": 75,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "3.5 REFIT Preprocessing & Interval-Energy Estimation"
+    },
+    {
+      "index": 76,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "To compare the five local REFIT cleaned files (H1, H2, H3, H4 and H11), the official Zenodo MD5 list was referred to, and for the total house active power the watt was the unit used; the H1, H2 and H4 files make up the main cohort while the H3 and H11 files constitute a separate sensitivity cohort since the REFIT descriptor contains a record of solar-generation interference and no solar or net-export correction was carried out."
+    },
+    {
+      "index": 77,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "In order to calculate the energy over the interval for each suitable consecutive record, the first active-power sample is used in conjunction with the real time interval that has passed. The following formula keeps the original method and units."
+    },
+    {
+      "index": 79,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The only intervals that are taken into account are those which meet the condition stated below."
+    },
+    {
+      "index": 81,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Without including the longer cross-gap periods, there would be no requirement for interpolation, filling, capping, or synthesis; negative power would be removed from the final combined result but would still remain in the source audit; IQR flags are used as diagnostic measures rather than as clipping rules, and REFIT Issues values are considered to be contextual information rather than anomaly labels."
+    },
+    {
+      "index": 82,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "3.6 Algorithmic Procedure for REFIT Normalisation"
+    },
+    {
+      "index": 83,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Algorithm 1. REFIT interval-energy normalisation"
+    },
+    {
+      "index": 84,
+      "style": "List Paragraph",
+      "alignment": "None",
+      "text": "The input is a cleaned and verified REFIT household file for a particular 14-day time period, as checked using an MD5 checksum."
+    },
+    {
+      "index": 85,
+      "style": "List Paragraph",
+      "alignment": "None",
+      "text": "Sort the order records by their preserved Unix timestamp and retain the associated Time value."
+    },
+    {
+      "index": 86,
+      "style": "List Paragraph",
+      "alignment": "None",
+      "text": "Calculate the actual elapsed time interval Δt for each subsequent pair."
+    },
+    {
+      "index": 87,
+      "style": "List Paragraph",
+      "alignment": "None",
+      "text": "If the value of Δt_s is such that it satisfies the condition 0 < Δt_s ≤ 16 s and the initial aggregate power is non-negative, then the left-rectangle/sample-hold rule mentioned should be applied in order to estimate the energy over the interval."
+    },
+    {
+      "index": 88,
+      "style": "List Paragraph",
+      "alignment": "None",
+      "text": "When in that situation, you must keep the existing record for audit purposes and enter the interval in the log of the records that have been excluded; do not interpolate, cap, or synthesise the data."
+    },
+    {
+      "index": 89,
+      "style": "List Paragraph",
+      "alignment": "None",
+      "text": "Create the cleaned cohort, the preprocessing summary, the quality report, the timestamp-interval report, and the excluded-record log."
+    },
+    {
+      "index": 90,
+      "style": "List Paragraph",
+      "alignment": "None",
+      "text": "Form a primary group consisting of H1/H2/H4 members and also create a separate group made up of H3/H11 members who are sensitive to solar radiation."
+    },
+    {
+      "index": 91,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "3.7 Evidence and Reproducibility Workflow"
+    },
+    {
+      "index": 93,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Figure 2. The workflow for evidence and reproducibility: the REFIT phase will stay pending until the isolation of the devices, the credentials, the pilot reconciliation, and the verified evaluation have all been carried out."
+    },
+    {
+      "index": 94,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "In the upper part of the workflow the entries pertaining to the legacy historical protocol with 5,000 records, the selection of the validation threshold, the offline reproduction, and the endpoint smoke-test boundary are recorded; in the lower part those relating to the official REFIT verification, cohort separation, actual-delta normalisation, and byte-identical repeatability are recorded. The final stage is shown in dashed form intentionally because the ingestion or anomaly evaluation has not yet been carried out."
+    },
+    {
+      "index": 96,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "4. Experimental Results and Discussion"
+    },
+    {
+      "index": 98,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "4.1 Experimental Conditions and Evidence Classes"
+    },
+    {
+      "index": 99,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The results presented in this report are based on different sections of the study and should not be understood in the same way. Although the architecture shows which services and event paths have been implemented, the historical model analysis relates to the labelled CSV file that was supplied; the offline rerun procedure examines whether the historical results can be reproduced; and the REFIT preprocessing step checks the source and the way in which the recorded inputs were prepared. None of these observations on their own amounts to a new accuracy result. For example, a service response or a repeated training run cannot be regarded as proof that the model will be accurate when used on household data."
+    },
+    {
+      "index": 100,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The laptop running Windows and mentioned in the source has a memory capacity of 8 GB and a Docker memory limit of 3.696 GiB; the main stack observed in this case needs about 2.89 GiB. It must therefore be concluded that the REFIT provisioning stack should not be run at the same time as the principal stack on this machine, since the deployment status cannot be used as a substitute for scientific validation."
+    },
+    {
+      "index": 101,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "4.2 Software Components and Data Sources"
+    },
+    {
+      "index": 102,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The system employs an API gateway, Keycloak, device-token admission, Kafka, InfluxDB, MySQL, a FastAPI Random Forest inference service, the Alert Service, Prometheus, and Grafana. With regard to version numbers, those which are not mentioned in the research evidence provided are not assumed in this instance. The earlier supervised CSV can be found in the repository, and REFIT is an official recorded-household source having its own dataset references. [5]–[7]"
+    },
+    {
+      "index": 103,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "4.3 Historical Baseline Protocol"
+    },
+    {
+      "index": 104,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The source protocol was used to assess the original Random Forest method with a chronological split of 70/15/15, which corresponded to 3,500, 750 and 750 records for training, validation and testing respectively; the test set consisted of 750 records and the threshold was set on the basis of the validation F1 score. Similarly, the logistic-regression comparator employed the same held-out split and used a threshold of 0.28."
+    },
+    {
+      "index": 105,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "4.4 Offline Reproduction and Live Smoke Test"
+    },
+    {
+      "index": 106,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The deterministic trainer was used together with the 5,000 copied historical records, and the fact that the figures obtained exactly match the SHA-256 value of the Random Forest artefact shows that the earlier experiment has been reproduced using the inputs that were available locally. Moreover, in order to test the deployed inference interface, a Wokwi-compatible request was made using device ID 1, setting the energyConsumed value to 0.55 and including a timestamp of 2026-10-11T00:00:00Z; however, this request was not meant as a test of latency, alertness, or accuracy."
+    },
+    {
+      "index": 107,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "4.5 REFIT Data Configuration and Repeatability"
+    },
+    {
+      "index": 108,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The primary-cohort periods for the H1, H2, and H4 selected windows, as shown in Table IV, were obtained. The preprocessing pipeline was applied twice, the first time using the same five validated source files, criteria, and configuration as on the second occasion. The artefact sets generated had the same byte values and comprised the cleaned primary and solar-sensitivity cohorts, the manifest, the excluded-record log, the quality report, the preprocessing summary, and the timestamp-interval report."
+    },
+    {
+      "index": 112,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "Table III. Historical legacy-baseline appraisal, exact reproduction, and smoke-test boundary"
+    },
+    {
+      "index": 114,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "Table IV. Normalisation results for the REFIT primary cohort"
+    },
+    {
+      "index": 116,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "We should mention that the term 'aggregate' relates to the total active power consumed by the house, measured in watts, and that energy is calculated by means of the true-delta, left-rectangle, sample-hold method; the sensitivity data for H3 and H11 have been left out of the main summary due to the known problem with solar interference."
+    },
+    {
+      "index": 118,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "4.6 Results and Discussion"
+    },
+    {
+      "index": 119,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Table III shows that the Random Forest outperforms the logistic-regression comparator in terms of historical held-out F1, ROC-AUC, and PR-AUC. Since both the exact offline reproduction and the matching artefact hash have been acquired, the legacy repository experiment can now be regenerated with the available copied input and configuration. However, the absence of provenance, licence, label-generation procedure, household identity, and the causal design of Avg_Past_Consumption in the historical CSV is still not dealt with."
+    },
+    {
+      "index": 120,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The results from the live smoke test indicate that the deployed interface is able to load the fixed model and deal with a Wokwi-compatible payload which has a declared imputation. However, it gives no measurements concerning response-time distribution, throughput, alert delivery, alert deduplication, recovery, or statistical accuracy. Moreover, in five of the six simulator boundaries that were looked at, the Wokwi values lie outside the 0–1 Electricity_Consumed range found in the training CSV, a result showing that additional range or out-of-distribution controls will have to be introduced."
+    },
+    {
+      "index": 121,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The REFIT process resulted in a primary cohort that could be traced, consisting of 468,847 retained intervals and an estimated energy output of 386.398411389 kWh over three specified 14-day periods. In those time intervals there were no duplicate or out-of-order Unix timestamps and each household satisfied the required criteria concerning cadence, coverage, missing slots, and the maximum gap. When the two preprocessing outputs were compared on a byte-by-byte basis, they were found to be identical; the SHA-256 hash of the main output is dfdba435f35a1548661309fd67b267548f419edd489cacf25c7566098f189163."
+    },
+    {
+      "index": 122,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The amount of evidence presented here is deliberately smaller than that which would be included in a statement on model effectiveness. The appliance-level annotations associated with REFIT are not regarded as valid aggregate anomaly ground truth; in fact, the only cases that overlap with the selected primary cohort are the H1 ones, and the annotation schema, the counts, the timestamp semantics, and the way they relate to aggregate readings have not been confirmed. Likewise, the interval-energy mapping that has been prepared has not yet been approved by the live ingestion API."
+    },
+    {
+      "index": 123,
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "text": "Table V. Publication border and current result status"
+    },
+    {
+      "index": 125,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "5. Limitations and Future Work"
+    },
+    {
+      "index": 127,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The first limitation is that the telemetry compatible with Wokwi is synthetic and has not been physically calibrated; the second is that the provenance together with the context concerning the construction of the older supervised CSV is incomplete, so that its historical metrics cannot be generalised; the third is that although REFIT does provide documented aggregate power it does not have a verified aggregate-anomaly-label protocol for the H1/H2/H4 cohort."
+    },
+    {
+      "index": 128,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The fourth limitation concerns the quantity of local resources available. As the evidence cited indicates, there is an 8 GB Windows laptop, a Docker memory limit of 3.696 GiB, and an observed memory requirement for the main stack of about 2.89 GiB. It therefore follows that the isolated REFIT provisioning stack cannot be run at the same time as the main stack on this machine; as a result, deployment status cannot be used as a substitute for controlled validation."
+    },
+    {
+      "index": 129,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The future work will need an isolated Keycloak realm, separate database volumes, a Kafka broker, three household profiles and three device-bound credentials; it then have to compare the mapping between derived_interval_energy_kwh and energyConsumed with that stated in the actual ingestion contract, carry out a small pilot replay, and will not move on to the H1/H2/H4 replay until that has been completed. It is still necessary to have validated label alignment, use a household-held-out or temporal evaluation, apply input-range controls, carry out repeated latency/throughput measurements, provide evidence of alert deduplication, and carry out fault/recovery testing."
+    },
+    {
+      "index": 131,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "6. Conclusion"
+    },
+    {
+      "index": 133,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The project features a Home Energy Tracker which is evidence-aware, has gateway-mediated admission, uses Kafka for event processing, makes use of both time-series and relational storage, offers deterministic insights, includes a baseline Random Forest service, has duplicate-aware alerting, and provides monitoring. The first classifier was recreated entirely offline together with its historical results, and the separate endpoint smoke test was limited to the evidence relating to interface execution. As part of the REFIT work, checksum-verified official inputs were carried out, a new H1/H2/H4 primary cohort was introduced, actual-delta interval-energy normalisation was applied, quality controls were put in place, and deterministic reproduction of the artefacts was achieved."
+    },
+    {
+      "index": 134,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The study thus looks at the traceability and reproducibility gaps at the architectural, historical-baseline, and recorded-data-preparation levels, without looking at real-world anomaly accuracy, achieving completed REFIT ingestion, the correctness of alert deduplication, production resilience, or generalisable performance; the following reasonable step will be isolated provisioning, then pilot replay, event reconciliation, validated label alignment, and finally a separate end-to-end evaluation."
+    },
+    {
+      "index": 136,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Credit Authorship Contribution Statement"
+    },
+    {
+      "index": 138,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Rohit Shrivastava: was responsible for the conceptualization, the development of the methodology, software development, preprocessing of the REFIT data, the formal analysis, the visualization, and the writing of the original draft. Harsh Gupta: carried out the microservice implementation, integrated Docker, carried out the validation and testing, and prepared the document for review and editing. Anshika Rai: carried out the literature review, curated the data, prepared the documentation, made the result tables and the visualisations, and was responsible for writing—reviewing and editing. Syamasudha Veeragandham: carried out a review of the methodology, validated it, reviewed and edited the manuscript, coordinated the project, and handled the correspondence."
+    },
+    {
+      "index": 140,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Funding Statement"
+    },
+    {
+      "index": 142,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The author says that they have not secured any funding, grants, or any other form of external support in connection with the preparation of this work.."
+    },
+    {
+      "index": 144,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Declaration of Competing Interests"
+    },
+    {
+      "index": 146,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "They are unaware of any financial interests or personal relationships which could have led to the impression that they had influenced the work referred to in this paper."
+    },
+    {
+      "index": 148,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "Data Availability"
+    },
+    {
+      "index": 150,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "The cleaned data from REFIT can be identified by referring to the dataset records mentioned in [6] and [7]. Since the historical labelled CSV file and the preprocessing artefacts obtained locally were not provided together with a public repository or a release statement in the source materials, the materials will only be available through the authors' responsibility and subject to the applicable source terms."
+    },
+    {
+      "index": 152,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "References"
+    },
+    {
+      "index": 154,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[1] C. Rovetto, E. Cruz, A. Smolarz, D. Concepcion, E. E. Cano, and I. Nuñez, \"Design of a microservices-based architecture for residential energy efficiency monitoring,\" International Journal of Electronics and Telecommunications, vol. 70, no. 4, pp. 1089–1098, 2024, doi: 10.24425/ijet.2024.152511."
+    },
+    {
+      "index": 155,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[2] L. L. Motta, W. S. Alvarez, H. R. Carvajal, F. B. Neto, E. R. de Lima, and L. G. P. Meloni, “A cloud architecture for home energy management systems: a conceptual model,” Energy Informatics, vol. 8, Art. no. 142, 2025, doi: 10.1186/s42162-025-00599-1."
+    },
+    {
+      "index": 156,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[3] A. F. S. Veloso, J. V. Reis, Jr., and R. A. L. Rabelo, “A Microservices-Based Solution with Hybrid Communication for Energy Management in Smart Grid Environments,” Sensors, vol. 26, no. 5, Art. no. 1714, 2026, doi: 10.3390/s26051714."
+    },
+    {
+      "index": 157,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[4] Á. Hernández, R. Nieto, L. de Diego-Otón, M. C. Pérez-Rubio, J. M. Villadangos-Carrizo, D. Pizarro, and J. Ureña, “Detection of Anomalies in Daily Activities Using Data from Smart Meters,” Sensors, vol. 24, no. 2, Art. no. 515, 2024, doi: 10.3390/s24020515."
+    },
+    {
+      "index": 158,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[5] D. Murray, L. Stankovic, and V. Stankovic, “An electrical load measurements dataset of United Kingdom households from a two-year longitudinal study,” Scientific Data, vol. 4, Art. no. 160122, 2017, doi: 10.1038/sdata.2016.122."
+    },
+    {
+      "index": 159,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[6] D. Murray, L. Stankovic, and V. Stankovic, “REFIT: Electrical Load Measurements (Cleaned),” dataset, University of Strathclyde, Jun. 2016, doi: 10.15129/9ab14b0e-19ac-4279-938f-27f643078cec."
+    },
+    {
+      "index": 160,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[7] D. Murray and L. Stankovic, “REFIT: Electrical Load Measurements (Cleaned),” Zenodo, dataset, Jun. 2016, doi: 10.5281/zenodo.5063428."
+    },
+    {
+      "index": 161,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[8] K. Kulkarni, R. Dantakale, S. Mande, S. Kshatriya, and M. Agrawal, “Anomaly Detection in Smart Electric Meters for Detecting Faults and Misuse of Electric Energy Consumption,” International Journal of Scientific Research in Engineering and Management, vol. 8, no. 5, pp. 1–5, May 2024, doi: 10.55041/IJSREM34689."
+    },
+    {
+      "index": 162,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[9] M. H. Abu-Arqoub, A. A. Titinchi, and R. R. Marie, “A Scalable IoT-AI Framework for Real-Time Energy Anomaly Detection in Smart Grid Networks,” in 2026 2nd International Conference on Computational Intelligence Approaches and Applications (ICCIAA), 2026, pp. 1–6, doi: 10.1109/ICCIAA68481.2026.11543846."
+    },
+    {
+      "index": 163,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[10] S. Maitra, S. Kundu, and A. Shankar, “A Real-time Anomaly Detection Using Convolutional Autoencoder with Dynamic Threshold,” arXiv preprint arXiv:2404.04311, 2024, doi: 10.48550/arXiv.2404.04311."
+    },
+    {
+      "index": 164,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[11] Dr. Karthika K, Thrupthi Chandana G, Taahani Sheikh, Sankeerthana, and Umme, “Smart Energy Monitoring System,” International Journal of Innovative Research in Information Security, vol. 11, no. 9, Oct. 2025, doi: 10.26562/ijiris.2025.v1109.15."
+    },
+    {
+      "index": 165,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[12] J.-H. Liu and Y.-T. Hsiao, “Smart plug-based home energy management with IoT and anomaly detection,” Journal of the Chinese Institute of Engineers, vol. 49, no. 3, pp. 655–670, 2026, doi: 10.1080/02533839.2025.2557233."
+    },
+    {
+      "index": 166,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[13] K. M. W. Hidayat and M. G. Al-Faris, “IoT-Based Electrical Power Consumption Monitoring System in Households Using ESP32 and PZEM-004T,” Brilliance: Research of Artificial Intelligence, vol. 5, no. 2, pp. 1077–1081, 2025, doi: 10.47709/brilliance.v5i2.6368."
+    },
+    {
+      "index": 167,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[14] S. Sirisumrannukul, T. Intaraumnauy, and N. Piamvilai, “Optimal control of cooling management system for energy conservation in smart home with ANNs-PSO data analytics microservice platform,” Heliyon, vol. 10, no. 6, Art. no. e26937, 2024, doi: 10.1016/j.heliyon.2024.e26937."
+    },
+    {
+      "index": 168,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[15] M. S. Hossain and M. M. Hassan, “Smart Energy Meter with Real Time Monitoring System,” in 2024 13th International Conference on Electrical and Computer Engineering (ICECE), 2024, pp. 761–766, doi: 10.1109/ICECE64886.2024.11024970."
+    },
+    {
+      "index": 169,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[16] D. G. S, T. Gangakhedkar, A. P, A. Ashwija and C. B. T. Rambapuri, “IOT Enabled Electrical Consumption Tracking for Intelligent Energy Saving,” International Journal of Scientific Research in Engineering and Management, 2025. doi: 10.55041/ijsrem54847."
+    },
+    {
+      "index": 170,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[17] Y. Zhu and M. Yue, “Design of an IoT-Based Smart City Energy Management System,” in 2025 4th International Conference on Green Energy and Power Systems (ICGEPS), 2025, pp. 489–492, doi: 10.1109/ICGEPS65133.2025.11034388."
+    },
+    {
+      "index": 171,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[18] S. Susikala, R. K, J. K, S. K, Y. M, “IoT Based Smart Electricity Monitoring System with Real Time Alerts & Remote Control,” International Journal of Engineering & Extended Technologies Research, 2026. doi: 10.15662/ijeetr.2026.0802420 ."
+    },
+    {
+      "index": 172,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[19] A. S. Shuaibu, S. U. Haq, B. Almadani, F. Aliyu, and E. G. Al-Nahari, “Smart Metering Meets AI: Real-Time Appliance Monitoring and Anomaly Detection Over DDS Middleware,” IEEE Transactions on Industry Applications, vol. 62, no. 2, pp. 2326–2342, Mar. 2026, doi: 10.1109/TIA.2025.3608687."
+    },
+    {
+      "index": 173,
+      "style": "Normal",
+      "alignment": "None",
+      "text": "[20] T. B. de Sousa and R. de A. L. Rabelo, “Smart Metering Enabled by the Internet of Things for Monitoring Residential Energy Consumption and Power Quality,” IEEE Access, vol. 13, pp. 186872–186886, 2025, doi: 10.1109/ACCESS.2025.3627191."
+    }
+  ],
+  "tables": [
+    {
+      "index": 1,
+      "rows": 6,
+      "columns": 3,
+      "data": [
+        [
+          "References",
+          "Primary topic",
+          "Relationship and boundary"
+        ],
+        [
+          "[1]–[3]",
+          "Microservices and cloud energy architectures",
+          "Motivate component separation; no deployment metric is reused as a benchmark."
+        ],
+        [
+          "[4], [8]–[10]",
+          "Smart-meter and real-time anomaly detection",
+          "Motivate evaluation discipline; no external model result is claimed for the legacy Random Forest."
+        ],
+        [
+          "[5]–[7]",
+          "REFIT measurements and cleaned-data records",
+          "Support provenance and repeatable preparation; do not supply validated aggregate anomaly labels for this experiment."
+        ],
+        [
+          "[11]–[13], [15]",
+          "IoT/home energy monitoring",
+          "Provide application context; the present system does not claim physical sensor calibration."
+        ],
+        [
+          "[14], [16]–[18]",
+          "Analytics, tracking, energy management, and alerts",
+          "Inform future analytic and alerting scope; replay, deduplication, and recovery tests remain pending."
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "rows": 7,
+      "columns": 3,
+      "data": [
+        [
+          "Component",
+          "Implemented behaviour",
+          "Evidence boundary"
+        ],
+        [
+          "Admission",
+          "Keycloak-backed user routes and device-token telemetry admission at the gateway.",
+          "Functional architecture and some authorization controls; no production security evaluation."
+        ],
+        [
+          "Brokering and ingestion",
+          "Ingestion validates telemetry and publishes Kafka energy-usage events.",
+          "Historical/local event-path evidence; no REFIT replay has been run."
+        ],
+        [
+          "Storage and usage",
+          "Usage aggregation writes time-stamped usage to InfluxDB; household, device, and alert state are retained in MySQL.",
+          "Component and historical integration evidence; no utility-bill verification."
+        ],
+        [
+          "Baseline inference",
+          "A FastAPI service loads the fixed Random Forest and returns anomaly results.",
+          "REFIT accuracy is not established by historical-dataset evaluation or a live smoke test."
+        ],
+        [
+          "Alerting and monitoring",
+          "Threshold/anomaly paths reach Alert Service; a 15 min deduplication window and Prometheus/Grafana observation are configured.",
+          "Historical local evidence exists; fault and replay tests after isolation remain pending."
+        ],
+        [
+          "REFIT data path",
+          "Checksum-verified, normalised H1/H2/H4 artefacts are prepared separately.",
+          "Device provisioning, ingestion, alert assessment, and tagged-anomaly evaluation are unfinished."
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "rows": 5,
+      "columns": 4,
+      "data": [
+        [
+          "Evidence item",
+          "Protocol",
+          "Observed result",
+          "Permissible interpretation"
+        ],
+        [
+          "Historical Random Forest",
+          "Chronological 70/15/15 split; 750 test records; validation-tuned threshold.",
+          "Precision 0.880952; Recall 0.925000; F1 0.902439; ROC-AUC 0.997430; PR-AUC 0.948532.",
+          "Historical CSV-specific evaluation, not REFIT or a new field result."
+        ],
+        [
+          "Historical logistic regression",
+          "Same held-out split; threshold = 0.28.",
+          "Precision 0.053333; Recall 1.000000; F1 0.101266; ROC-AUC 0.422852; PR-AUC 0.059710.",
+          "Legacy comparator only."
+        ],
+        [
+          "Offline reproduction",
+          "Current deterministic trainer with 5,000 copied records.",
+          "All reported metric differences = 0; reproduced Random Forest artefact SHA-256 matched the legacy artefact.",
+          "Reproduces the legacy experiment; does not prove external validity."
+        ],
+        [
+          "Live inference smoke test",
+          "deviceId 1; energyConsumed 0.55; timestamp 2026-10-11T00:00:00Z.",
+          "anomaly = false; probability = 0.0; threshold = 0.31; four context features imputed.",
+          "Confirms endpoint execution and declared imputation only."
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "rows": 5,
+      "columns": 7,
+      "data": [
+        [
+          "Home",
+          "Time window (UTC)",
+          "Chosen rows",
+          "Intervals retained",
+          "Rows excluded",
+          "Energy estimated (kWh)",
+          "Quality output"
+        ],
+        [
+          "H1",
+          "2014-10-01 to 2014-10-15",
+          "153,762",
+          "153,578",
+          "184",
+          "104.820956111",
+          "PASS; 95.97% native cadence"
+        ],
+        [
+          "H2",
+          "2014-10-01 through 2014-10-15",
+          "155,097",
+          "154,985",
+          "112",
+          "170.354373889",
+          "PASS; 95.64% native cadence"
+        ],
+        [
+          "H4",
+          "22 Apr 2015 to 6 May 2015",
+          "160,324",
+          "160,284",
+          "40",
+          "111.223081389",
+          "PASS; 99.30% native cadence"
+        ],
+        [
+          "Total primary",
+          "Three 14-day periods",
+          "469,183",
+          "468,847",
+          "336",
+          "386.398411389",
+          "All record reconciliations passed"
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "rows": 5,
+      "columns": 3,
+      "data": [
+        [
+          "Region",
+          "Proven outcome",
+          "Not configured or not validated"
+        ],
+        [
+          "System implementation",
+          "Gateway, event processing, storage, deterministic insights, alert path, and observability are implemented in the local composition.",
+          "Production-scale capacity, full recovery behavior, and independent penetration security testing."
+        ],
+        [
+          "Baseline legacy",
+          "A dated endpoint smoke test passed, and offline reproduction of historical Random Forest metrics was exact with the copied CSV.",
+          "External data provenance, actual household generalisation, REFIT accuracy, and a complete post-restart ML-to-alert outcome."
+        ],
+        [
+          "REFIT data",
+          "Five local official files were MD5-validated; H1/H2/H4 interval artefacts were normalised and replicated byte-for-byte.",
+          "End-to-end ingestion, device/token provisioning, pilot/full replay, alert deduplication, and aggregate anomaly-label evaluation."
+        ],
+        [
+          "Deployment viability",
+          "Isolated-experiment design and safety assessments define necessary provisioning and storage boundaries.",
+          "Safe isolated deployment on the 8 GB laptop while the main stack is running; the measured memory constraint prevents concurrent operation."
+        ]
+      ]
+    }
+  ],
+  "images": [
+    {
+      "rel_id": "rId8",
+      "target": "media/image4.jpeg"
+    },
+    {
+      "rel_id": "rId7",
+      "target": "media/image3.png"
+    },
+    {
+      "rel_id": "rId6",
+      "target": "media/image2.png"
+    },
+    {
+      "rel_id": "rId5",
+      "target": "media/image1.jpeg"
+    }
+  ]
+}

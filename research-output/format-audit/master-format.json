@@ -1,0 +1,3698 @@
+{
+  "source": "C:\\Users\\anju2\\Desktop\\Advance_java_research\\version-1.1aHome_Energy_Tracker-publication.docx",
+  "paragraph_count": 97,
+  "nonempty_paragraph_count": 78,
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "A Microservices-Based Home Energy Tracker for Real-Time Monitoring, Intelligent Alerting, and AI-Driven Energy Insights",
+      "style": "Title",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 6.0,
+      "space_after_pt": null,
+      "line_spacing": null,
+      "runs": [
+        {
+          "text": "A Microservices-Based Home Energy Tracker for Real-Time Monitoring, Intelligent Alerting, and AI-Driven Energy Insights",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 11.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "text": "                         Rohit Shrivastava1 , Anshika Rai2 , Harsh Gupta3 , Syamasudha Veeragandham4         1,2,3,4School of Computer Science and Engineering, Vellore Institute of Technology, Vellore,    Tamil Nadu, India \u2013 632014  Email: 1rohit.lalbahadur2023@vitstudent.ac.in, 2anshika.rai2023@vitstudent.ac.in,                    3harsh.gupta2023@vitstudent.ac.in, 4 syamasudha.v@vit.ac.in",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "                         Rohit Shrivastava",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "1 ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": ", Anshika Rai",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "2 ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": ", Harsh Gupta",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "3",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": " , ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "Syamasudha",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": " Veeragandham",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "4",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "\n",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "        1,2,3,4",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "\n  Tamil Nadu, India \u2013 632014",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "\n",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "\nEmail: ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "1",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": ", ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "2",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": ", ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "\n",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "                  3",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": ", ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "4 ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "       4Corresponding author",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "\n",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": "0563C1",
+          "caps": false
+        },
+        {
+          "text": "      ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "4",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        },
+        {
+          "text": "Corresponding author",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": null,
+          "color": null,
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "Abstract - Residential energy-monitoring platforms require a traceable route from device telemetry to actionable feedback, yet sensing, analytics, and scalable software deployment are often treated separately. This work presents a microservices-based Home Energy Tracker that integrates Wokwi-generated ESP32 telemetry, REST ingestion, Apache Kafka event transfer, InfluxDB time-series storage, MySQL",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Abstract - ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "Residential energy-monitoring platforms require a traceable route from device telemetry to actionable feedback, yet sens",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "Keywords - Home Energy Tracker, Internet of Things, microservices, Spring Boot, Apache Kafka, InfluxDB, Wokwi simulation, threshold alerting.",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": null,
+      "space_after_pt": 5.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Keywords - ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "Home Energy Tracker, Internet of Things, microservices, Spring Boot, Apache Kafka, InfluxDB, Wokwi simulation, threshold",
+          "bold": false,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "I. INTRODUCTION",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 7.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "I. INTRODUCTION",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Residential electricity bills provide limited visibility into when energy is consumed, which registered device contributes most, or when a configured consumption threshold has been exceeded. A practical Home Energy Management System therefore requires an auditable path from telemetry to stored records, interpretable outputs, and user notification. Recent IoT monitoring systems demonstrate affordab",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Residential electricity bills provide limited visibility into when energy is consumed, which registered device contribut",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "This work addresses the system-integration problem rather than the accuracy of an energy meter or a trained analytical model. The Home Energy Tracker separates household and device metadata, telemetry ingestion, time-series usage, deterministic insights, and alert handling into independently deployable Spring Boot services. Wokwi supplies timestamped synthetic JSON payloads to the same REST interf",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "This work addresses the system-integration problem rather than the accuracy of an energy meter or a trained analytical m",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "The study makes three bounded contributions: it implements an event-driven microservices path from simulated telemetry to time-series storage; it provides reproducible, deterministic billing, ranking, standby, and threshold calculations; and it documents controlled end-to-end evidence for ingestion, persistence, analytics, alert creation, and local email capture. The scope excludes calibrated sens",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The study makes three bounded contributions: it implements an event-driven microservices path from simulated telemetry t",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "II. RELATED WORK AND RESEARCH GAP",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 7.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "II. RELATED WORK AND RESEARCH GAP",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "A. Existing Approaches",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "A. Existing Approaches",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "The literature represented in the source paper spans three complementary directions. Low-cost IoT systems use ESP32-class controllers and energy sensors to expose consumption or power-quality information [3]-[6], [13], [16], [18]-[21], [23]. These systems motivate a future calibrated sensing phase, but their measurement evidence cannot be transferred to the Wokwi-generated values used here. A seco",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The literature represented in the source paper spans three complementary directions. Low-cost IoT systems use ESP32-clas",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "A third direction considers microservices, cloud organisation, or distributed control for energy-management systems [2], [12], [14], [17], [24]. These works motivate service separation and maintainability, while leaving an opportunity to demonstrate a concise, traceable prototype that links a telemetry contract, an event broker, time-series persistence, deterministic user-facing insights, and a no",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "A third direction considers microservices, cloud organisation, or distributed control for energy-management systems [2],",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "B. Research Gap and Contribution",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "B. Research Gap and Contribution",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "The principal gap is the limited implementation-level linkage between residential telemetry, event-driven services, historical time-series storage, transparent analytics, and alert delivery. The prototype addresses this gap at the integration level through Wokwi telemetry, API Gateway routing, Spring Boot microservices, Kafka, InfluxDB, MySQL, deterministic insight functions, and Mailpit-backed th",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The principal gap is the limited implementation-level linkage between residential telemetry, event-driven services, hist",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "III. PROPOSED SYSTEM AND METHODOLOGY",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 7.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "III. PROPOSED SYSTEM AND METHODOLOGY",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "A. Architecture and Telemetry Path",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "A. Architecture and Telemetry Path",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "The input record contains deviceId, energyConsumed, and timestamp. In the Wokwi firmware, a virtual ESP32 creates this JSON payload at an approximately 8 s interval. Eco, Heavy, and Alert Test modes generate controlled values for integration testing; they are not calibrated physical measurements. The API Gateway routes the request to the Ingestion Service, which requires deviceId and timestamp and",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The input record contains deviceId, energyConsumed, and timestamp. In the Wokwi firmware, a virtual ESP32 creates this J",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "records are mapped to energy-usage events and published to Kafka.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "The Usage Service consumes the event and writes a time-stamped InfluxDB energy_usage point with deviceId as a tag and energyConsumed as a field. User and Device Services maintain household, appliance, and alert-setting metadata in MySQL. Aggregation over a selected D-day window produces device and household totals. This separation lets the telemetry-facing request be acknowledged without waiting f",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The Usage Service consumes the event and writes a time-stamped InfluxDB energy_usage point with deviceId as a tag and en",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "Fig. 1. Proposed architecture of the Home Energy Tracker.",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 1.0,
+      "space_after_pt": 5.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Fig. 1. Proposed architecture of the Home Energy Tracker.",
+          "bold": false,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "B. Deterministic Insight and Alert Methods",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "B. Deterministic Insight and Alert Methods",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "text": "The Insight Service transforms aggregated usage rather than learning features from a training set. It derives a daily rate and a 30-day energy projection from total energy E over D selected days. The configured local tariff applies a fixed 10.00 charge and slab rates of 0.12 per kWh for 0-100 kWh, 0.18 per kWh for 100-300 kWh, and 0.25 per kWh above 300 kWh. These are demonstration parameters used",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The Insight Service transforms aggregated usage rather than learning features from a training set. It derives a daily ra",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "Devices are ordered by descending energyConsumed and each contribution is calculated as the device total divided by the household total. The Standby Energy Detective estimates baseline demand as 20% of average load. It labels the estimate LOW at or below 50 W, MEDIUM above 50 W and at or below 150 W, and HIGH above 150 W. This is an explainable heuristic and does not identify actual low-activity p",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Devices are ordered by descending energyConsumed and each contribution is calculated as the device total divided by the ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "estimate LOW at or below 50 W, MEDIUM above 50 W and at or below 150 W, and HIGH above 150 W. This is an explainable heu",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "text": "For alerting, a scheduler evaluates the preceding one-hour household sum every 10 s. When alerting is enabled and the sum exceeds the user-defined threshold, an energy-alerts event is published. The Alert Service persists the alert in MySQL and attempts notification delivery through the configured SMTP endpoint, with Mailpit used as the local demonstration inbox. The current rule does not deduplic",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "For alerting, a scheduler evaluates the preceding one-hour household sum every 10 s. When alerting is enabled and the su",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "text": "  TABLE I",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 5.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "\n",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "\n",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "TABLE I",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "text": "Implemented System Components and Traceable Data Flow",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": null,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Implemented System Components and Traceable Data Flow",
+          "bold": false,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "text": "C. Operational Workflow",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "C. Operational Workflow",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "text": "Fig. 2 summarises the operational sequence. The validation, event-storage, insight, and alert branches are intentionally separated. Functional evaluation records the HTTP response, queryable usage, deterministic insight response, alert history, and notification evidence. No supervised learning, train-test split, or empirical anomaly-classifier evaluation is present in the current prototype.",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Fig. 2 summarises the operational sequence. The validation, event-storage, insight, and alert branches are intentionally",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "HTTP response, queryable usage, deterministic insight response, alert history, and notification evidence. No supervised ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "text": "                     Fig. 2. Functional workflow of the proposed Home Energy Tracker.",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 1.0,
+      "space_after_pt": 5.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "                     ",
+          "bold": false,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "Fig. 2. Functional workflow of the proposed Home Energy Tracker.",
+          "bold": false,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "text": "IV. IMPLEMENTATION AND FUNCTIONAL VERIFICATION",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 7.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "IV. IMPLEMENTATION AND FUNCTIONAL VERIFICATION",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "text": "A. Implementation Environment",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "A. Implementation Environment",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "text": "The prototype was executed as a local Docker-based environment on Windows 11 Home Single Language (10.0.26200) with an 11th Gen Intel Core i5-1135G7 processor at 2.40 GHz, four cores, eight logical processors, and 7.74 GB RAM. The C: drive had 373.71 GB total capacity and 98.13 GB free during verification. The deployment included User, Device, Ingestion, Usage, Insight, Alert, and API Gateway serv",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The prototype was executed as a local Docker-based environment on Windows 11 Home Single Language (10.0.26200) with an 1",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "processor at 2.40 GHz, four cores, eight logical processors, and 7.74 GB RAM. The C: drive had 373.71 GB total capacity ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "text": "  TABLE II",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 5.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "\n",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "\n",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "TABLE II",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "text": "Controlled Verification Environment and Conditions",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": null,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Controlled Verification Environment and Conditions",
+          "bold": false,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "text": "B. Verification Procedure",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "B. Verification Procedure",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "text": "1. A fresh household and device were registered, and the analytics case submitted three timestamped REST telemetry records (0.25, 0.50, and 0.75 kWh) for device 307.",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": 0.12,
+      "right_indent_in": null,
+      "first_line_in": -0.12,
+      "space_before_pt": null,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "1. ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "A fresh household and device were registered, and the analytics case submitted three timestamped REST telemetry records ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "text": "2. HTTP responses, usage totals, and Insight Service outputs were queried after ingestion. The selected insight window was D = 3 days.",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": 0.12,
+      "right_indent_in": null,
+      "first_line_in": -0.12,
+      "space_before_pt": null,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "2. ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "HTTP responses, usage totals, and Insight Service outputs were queried after ingestion. The selected insight window was ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "text": "3. An isolated alert case used user 9 with alerting enabled and a 0.10 kWh threshold. One 1.00 kWh event was submitted for device 308, then alert history and Mailpit were inspected.",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": 0.12,
+      "right_indent_in": null,
+      "first_line_in": -0.12,
+      "space_before_pt": null,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "3. ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "An isolated alert case used user 9 with alerting enabled and a 0.10 kWh threshold. One 1.00 kWh event was submitted for ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "text": "4. The local Maven suite covered the stateful and analytical services; 19 tests were discovered, 16 executed with zero failures and zero errors, and three were marked skipped.",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": 0.12,
+      "right_indent_in": null,
+      "first_line_in": -0.12,
+      "space_before_pt": null,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "4. ",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "The local Maven suite covered the stateful and analytical services; 19 tests were discovered, 16 executed with zero fail",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "text": "V. RESULTS AND DISCUSSION",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 7.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "V. RESULTS AND DISCUSSION",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "text": "A. Functional Results",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "A. Functional Results",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "text": "The controlled run establishes functional traceability rather than general performance. All four submitted events returned HTTP 201. Device 307 produced a queryable 1.50 kWh total, while device 308 produced a queryable 1.00 kWh total in the isolated alert case. The records originated from controlled REST submissions matching the Wokwi payload contract; they are synthetic inputs and not physical-me",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The controlled run establishes functional traceability rather than general performance. All four submitted events return",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "text": "  TABLE III",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 5.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "\n",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "\n",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "TABLE III",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "text": "Controlled Functional Verification Results",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": null,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Controlled Functional Verification Results",
+          "bold": false,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "text": "B. Interpretation and Evidence Boundaries",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "B. Interpretation and Evidence Boundaries",
+          "bold": true,
+          "italic": true,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "text": "The forecast, ranking, and standby results matched the documented deterministic transformations for the controlled 1.50 kWh case. The alert path also demonstrated a direct link from a threshold condition to a stored alert and locally captured email. Kafka is relevant because it separates request acceptance from time-series persistence; InfluxDB is relevant because the prototype queries timestamped",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The forecast, ranking, and standby results matched the documented deterministic transformations for the controlled 1.50 ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "text": "The 100% acceptance and functional persistence observations are limited to four valid synthetic events in two isolated cases. The 17.32 s analytics observation and 6.14 s alert observation are bounded by client polling and must not be converted into latency or throughput metrics. No benchmark dataset, matched physical-meter series, labelled standby data, baseline implementation, load protocol, res",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The 100% acceptance and functional persistence observations are limited to four valid synthetic events in two isolated c",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "benchmark dataset, matched physical-meter series, labelled standby data, baseline implementation, load protocol, resourc",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "text": "The optional Ollama integration should be interpreted narrowly. It can produce narrative recommendation wording when available, while a deterministic fallback maintains the interface when it is unavailable. It does not compute bill values, detect anomalies, classify appliance states, or provide a validated predictive inference result.",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The optional Ollama integration should be interpreted narrowly. It can produce narrative recommendation wording when ava",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "text": "VI. LIMITATIONS AND FUTURE WORK",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 7.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "VI. LIMITATIONS AND FUTURE WORK",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "text": "The current input is Wokwi-generated synthetic telemetry rather than calibrated smart-meter data. The prototype has no external benchmark dataset, labelled anomaly set, ground-truth bill reference, or empirical baseline. The standby value is a fixed 20% average-load heuristic; the scheduler has no alert-deduplication window; and demonstrated Keycloak/JWT authentication, ownership enforcement, clou",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "The current input is Wokwi-generated synthetic telemetry rather than calibrated smart-meter data. The prototype has no e",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "ground-truth bill reference, or empirical baseline. The standby value is a fixed 20% average-load heuristic; the schedul",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "text": "Future work should integrate calibrated sensing and validated interval-energy conversion, collect consented household telemetry with documented sampling and labels, and evaluate forecast error against matched meter or bill data. It should also replace the fixed standby coefficient with contextual or appliance-level analysis, add authentication and device-provisioning controls, and conduct observab",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "Future work should integrate calibrated sensing and validated interval-energy conversion, collect consented household te",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "text": "VII. CONCLUSION",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 7.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "VII. CONCLUSION",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "text": "This paper presents a microservices-based Home Energy Tracker that integrates Wokwi ESP32 telemetry, API Gateway routing, Spring Boot services, Kafka, InfluxDB, MySQL, deterministic energy insights, and threshold-based alerting. The controlled local verification accepted four synthetic events, made the 1.50 kWh analytics and 1.00 kWh alert cases queryable, returned the specified forecast, ranking,",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": 0.12,
+      "space_before_pt": null,
+      "space_after_pt": 3.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "This paper presents a microservices-based Home Energy Tracker that integrates Wokwi ESP32 telemetry, API Gateway routing",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "text": "REFERENCES",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": null,
+      "right_indent_in": null,
+      "first_line_in": null,
+      "space_before_pt": 7.0,
+      "space_after_pt": 2.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "REFERENCES",
+          "bold": true,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "text": "[1] A. Shuaibu, S. U. Haq, B. Almadani, F. Aliyu, and E. Al-Nahari, \"Smart Metering Meets AI: Real-Time Appliance Monitoring and Anomaly Detection Over DDS Middleware,\" IEEE Transactions on Industry Applications, 2026. doi: 10.1109/tia.2025.3608687.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[1] A. Shuaibu, S. U. Haq, B. Almadani, F. Aliyu, and E. Al-Nahari, \"Smart Metering Meets AI: Real-Time Appliance Monito",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "text": "[2] I. N\u00fa\u00f1ez, C. A. Rovetto, E. Cruz, A. Smolarz, D. H. Concepci\u00f3n, and E. Cano, \"Design of a microservices-based architecture for residential energy efficiency monitoring,\" International Journal of Electronics and Telecommunications, 2024. doi: 10.24425/ijet.2024.152511.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[2] I. N\u00fa\u00f1ez, C. A. Rovetto, E. Cruz, A. Smolarz, D. H. Concepci\u00f3n, and E. Cano, \"Design of a microservices-based archit",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "text": "[3] W. Agustiarmi et al., \"Real-Time IoT-based Energy Power Consumption Monitoring System for Smart Homes,\" International Journal on Advanced Science, Engineering and Information Technology, 2025. doi: 10.18517/ijaseit.15.5.20918.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[3] W. Agustiarmi et al., \"Real-Time IoT-based Energy Power Consumption Monitoring System for Smart Homes,\" Internationa",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "text": "[4] M. Islam, N. Jobaida, M. S. Hossain, M. R. Uddin, and M. Hasan, \"IoT-Based Smart Energy Monitoring and Energy Demand Response System,\" 2024 IEEE 3rd International Conference on Electrical Power and Energy Systems (ICEPES), 2024. doi: 10.1109/icepes60647.2024.10653605.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[4] M. Islam, N. Jobaida, M. S. Hossain, M. R. Uddin, and M. Hasan, \"IoT-Based Smart Energy Monitoring and Energy Demand",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "text": "[5] S. S. Shashank, Yogesh, M. Krishnamoorthy, N. Karuppiah, P. Mounica, and R. Abinaya, \"Smart Energy Monitoring for Real-Time Power Consumption Tracking and Optimization Using an IoT-Based Cost-Effective System,\" 2025 11th International Conference on Electrical Energy Systems (ICEES), 2025. doi: 10.1109/icees67011.2025.11212888.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[5] S. S. Shashank, Yogesh, M. Krishnamoorthy, N. Karuppiah, P. Mounica, and R. Abinaya, \"Smart Energy Monitoring for Re",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "text": "[6] T. B. D. Sousa and R. Rabelo, \"Smart Metering Enabled by the Internet of Things for Monitoring Residential Energy Consumption and Power Quality,\" IEEE Access, 2025. doi: 10.1109/access.2025.3627191.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[6] T. B. D. Sousa and R. Rabelo, \"Smart Metering Enabled by the Internet of Things for Monitoring Residential Energy Co",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "text": "[7] B. Jyothi et al., \"Empowering energy management: anomaly detection in smart meter data for proactive consumption control,\" Bulletin of Electrical Engineering and Informatics, 2026. doi: 10.11591/eei.v15i3.10957.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[7] B. Jyothi et al., \"Empowering energy management: anomaly detection in smart meter data for proactive consumption con",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "eei.v",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "15i3.10957.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "text": "[8] K. Kulkarni, \"Anomaly Detection in Smart Electric Meters for Detecting Faults and Misuse of Electric Energy Consumption,\" INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT, 2024. doi: 10.55041/ijsrem34689.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[8] K. Kulkarni, \"Anomaly Detection in Smart Electric Meters for Detecting Faults and Misuse of Electric Energy Consumpt",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "text": "[9] M. AbuArqoub, A. A. Titinchi, and R. Marie, \"A Scalable IoT-AI Framework for Real-Time Energy Anomaly Detection in Smart Grid Networks,\" 2026 2nd International Conference on Computational Intelligence Approaches and Applications (ICCIAA), 2026. doi: 10.1109/icciaa68481.2026.11543846.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[9] M. AbuArqoub, A. A. Titinchi, and R. Marie, \"A Scalable IoT-AI Framework for Real-Time Energy Anomaly Detection in S",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "text": "[10] \u00c1. Hern\u00e1ndez et al., \"Detection of Anomalies in Daily Activities Using Data from Smart Meters,\" Sensors (Basel, Switzerland), 2024. doi: 10.3390/s24020515.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[10] \u00c1. Hern\u00e1ndez et al., \"Detection of Anomalies in Daily Activities Using Data from Smart Meters,\" Sensors (Basel, Swi",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "text": "[11] S. Maitra, S. Kundu, and A. Shankar, \"A Real-time Anomaly Detection Using Convolutional Autoencoder with Dynamic Threshold,\" ArXiv, 2024. doi: 10.48550/arxiv.2404.04311.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[11] S. Maitra, S. Kundu, and A. Shankar, \"A Real-time Anomaly Detection Using Convolutional Autoencoder with Dynamic Th",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "text": "[12] A. F. S. Veloso, J. Reis, and R. Rabelo, \"A Microservices-Based Solution with Hybrid Communication for Energy Management in Smart Grid Environments,\" Sensors (Basel, Switzerland), 2026. doi: 10.3390/s26051714.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[12] A. F. S. Veloso, J. Reis, and R. Rabelo, \"A Microservices-Based Solution with Hybrid Communication for Energy Manag",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "text": "[13] D. K, \"Smart Energy Monitoring System,\" International Journal of Innovative Research in Information Security, 2025. doi: 10.26562/ijiris.2025.v1109.15.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[13] D. K, \"Smart Energy Monitoring System,\" International Journal of Innovative Research in Information Security, 2025.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "ijiris.2025.v",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "1109.15.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 86,
+      "text": "[14] L. L. Motta, W. S. Alvarez, H. R. Carvajal, F. B. Neto, E. D. Lima, and L. F. P. Meloni, \"A cloud architecture for home energy management systems: a conceptual model,\" Energy Informatics, 2025. doi: 10.1186/s42162-025-00599-1.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[14] L. L. Motta, W. S. Alvarez, H. R. Carvajal, F. B. Neto, E. D. Lima, and L. F. P. Meloni, \"A cloud architecture for ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "text": "[15] J. Liu and Y. Hsiao, \"Smart plug-based home energy management with IoT and anomaly detection,\" Journal of the Chinese Institute of Engineers, 2025. doi: 10.1080/02533839.2025.2557233.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[15] J. Liu and Y. Hsiao, \"Smart plug-based home energy management with IoT and anomaly detection,\" Journal of the Chine",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "text": "[16] K. M. W. Hidayat and M. G. Al-Faris, \"IoT-Based Electrical Power Consumption Monitoring System in Households Using ESP32 and PZEM-004T,\" Brilliance: Research of Artificial Intelligence, 2025. doi: 10.47709/brilliance.v5i2.6368.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[16] K. M. W. Hidayat and M. G. Al-Faris, \"IoT-Based Electrical Power Consumption Monitoring System in Households Using ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "brilliance.v",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "5i2.6368.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 89,
+      "text": "[17] S. Sirisumrannukul, T. Intaraumnauy, and N. Piamvilai, \"Optimal control of cooling management system for energy conservation in smart home with ANNs-PSO data analytics microservice platform,\" Heliyon, 2024. doi: 10.1016/j.heliyon.2024.e26937.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[17] S. Sirisumrannukul, T. Intaraumnauy, and N. Piamvilai, \"Optimal control of cooling management system for energy con",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "10.1016/j.heliyon.2024.e",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "26937.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 90,
+      "text": "[18] M. S. Hossain and M. Hassan, \"Smart Energy Meter with Real Time Monitoring System,\" 2024 13th International Conference on Electrical and Computer Engineering (ICECE), 2024. doi: 10.1109/icece64886.2024.11024970.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[18] M. S. Hossain and M. Hassan, \"Smart Energy Meter with Real Time Monitoring System,\" 2024 13th International Confere",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 91,
+      "text": "[19] D. G. S, T. Gangakhedkar, A. P, A. Ashwija, and C. B. T. Rambapuri, \"IOT-Enabled Electrical Consumption Tracking for Intelligent Energy Saving,\" International Journal of Scientific Research in Engineering and Management, 2025. doi: 10.55041/ijsrem54847.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[19] D. G. S, T. Gangakhedkar, A. P, A. Ashwija, and C. B. T. Rambapuri, \"IOT-Enabled Electrical Consumption Tracking fo",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 92,
+      "text": "[20] Y. Zhu and M. Yue, \"Design of an IoT-Based Smart City Energy Management System,\" 2025 4th International Conference on Green Energy and Power Systems (ICGEPS), 2025. doi: 10.1109/icgeps65133.2025.11034388.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[20] Y. Zhu and M. Yue, \"Design of an IoT-Based Smart City Energy Management System,\" 2025 4th International ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "Conference on Green Energy and Power Systems (ICGEPS), 2025. doi: 10.1109/icgeps65133.2025.11034388.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "text": "[21] S. Susikala, R. K, J. K, S. K, and Y. M, \"IoT-Based Smart Electricity Monitoring System with Real-Time Alerts and Remote Control,\" International Journal of Engineering & Extended Technologies Research, 2026. doi: 10.15662/ijeetr.2026.0802420.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[21] S. Susikala, R. K, J. K, S. K, and Y. M, \"IoT-Based Smart Electricity Monitoring System with Real-Time Alerts and R",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 94,
+      "text": "[22] C. S. Sinha, \"Smart Meter-Based Power Consumption Detection System: An Integrated Approach Using LSTM Networks and Real-Time Web Interface,\" International Journal For Multidisciplinary Research, 2025. doi: 10.36948/ijfmr.2025.v07i01.37948.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[22] C. S. Sinha, \"Smart Meter-Based Power Consumption Detection System: An Integrated Approach Using LSTM Networks and ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "For",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": " Multidisciplinary Research, 2025. doi: 10.36948/",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "ijfmr.2025.v",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "07i01.37948.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 95,
+      "text": "[23] F. Dinmohammadi, A. M. Farook, and M. Shafiee, \"Improving Energy Efficiency in Buildings with an IoT-Based Smart Monitoring System,\" Energies, 2025. doi: 10.3390/en18051269.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[23] F. Dinmohammadi, A. M. Farook, and M. Shafiee, \"Improving Energy Efficiency in Buildings with an IoT-Based Smart Mo",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "text": "[24] S. Son, S. Ko, H. Lee, S. Lee, and B. Lee, \"SIMA: Scalable IoT Microservice Architecture With Users and Things Joint Load Balancing,\" IEEE Internet of Things Journal, 2024. doi: 10.1109/jiot.2023.3317430.",
+      "style": "Normal",
+      "alignment": null,
+      "left_indent_in": 0.14,
+      "right_indent_in": null,
+      "first_line_in": -0.14,
+      "space_before_pt": null,
+      "space_after_pt": 1.0,
+      "line_spacing": 1.0,
+      "runs": [
+        {
+          "text": "[24] S. Son, S. Ko, H. Lee, S. Lee, and B. Lee, \"SIMA: Scalable IoT Microservice Architecture ",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": "With",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        },
+        {
+          "text": " Users and Things Joint Load Balancing,\" IEEE Internet of Things Journal, 2024. doi: 10.1109/jiot.2023.3317430.",
+          "bold": false,
+          "italic": false,
+          "font": null,
+          "size_pt": 10.0,
+          "color": "000000",
+          "caps": false
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "index": 0,
+      "rows": 6,
+      "cols": 3,
+      "autofit": false,
+      "grid_twips": [
+        1655,
+        5688,
+        2664
+      ],
+      "sample": [
+        [
+          "Stage",
+          "Implemented component and technique",
+          "Output"
+        ],
+        [
+          "Telemetry and routing",
+          "Wokwi ESP32 virtual meter sends deviceId, energyConsumed, and timestamp through the API Gateway.",
+          "REST request delivered to the Ingestion Service."
+        ],
+        [
+          "Ingestion and event transfer",
+          "Bean validation checks mandatory fields and non-negative energy; accepted payloads become Kafka energy-usage events.",
+          "Asynchronous energy-usage event."
+        ],
+        [
+          "Storage and aggregation",
+          "Usage Service writes energy_usage points to InfluxDB and sums selected time windows; Device Service resolves ownership.",
+          "Device and household energy totals."
+        ],
+        [
+          "Insight computation",
+          "Slab forecast, device ranking, and 20% average-load standby heuristic use aggregated values.",
+          "Deterministic numerical outputs and recommendations."
+        ],
+        [
+          "Threshold alerting",
+          "A 10 s scheduler compares the preceding one-hour total with the configured threshold; Alert Service persists and sends the event.",
+          "Alert history and Mailpit-captured notification."
+        ]
+      ],
+      "style": "Table Grid"
+    },
+    {
+      "index": 1,
+      "rows": 7,
+      "cols": 2,
+      "autofit": false,
+      "grid_twips": [
+        2232,
+        7776
+      ],
+      "sample": [
+        [
+          "Element",
+          "Documented configuration"
+        ],
+        [
+          "Runtime and deployment",
+          "Docker Engine 29.7.2 and Docker Compose v5.5.1. Java 17; Spring Boot 3.5.3 for User, Device, Ingestion, Usage, Alert, and Insight services; API Gateway uses Spring Boot 3.4.5."
+        ],
+        [
+          "Application and data stack",
+          "React 19.2.8, Vite 8.2.2, TypeScript 6.0.2, Tailwind CSS 4.3.3, Apache Kafka 4.3.1 observed from the running container, MySQL 8.3.0, and InfluxDB 2.7."
+        ],
+        [
+          "IoT simulation",
+          "ESP32 DevKit, potentiometer, three pushbuttons, and SSD1306 OLED simulated in Wokwi. PlatformIO IDE VS Code extension 3.3.4 and Wokwi VS Code extension 3.7.0 were used."
+        ],
+        [
+          "Controlled data",
+          "Four valid synthetic JSON events on 1 October 2026: 0.25, 0.50, and 0.75 kWh for analytics device 307, and 1.00 kWh for alert device 308. Fields: deviceId, energyConsumed, timestamp."
+        ],
+        [
+          "Insight configuration",
+          "Three-day insight window; 30-day forecast horizon; fixed 10.00 charge; 0.12, 0.18, and 0.25 per-kWh slab rates; 20% standby coefficient."
+        ],
+        [
+          "Alert configuration",
+          "One-hour aggregation window and 10 s scheduler. User 9 threshold set to 0.10 kWh for the isolated alert case. Spring AI 1.0.3 is present; Ollama CLI was not installed or used during controlled verification."
+        ]
+      ],
+      "style": "Table Grid"
+    },
+    {
+      "index": 2,
+      "rows": 9,
+      "cols": 3,
+      "autofit": false,
+      "grid_twips": [
+        2304,
+        3384,
+        4392
+      ],
+      "sample": [
+        [
+          "Verification item",
+          "Condition",
+          "Observed result"
+        ],
+        [
+          "Automated service tests",
+          "19 tests discovered across User, Device, Ingestion, Usage, Alert, and Insight services; three skipped.",
+          "16 executed tests completed with zero failures and zero errors."
+        ],
+        [
+          "Gateway and ingestion",
+          "Three analytics events for device 307 plus one isolated alert event for device 308.",
+          "Gateway health was UP; all four POST requests returned HTTP 201 (4/4)."
+        ],
+        [
+          "Persistence and aggregation",
+          "Analytics values: 0.25, 0.50, and 0.75 kWh. Alert value: 1.00 kWh.",
+          "Usage API returned 1.50 kWh for device 307 and 1.00 kWh for device 308."
+        ],
+        [
+          "Bill forecast",
+          "User 8, D = 3 days, total energy 1.50 kWh.",
+          "Current cost 0.18; daily rate 0.50 kWh/day; projected use 15.00 kWh; projected monthly cost 11.80."
+        ],
+        [
+          "Appliance ranking",
+          "One isolated device with 1.50 kWh.",
+          "Device 307 ranked first with 100.00% contribution and estimated cost 0.18."
+        ],
+        [
+          "Standby heuristic",
+          "User 8, D = 3 days, total energy 1.50 kWh.",
+          "Baseline 4.17 W; daily 0.10 kWh; monthly 3.00 kWh; monthly cost 0.36; risk LOW."
+        ],
+        [
+          "Threshold alert and delivery",
+          "User 9 threshold 0.10 kWh; one 1.00 kWh event.",
+          "One detailed alert and one delivery-status record were present. Mailpit captured one email with the 0.10 threshold and 1.00 energy-consumed value."
+        ],
+        [
+          "Output observations",
+          "Usage polling at 3 s and alert polling at 5 s.",
+          "Analytics output observed within 17.32 s; persisted alert observed within 6.14 s. Both are polling-bounded observations, not latency benchmarks."
+        ]
+      ],
+      "style": "Table Grid"
+    }
+  ],
+  "sections_xml": [
+    {
+      "index": 1,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "space": "0"
+      },
+      "type": null
+    },
+    {
+      "index": 2,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 3,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 4,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 5,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 6,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 7,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 8,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 9,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 10,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 11,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "index": 12,
+      "page_w_twips": 11906,
+      "page_h_twips": 16838,
+      "page_orient": null,
+      "margins_twips": {
+        "top": 792,
+        "right": 893,
+        "bottom": 792,
+        "left": 893,
+        "header": 288,
+        "footer": 288,
+        "gutter": 0
+      },
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    }
+  ],
+  "section_boundaries": [
+    {
+      "body_child_index": 4,
+      "document_paragraph_index": 4,
+      "paragraph_text": "",
+      "columns": {
+        "space": "0"
+      },
+      "type": null
+    },
+    {
+      "body_child_index": 21,
+      "document_paragraph_index": 21,
+      "paragraph_text": "",
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 24,
+      "document_paragraph_index": 24,
+      "paragraph_text": "",
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 31,
+      "document_paragraph_index": 31,
+      "paragraph_text": "",
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 36,
+      "document_paragraph_index": 35,
+      "paragraph_text": "",
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 39,
+      "document_paragraph_index": 38,
+      "paragraph_text": "",
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 42,
+      "document_paragraph_index": 41,
+      "paragraph_text": "",
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 46,
+      "document_paragraph_index": 45,
+      "paragraph_text": "",
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 51,
+      "document_paragraph_index": 49,
+      "paragraph_text": "",
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 60,
+      "document_paragraph_index": 58,
+      "paragraph_text": "",
+      "columns": {
+        "num": "2",
+        "space": "360"
+      },
+      "type": "continuous"
+    },
+    {
+      "body_child_index": 65,
+      "document_paragraph_index": 62,
+      "paragraph_text": "",
+      "columns": {
+        "space": "0"
+      },
+      "type": "continuous"
+    }
+  ],
+  "parts": [
+    {
+      "part": "word/document.xml",
+      "size": 137314
+    },
+    {
+      "part": "word/_rels/document.xml.rels",
+      "size": 2079
+    },
+    {
+      "part": "word/media/image1.png",
+      "size": 125518
+    },
+    {
+      "part": "word/media/image2.png",
+      "size": 68664
+    },
+    {
+      "part": "word/theme/theme1.xml",
+      "size": 7643
+    },
+    {
+      "part": "word/settings.xml",
+      "size": 3611
+    },
+    {
+      "part": "word/numbering.xml",
+      "size": 7477
+    },
+    {
+      "part": "word/styles.xml",
+      "size": 345472
+    },
+    {
+      "part": "word/webSettings.xml",
+      "size": 1046
+    },
+    {
+      "part": "word/fontTable.xml",
+      "size": 3200
+    }
+  ],
+  "styles": [
+    {
+      "styleId": "Normal",
+      "type": "paragraph",
+      "name": "Normal"
+    },
+    {
+      "styleId": "Heading1",
+      "type": "paragraph",
+      "name": "heading 1"
+    },
+    {
+      "styleId": "Heading2",
+      "type": "paragraph",
+      "name": "heading 2"
+    },
+    {
+      "styleId": "Heading3",
+      "type": "paragraph",
+      "name": "heading 3"
+    },
+    {
+      "styleId": "Heading4",
+      "type": "paragraph",
+      "name": "heading 4"
+    },
+    {
+      "styleId": "Heading5",
+      "type": "paragraph",
+      "name": "heading 5"
+    },
+    {
+      "styleId": "Heading6",
+      "type": "paragraph",
+      "name": "heading 6"
+    },
+    {
+      "styleId": "Heading7",
+      "type": "paragraph",
+      "name": "heading 7"
+    },
+    {
+      "styleId": "Heading8",
+      "type": "paragraph",
+      "name": "heading 8"
+    },
+    {
+      "styleId": "Heading9",
+      "type": "paragraph",
+      "name": "heading 9"
+    },
+    {
+      "styleId": "DefaultParagraphFont",
+      "type": "character",
+      "name": "Default Paragraph Font"
+    },
+    {
+      "styleId": "TableNormal",
+      "type": "table",
+      "name": "Normal Table"
+    },
+    {
+      "styleId": "NoList",
+      "type": "numbering",
+      "name": "No List"
+    },
+    {
+      "styleId": "Header",
+      "type": "paragraph",
+      "name": "header"
+    },
+    {
+      "styleId": "HeaderChar",
+      "type": "character",
+      "name": "Header Char"
+    },
+    {
+      "styleId": "Footer",
+      "type": "paragraph",
+      "name": "footer"
+    },
+    {
+      "styleId": "FooterChar",
+      "type": "character",
+      "name": "Footer Char"
+    },
+    {
+      "styleId": "NoSpacing",
+      "type": "paragraph",
+      "name": "No Spacing"
+    },
+    {
+      "styleId": "Heading1Char",
+      "type": "character",
+      "name": "Heading 1 Char"
+    },
+    {
+      "styleId": "Heading2Char",
+      "type": "character",
+      "name": "Heading 2 Char"
+    },
+    {
+      "styleId": "Heading3Char",
+      "type": "character",
+      "name": "Heading 3 Char"
+    },
+    {
+      "styleId": "Title",
+      "type": "paragraph",
+      "name": "Title"
+    },
+    {
+      "styleId": "TitleChar",
+      "type": "character",
+      "name": "Title Char"
+    },
+    {
+      "styleId": "Subtitle",
+      "type": "paragraph",
+      "name": "Subtitle"
+    },
+    {
+      "styleId": "SubtitleChar",
+      "type": "character",
+      "name": "Subtitle Char"
+    },
+    {
+      "styleId": "ListParagraph",
+      "type": "paragraph",
+      "name": "List Paragraph"
+    },
+    {
+      "styleId": "BodyText",
+      "type": "paragraph",
+      "name": "Body Text"
+    },
+    {
+      "styleId": "BodyTextChar",
+      "type": "character",
+      "name": "Body Text Char"
+    },
+    {
+      "styleId": "BodyText2",
+      "type": "paragraph",
+      "name": "Body Text 2"
+    },
+    {
+      "styleId": "BodyText2Char",
+      "type": "character",
+      "name": "Body Text 2 Char"
+    },
+    {
+      "styleId": "BodyText3",
+      "type": "paragraph",
+      "name": "Body Text 3"
+    },
+    {
+      "styleId": "BodyText3Char",
+      "type": "character",
+      "name": "Body Text 3 Char"
+    },
+    {
+      "styleId": "List",
+      "type": "paragraph",
+      "name": "List"
+    },
+    {
+      "styleId": "List2",
+      "type": "paragraph",
+      "name": "List 2"
+    },
+    {
+      "styleId": "List3",
+      "type": "paragraph",
+      "name": "List 3"
+    },
+    {
+      "styleId": "ListBullet",
+      "type": "paragraph",
+      "name": "List Bullet"
+    },
+    {
+      "styleId": "ListBullet2",
+      "type": "paragraph",
+      "name": "List Bullet 2"
+    },
+    {
+      "styleId": "ListBullet3",
+      "type": "paragraph",
+      "name": "List Bullet 3"
+    },
+    {
+      "styleId": "ListNumber",
+      "type": "paragraph",
+      "name": "List Number"
+    },
+    {
+      "styleId": "ListNumber2",
+      "type": "paragraph",
+      "name": "List Number 2"
+    },
+    {
+      "styleId": "ListNumber3",
+      "type": "paragraph",
+      "name": "List Number 3"
+    },
+    {
+      "styleId": "ListContinue",
+      "type": "paragraph",
+      "name": "List Continue"
+    },
+    {
+      "styleId": "ListContinue2",
+      "type": "paragraph",
+      "name": "List Continue 2"
+    },
+    {
+      "styleId": "ListContinue3",
+      "type": "paragraph",
+      "name": "List Continue 3"
+    },
+    {
+      "styleId": "MacroText",
+      "type": "paragraph",
+      "name": "macro"
+    },
+    {
+      "styleId": "MacroTextChar",
+      "type": "character",
+      "name": "Macro Text Char"
+    },
+    {
+      "styleId": "Quote",
+      "type": "paragraph",
+      "name": "Quote"
+    },
+    {
+      "styleId": "QuoteChar",
+      "type": "character",
+      "name": "Quote Char"
+    },
+    {
+      "styleId": "Heading4Char",
+      "type": "character",
+      "name": "Heading 4 Char"
+    },
+    {
+      "styleId": "Heading5Char",
+      "type": "character",
+      "name": "Heading 5 Char"
+    },
+    {
+      "styleId": "Heading6Char",
+      "type": "character",
+      "name": "Heading 6 Char"
+    },
+    {
+      "styleId": "Heading7Char",
+      "type": "character",
+      "name": "Heading 7 Char"
+    },
+    {
+      "styleId": "Heading8Char",
+      "type": "character",
+      "name": "Heading 8 Char"
+    },
+    {
+      "styleId": "Heading9Char",
+      "type": "character",
+      "name": "Heading 9 Char"
+    },
+    {
+      "styleId": "Caption",
+      "type": "paragraph",
+      "name": "caption"
+    },
+    {
+      "styleId": "Strong",
+      "type": "character",
+      "name": "Strong"
+    },
+    {
+      "styleId": "Emphasis",
+      "type": "character",
+      "name": "Emphasis"
+    },
+    {
+      "styleId": "IntenseQuote",
+      "type": "paragraph",
+      "name": "Intense Quote"
+    },
+    {
+      "styleId": "IntenseQuoteChar",
+      "type": "character",
+      "name": "Intense Quote Char"
+    },
+    {
+      "styleId": "SubtleEmphasis",
+      "type": "character",
+      "name": "Subtle Emphasis"
+    },
+    {
+      "styleId": "IntenseEmphasis",
+      "type": "character",
+      "name": "Intense Emphasis"
+    },
+    {
+      "styleId": "SubtleReference",
+      "type": "character",
+      "name": "Subtle Reference"
+    },
+    {
+      "styleId": "IntenseReference",
+      "type": "character",
+      "name": "Intense Reference"
+    },
+    {
+      "styleId": "BookTitle",
+      "type": "character",
+      "name": "Book Title"
+    },
+    {
+      "styleId": "TOCHeading",
+      "type": "paragraph",
+      "name": "TOC Heading"
+    },
+    {
+      "styleId": "TableGrid",
+      "type": "table",
+      "name": "Table Grid"
+    },
+    {
+      "styleId": "LightShading",
+      "type": "table",
+      "name": "Light Shading"
+    },
+    {
+      "styleId": "LightShading-Accent1",
+      "type": "table",
+      "name": "Light Shading Accent 1"
+    },
+    {
+      "styleId": "LightShading-Accent2",
+      "type": "table",
+      "name": "Light Shading Accent 2"
+    },
+    {
+      "styleId": "LightShading-Accent3",
+      "type": "table",
+      "name": "Light Shading Accent 3"
+    },
+    {
+      "styleId": "LightShading-Accent4",
+      "type": "table",
+      "name": "Light Shading Accent 4"
+    },
+    {
+      "styleId": "LightShading-Accent5",
+      "type": "table",
+      "name": "Light Shading Accent 5"
+    },
+    {
+      "styleId": "LightShading-Accent6",
+      "type": "table",
+      "name": "Light Shading Accent 6"
+    },
+    {
+      "styleId": "LightList",
+      "type": "table",
+      "name": "Light List"
+    },
+    {
+      "styleId": "LightList-Accent1",
+      "type": "table",
+      "name": "Light List Accent 1"
+    },
+    {
+      "styleId": "LightList-Accent2",
+      "type": "table",
+      "name": "Light List Accent 2"
+    },
+    {
+      "styleId": "LightList-Accent3",
+      "type": "table",
+      "name": "Light List Accent 3"
+    },
+    {
+      "styleId": "LightList-Accent4",
+      "type": "table",
+      "name": "Light List Accent 4"
+    },
+    {
+      "styleId": "LightList-Accent5",
+      "type": "table",
+      "name": "Light List Accent 5"
+    },
+    {
+      "styleId": "LightList-Accent6",
+      "type": "table",
+      "name": "Light List Accent 6"
+    },
+    {
+      "styleId": "LightGrid",
+      "type": "table",
+      "name": "Light Grid"
+    },
+    {
+      "styleId": "LightGrid-Accent1",
+      "type": "table",
+      "name": "Light Grid Accent 1"
+    },
+    {
+      "styleId": "LightGrid-Accent2",
+      "type": "table",
+      "name": "Light Grid Accent 2"
+    },
+    {
+      "styleId": "LightGrid-Accent3",
+      "type": "table",
+      "name": "Light Grid Accent 3"
+    },
+    {
+      "styleId": "LightGrid-Accent4",
+      "type": "table",
+      "name": "Light Grid Accent 4"
+    },
+    {
+      "styleId": "LightGrid-Accent5",
+      "type": "table",
+      "name": "Light Grid Accent 5"
+    },
+    {
+      "styleId": "LightGrid-Accent6",
+      "type": "table",
+      "name": "Light Grid Accent 6"
+    },
+    {
+      "styleId": "MediumShading1",
+      "type": "table",
+      "name": "Medium Shading 1"
+    },
+    {
+      "styleId": "MediumShading1-Accent1",
+      "type": "table",
+      "name": "Medium Shading 1 Accent 1"
+    },
+    {
+      "styleId": "MediumShading1-Accent2",
+      "type": "table",
+      "name": "Medium Shading 1 Accent 2"
+    },
+    {
+      "styleId": "MediumShading1-Accent3",
+      "type": "table",
+      "name": "Medium Shading 1 Accent 3"
+    },
+    {
+      "styleId": "MediumShading1-Accent4",
+      "type": "table",
+      "name": "Medium Shading 1 Accent 4"
+    },
+    {
+      "styleId": "MediumShading1-Accent5",
+      "type": "table",
+      "name": "Medium Shading 1 Accent 5"
+    },
+    {
+      "styleId": "MediumShading1-Accent6",
+      "type": "table",
+      "name": "Medium Shading 1 Accent 6"
+    },
+    {
+      "styleId": "MediumShading2",
+      "type": "table",
+      "name": "Medium Shading 2"
+    },
+    {
+      "styleId": "MediumShading2-Accent1",
+      "type": "table",
+      "name": "Medium Shading 2 Accent 1"
+    },
+    {
+      "styleId": "MediumShading2-Accent2",
+      "type": "table",
+      "name": "Medium Shading 2 Accent 2"
+    },
+    {
+      "styleId": "MediumShading2-Accent3",
+      "type": "table",
+      "name": "Medium Shading 2 Accent 3"
+    },
+    {
+      "styleId": "MediumShading2-Accent4",
+      "type": "table",
+      "name": "Medium Shading 2 Accent 4"
+    },
+    {
+      "styleId": "MediumShading2-Accent5",
+      "type": "table",
+      "name": "Medium Shading 2 Accent 5"
+    },
+    {
+      "styleId": "MediumShading2-Accent6",
+      "type": "table",
+      "name": "Medium Shading 2 Accent 6"
+    },
+    {
+      "styleId": "MediumList1",
+      "type": "table",
+      "name": "Medium List 1"
+    },
+    {
+      "styleId": "MediumList1-Accent1",
+      "type": "table",
+      "name": "Medium List 1 Accent 1"
+    },
+    {
+      "styleId": "MediumList1-Accent2",
+      "type": "table",
+      "name": "Medium List 1 Accent 2"
+    },
+    {
+      "styleId": "MediumList1-Accent3",
+      "type": "table",
+      "name": "Medium List 1 Accent 3"
+    },
+    {
+      "styleId": "MediumList1-Accent4",
+      "type": "table",
+      "name": "Medium List 1 Accent 4"
+    },
+    {
+      "styleId": "MediumList1-Accent5",
+      "type": "table",
+      "name": "Medium List 1 Accent 5"
+    },
+    {
+      "styleId": "MediumList1-Accent6",
+      "type": "table",
+      "name": "Medium List 1 Accent 6"
+    },
+    {
+      "styleId": "MediumList2",
+      "type": "table",
+      "name": "Medium List 2"
+    },
+    {
+      "styleId": "MediumList2-Accent1",
+      "type": "table",
+      "name": "Medium List 2 Accent 1"
+    },
+    {
+      "styleId": "MediumList2-Accent2",
+      "type": "table",
+      "name": "Medium List 2 Accent 2"
+    },
+    {
+      "styleId": "MediumList2-Accent3",
+      "type": "table",
+      "name": "Medium List 2 Accent 3"
+    },
+    {
+      "styleId": "MediumList2-Accent4",
+      "type": "table",
+      "name": "Medium List 2 Accent 4"
+    },
+    {
+      "styleId": "MediumList2-Accent5",
+      "type": "table",
+      "name": "Medium List 2 Accent 5"
+    },
+    {
+      "styleId": "MediumList2-Accent6",
+      "type": "table",
+      "name": "Medium List 2 Accent 6"
+    },
+    {
+      "styleId": "MediumGrid1",
+      "type": "table",
+      "name": "Medium Grid 1"
+    },
+    {
+      "styleId": "MediumGrid1-Accent1",
+      "type": "table",
+      "name": "Medium Grid 1 Accent 1"
+    },
+    {
+      "styleId": "MediumGrid1-Accent2",
+      "type": "table",
+      "name": "Medium Grid 1 Accent 2"
+    },
+    {
+      "styleId": "MediumGrid1-Accent3",
+      "type": "table",
+      "name": "Medium Grid 1 Accent 3"
+    },
+    {
+      "styleId": "MediumGrid1-Accent4",
+      "type": "table",
+      "name": "Medium Grid 1 Accent 4"
+    },
+    {
+      "styleId": "MediumGrid1-Accent5",
+      "type": "table",
+      "name": "Medium Grid 1 Accent 5"
+    },
+    {
+      "styleId": "MediumGrid1-Accent6",
+      "type": "table",
+      "name": "Medium Grid 1 Accent 6"
+    },
+    {
+      "styleId": "MediumGrid2",
+      "type": "table",
+      "name": "Medium Grid 2"
+    },
+    {
+      "styleId": "MediumGrid2-Accent1",
+      "type": "table",
+      "name": "Medium Grid 2 Accent 1"
+    },
+    {
+      "styleId": "MediumGrid2-Accent2",
+      "type": "table",
+      "name": "Medium Grid 2 Accent 2"
+    },
+    {
+      "styleId": "MediumGrid2-Accent3",
+      "type": "table",
+      "name": "Medium Grid 2 Accent 3"
+    },
+    {
+      "styleId": "MediumGrid2-Accent4",
+      "type": "table",
+      "name": "Medium Grid 2 Accent 4"
+    },
+    {
+      "styleId": "MediumGrid2-Accent5",
+      "type": "table",
+      "name": "Medium Grid 2 Accent 5"
+    },
+    {
+      "styleId": "MediumGrid2-Accent6",
+      "type": "table",
+      "name": "Medium Grid 2 Accent 6"
+    },
+    {
+      "styleId": "MediumGrid3",
+      "type": "table",
+      "name": "Medium Grid 3"
+    },
+    {
+      "styleId": "MediumGrid3-Accent1",
+      "type": "table",
+      "name": "Medium Grid 3 Accent 1"
+    },
+    {
+      "styleId": "MediumGrid3-Accent2",
+      "type": "table",
+      "name": "Medium Grid 3 Accent 2"
+    },
+    {
+      "styleId": "MediumGrid3-Accent3",
+      "type": "table",
+      "name": "Medium Grid 3 Accent 3"
+    },
+    {
+      "styleId": "MediumGrid3-Accent4",
+      "type": "table",
+      "name": "Medium Grid 3 Accent 4"
+    },
+    {
+      "styleId": "MediumGrid3-Accent5",
+      "type": "table",
+      "name": "Medium Grid 3 Accent 5"
+    },
+    {
+      "styleId": "MediumGrid3-Accent6",
+      "type": "table",
+      "name": "Medium Grid 3 Accent 6"
+    },
+    {
+      "styleId": "DarkList",
+      "type": "table",
+      "name": "Dark List"
+    },
+    {
+      "styleId": "DarkList-Accent1",
+      "type": "table",
+      "name": "Dark List Accent 1"
+    },
+    {
+      "styleId": "DarkList-Accent2",
+      "type": "table",
+      "name": "Dark List Accent 2"
+    },
+    {
+      "styleId": "DarkList-Accent3",
+      "type": "table",
+      "name": "Dark List Accent 3"
+    },
+    {
+      "styleId": "DarkList-Accent4",
+      "type": "table",
+      "name": "Dark List Accent 4"
+    },
+    {
+      "styleId": "DarkList-Accent5",
+      "type": "table",
+      "name": "Dark List Accent 5"
+    },
+    {
+      "styleId": "DarkList-Accent6",
+      "type": "table",
+      "name": "Dark List Accent 6"
+    },
+    {
+      "styleId": "ColorfulShading",
+      "type": "table",
+      "name": "Colorful Shading"
+    },
+    {
+      "styleId": "ColorfulShading-Accent1",
+      "type": "table",
+      "name": "Colorful Shading Accent 1"
+    },
+    {
+      "styleId": "ColorfulShading-Accent2",
+      "type": "table",
+      "name": "Colorful Shading Accent 2"
+    },
+    {
+      "styleId": "ColorfulShading-Accent3",
+      "type": "table",
+      "name": "Colorful Shading Accent 3"
+    },
+    {
+      "styleId": "ColorfulShading-Accent4",
+      "type": "table",
+      "name": "Colorful Shading Accent 4"
+    },
+    {
+      "styleId": "ColorfulShading-Accent5",
+      "type": "table",
+      "name": "Colorful Shading Accent 5"
+    },
+    {
+      "styleId": "ColorfulShading-Accent6",
+      "type": "table",
+      "name": "Colorful Shading Accent 6"
+    },
+    {
+      "styleId": "ColorfulList",
+      "type": "table",
+      "name": "Colorful List"
+    },
+    {
+      "styleId": "ColorfulList-Accent1",
+      "type": "table",
+      "name": "Colorful List Accent 1"
+    },
+    {
+      "styleId": "ColorfulList-Accent2",
+      "type": "table",
+      "name": "Colorful List Accent 2"
+    },
+    {
+      "styleId": "ColorfulList-Accent3",
+      "type": "table",
+      "name": "Colorful List Accent 3"
+    },
+    {
+      "styleId": "ColorfulList-Accent4",
+      "type": "table",
+      "name": "Colorful List Accent 4"
+    },
+    {
+      "styleId": "ColorfulList-Accent5",
+      "type": "table",
+      "name": "Colorful List Accent 5"
+    },
+    {
+      "styleId": "ColorfulList-Accent6",
+      "type": "table",
+      "name": "Colorful List Accent 6"
+    },
+    {
+      "styleId": "ColorfulGrid",
+      "type": "table",
+      "name": "Colorful Grid"
+    },
+    {
+      "styleId": "ColorfulGrid-Accent1",
+      "type": "table",
+      "name": "Colorful Grid Accent 1"
+    },
+    {
+      "styleId": "ColorfulGrid-Accent2",
+      "type": "table",
+      "name": "Colorful Grid Accent 2"
+    },
+    {
+      "styleId": "ColorfulGrid-Accent3",
+      "type": "table",
+      "name": "Colorful Grid Accent 3"
+    },
+    {
+      "styleId": "ColorfulGrid-Accent4",
+      "type": "table",
+      "name": "Colorful Grid Accent 4"
+    },
+    {
+      "styleId": "ColorfulGrid-Accent5",
+      "type": "table",
+      "name": "Colorful Grid Accent 5"
+    },
+    {
+      "styleId": "ColorfulGrid-Accent6",
+      "type": "table",
+      "name": "Colorful Grid Accent 6"
+    },
+    {
+      "styleId": "Hyperlink",
+      "type": "character",
+      "name": "Hyperlink"
+    }
+  ]
+}

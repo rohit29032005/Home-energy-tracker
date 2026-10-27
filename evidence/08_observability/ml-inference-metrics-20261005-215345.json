@@ -1,0 +1,19 @@
+﻿{
+    "status":  "success",
+    "data":  {
+                 "resultType":  "vector",
+                 "result":  [
+                                {
+                                    "metric":  {
+                                                   "__name__":  "ml_inference_latency_seconds_count",
+                                                   "instance":  "ml-inference-service:8090",
+                                                   "job":  "ml-inference-service"
+                                               },
+                                    "value":  [
+                                                  1791217426.153,
+                                                  "0"
+                                              ]
+                                }
+                            ]
+             }
+}

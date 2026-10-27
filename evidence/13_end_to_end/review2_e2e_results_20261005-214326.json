@@ -1,0 +1,310 @@
+﻿{
+    "evidenceType":  "Controlled local end-to-end functional verification",
+    "runId":  "review2-20261005-214326-94025323",
+    "startedAtUtc":  "2026-10-05T16:13:26.0997698Z",
+    "baseUrl":  "http://127.0.0.1:8080/api/v1",
+    "authentication":  {
+                           "keycloakRealm":  "home-energy",
+                           "setupActor":  "demo-admin",
+                           "telemetryActor":  "machine-token"
+                       },
+    "testBoundary":  "Synthetic REST telemetry was submitted through the same ingestion endpoint used by the Wokwi ESP32 simulator. Values are not calibrated physical-meter measurements.",
+    "expectedAnalytics":  {
+                              "totalUsageKwh":  1.5,
+                              "currentEstimatedCost":  0.18,
+                              "dailyRateKwh":  0.5,
+                              "projectedMonthlyKwh":  15,
+                              "projectedMonthlyCost":  11.8,
+                              "rankingPercent":  100,
+                              "standbyBaselineWatts":  4.17,
+                              "standbyDailyKwh":  0.1,
+                              "standbyMonthlyKwh":  3,
+                              "standbyMonthlyCost":  0.36,
+                              "standbyRisk":  "LOW"
+                          },
+    "gatewayHealth":  {
+                          "status":  "UP",
+                          "components":  {
+                                             "discoveryComposite":  {
+                                                                        "description":  "Discovery Client not initialized",
+                                                                        "status":  "UNKNOWN",
+                                                                        "components":  {
+                                                                                           "discoveryClient":  {
+                                                                                                                   "description":  "Discovery Client not initialized",
+                                                                                                                   "status":  "UNKNOWN"
+                                                                                                               }
+                                                                                       }
+                                                                    },
+                                             "diskSpace":  {
+                                                               "status":  "UP",
+                                                               "details":  {
+                                                                               "total":  1081101176832,
+                                                                               "free":  1003633012736,
+                                                                               "threshold":  10485760,
+                                                                               "path":  "/app/.",
+                                                                               "exists":  true
+                                                                           }
+                                                           },
+                                             "ping":  {
+                                                          "status":  "UP"
+                                                      },
+                                             "reactiveDiscoveryClients":  {
+                                                                              "description":  "Discovery Client not initialized",
+                                                                              "status":  "UNKNOWN",
+                                                                              "components":  {
+                                                                                                 "Simple Reactive Discovery Client":  {
+                                                                                                                                          "description":  "Discovery Client not initialized",
+                                                                                                                                          "status":  "UNKNOWN"
+                                                                                                                                      }
+                                                                                             }
+                                                                          },
+                                             "refreshScope":  {
+                                                                  "status":  "UP"
+                                                              },
+                                             "ssl":  {
+                                                         "status":  "UP",
+                                                         "details":  {
+                                                                         "validChains":  [
+
+                                                                                         ],
+                                                                         "invalidChains":  [
+
+                                                                                           ]
+                                                                     }
+                                                     }
+                                         }
+                      },
+    "analyticsCase":  {
+                          "user":  {
+                                       "id":  15,
+                                       "name":  "Review2 Analytics 20261005-214326",
+                                       "surname":  "Verification",
+                                       "email":  "review2.analytics.20261005-214326@example.test",
+                                       "address":  "Controlled local verification",
+                                       "alerting":  false,
+                                       "energyAlertingThreshold":  999999.0
+                                   },
+                          "device":  {
+                                         "id":  314,
+                                         "name":  "Controlled Analytics Device 20261005-214326",
+                                         "type":  "GENERAL",
+                                         "location":  "Verification Lab",
+                                         "userId":  15
+                                     },
+                          "submissions":  [
+                                              {
+                                                  "payload":  {
+                                                                  "deviceId":  314,
+                                                                  "energyConsumed":  0.25,
+                                                                  "timestamp":  "2026-10-05T16:13:27.4242803Z"
+                                                              },
+                                                  "statusCode":  201,
+                                                  "submittedAtUtc":  "2026-10-05T16:13:27.5229761Z"
+                                              },
+                                              {
+                                                  "payload":  {
+                                                                  "deviceId":  314,
+                                                                  "energyConsumed":  0.5,
+                                                                  "timestamp":  "2026-10-05T16:13:27.5229761Z"
+                                                              },
+                                                  "statusCode":  201,
+                                                  "submittedAtUtc":  "2026-10-05T16:13:27.5779233Z"
+                                              },
+                                              {
+                                                  "payload":  {
+                                                                  "deviceId":  314,
+                                                                  "energyConsumed":  0.75,
+                                                                  "timestamp":  "2026-10-05T16:13:27.5789312Z"
+                                                              },
+                                                  "statusCode":  201,
+                                                  "submittedAtUtc":  "2026-10-05T16:13:27.6386821Z"
+                                              }
+                                          ],
+                          "usage":  {
+                                        "userId":  15,
+                                        "devices":  [
+                                                        {
+                                                            "id":  314,
+                                                            "name":  "Controlled Analytics Device 20261005-214326",
+                                                            "type":  "GENERAL",
+                                                            "location":  "Verification Lab",
+                                                            "userId":  15,
+                                                            "energyConsumed":  1.5
+                                                        }
+                                                    ]
+                                    },
+                          "observedUsageTotalKwh":  1.5,
+                          "forecast":  {
+                                           "userId":  15,
+                                           "periodDays":  3,
+                                           "currentKwh":  1.5,
+                                           "currentEstimatedCost":  0.18,
+                                           "dailyRateKwh":  0.5,
+                                           "projectedMonthlyKwh":  15.0,
+                                           "projectedMonthlyCost":  11.8,
+                                           "tariffSummary":  "Fixed: $10.00/mo | Slab 1 (0-100kWh): $0.12/kWh | Slab 2 (100-300kWh): $0.18/kWh | Slab 3 (\u003e300kWh): $0.25/kWh"
+                                       },
+                          "ranking":  {
+                                          "userId":  15,
+                                          "periodDays":  3,
+                                          "totalKwh":  1.5,
+                                          "totalEstimatedCost":  0.18,
+                                          "rankings":  [
+                                                           {
+                                                               "deviceId":  314,
+                                                               "name":  "Controlled Analytics Device 20261005-214326",
+                                                               "type":  "GENERAL",
+                                                               "location":  "Verification Lab",
+                                                               "energyConsumedKwh":  1.5,
+                                                               "percentageOfTotal":  100.0,
+                                                               "estimatedCost":  0.18
+                                                           }
+                                                       ]
+                                      },
+                          "standby":  {
+                                          "userId":  15,
+                                          "baselineWatts":  4.17,
+                                          "standbyDailyKwh":  0.1,
+                                          "standbyMonthlyKwh":  3.0,
+                                          "standbyMonthlyCost":  0.36,
+                                          "riskLevel":  "LOW",
+                                          "recommendations":  [
+                                                                  "Plug standby electronics into smart surge protectors or switchable power strips.",
+                                                                  "Unplug game consoles, soundbars, and second TVs when not in use for extended periods."
+                                                              ],
+                                          "probableCategories":  [
+                                                                     "Entertainment Systems (TVs, Soundbars, Gaming Consoles)",
+                                                                     "Home Office Setup (Desktop PCs, Monitors, Printers)",
+                                                                     "Kitchen Appliances with Digital Displays / Clocks",
+                                                                     "Continuous Water Dispensers \u0026 Idle Chargers"
+                                                                 ],
+                                          "baselineAssumptions":  "Baseline load computed as ~20% continuous idle power during low-activity windows over 3 days. Target threshold: \u003c50W continuous idle."
+                                      },
+                          "endToEndAvailabilityLatencySeconds":  3.79,
+                          "passed":  {
+                                         "usageTotal":  true,
+                                         "currentCost":  true,
+                                         "dailyRate":  true,
+                                         "projectedKwh":  true,
+                                         "projectedCost":  true,
+                                         "ranking":  true,
+                                         "standby":  true
+                                     }
+                      },
+    "alertCase":  {
+                      "user":  {
+                                   "id":  16,
+                                   "name":  "Review2 Alert 20261005-214326",
+                                   "surname":  "Verification",
+                                   "email":  "review2.alert.20261005-214326@example.test",
+                                   "address":  "Controlled local verification",
+                                   "alerting":  true,
+                                   "energyAlertingThreshold":  0.1
+                               },
+                      "device":  {
+                                     "id":  315,
+                                     "name":  "Controlled Alert Device 20261005-214326",
+                                     "type":  "GENERAL",
+                                     "location":  "Verification Lab",
+                                     "userId":  16
+                                 },
+                      "submission":  {
+                                         "payload":  {
+                                                         "deviceId":  315,
+                                                         "energyConsumed":  1,
+                                                         "timestamp":  "2026-10-05T16:13:31.5208480Z"
+                                                     },
+                                         "statusCode":  201,
+                                         "submittedAtUtc":  "2026-10-05T16:13:31.5548877Z"
+                                     },
+                      "expectedCondition":  "1.00 kWh \u003e 0.10 kWh",
+                      "alertRecords":  [
+                                           {
+                                               "id":  486,
+                                               "userId":  16,
+                                               "deviceId":  null,
+                                               "message":  "Energy consumption threshold exceeded",
+                                               "alertType":  "THRESHOLD",
+                                               "deduplicationKey":  "16:HOUSEHOLD:THRESHOLD",
+                                               "threshold":  0.1,
+                                               "energyConsumed":  1.0,
+                                               "email":  "review2.alert.20261005-214326@example.test",
+                                               "createdAt":  "2026-10-05T16:13:40",
+                                               "sent":  true
+                                           },
+                                           {
+                                               "id":  485,
+                                               "userId":  16,
+                                               "deviceId":  315,
+                                               "message":  "ML anomaly detected by random_forest-csv-20261003T205417Z (probability=0.792945)",
+                                               "alertType":  "ML_ANOMALY",
+                                               "deduplicationKey":  "16:315:ML_ANOMALY",
+                                               "threshold":  0.31000000000000005,
+                                               "energyConsumed":  0.792945,
+                                               "email":  "review2.alert.20261005-214326@example.test",
+                                               "createdAt":  "2026-10-05T16:13:32",
+                                               "sent":  true
+                                           }
+                                       ],
+                      "matchingThresholdAlert":  {
+                                                     "id":  486,
+                                                     "userId":  16,
+                                                     "deviceId":  null,
+                                                     "message":  "Energy consumption threshold exceeded",
+                                                     "alertType":  "THRESHOLD",
+                                                     "deduplicationKey":  "16:HOUSEHOLD:THRESHOLD",
+                                                     "threshold":  0.1,
+                                                     "energyConsumed":  1.0,
+                                                     "email":  "review2.alert.20261005-214326@example.test",
+                                                     "createdAt":  "2026-10-05T16:13:40",
+                                                     "sent":  true
+                                                 },
+                      "observedAlertRecordCount":  2,
+                      "alertObservationLatencySeconds":  13.64,
+                      "alertingDisabledStatusCode":  200,
+                      "alertAssertions":  {
+                                              "matchingThresholdAlert":  true,
+                                              "persistedAsSent":  true,
+                                              "correctRecipient":  true,
+                                              "correctThreshold":  true,
+                                              "triggerValueObserved":  true
+                                          },
+                      "mailpit":  {
+                                      "baselineMessageCount":  3,
+                                      "observedMessageCount":  5,
+                                      "matchingMessage":  {
+                                                              "ID":  "58cuVTs3uHpfcBUihq5aTO",
+                                                              "MessageID":  "230223909.4.1791216820465@4d1c07b72412",
+                                                              "Read":  false,
+                                                              "From":  {
+                                                                           "Name":  "",
+                                                                           "Address":  "noreply@hometracker.com"
+                                                                       },
+                                                              "To":  [
+                                                                         {
+                                                                             "Name":  "",
+                                                                             "Address":  "review2.alert.20261005-214326@example.test"
+                                                                         }
+                                                                     ],
+                                                              "Cc":  null,
+                                                              "Bcc":  null,
+                                                              "ReplyTo":  [
+
+                                                                          ],
+                                                              "Subject":  "Energy Usage Alert for User 16",
+                                                              "Created":  "2026-10-05T16:13:40.479Z",
+                                                              "Username":  "",
+                                                              "Tags":  [
+
+                                                                       ],
+                                                              "Size":  665,
+                                                              "Attachments":  0,
+                                                              "Snippet":  "Alert: Energy consumption threshold exceeded Threshold: 0.1 Energy Consumed: 1.0"
+                                                          },
+                                      "deliveryObserved":  true
+                                  },
+                      "passed":  true
+                  },
+    "completedAtUtc":  "2026-10-05T16:13:45.0365140Z",
+    "overallPassed":  true
+}

@@ -1,0 +1,36 @@
+source,static_test_count,test_level,external_or_side_effect_path,execution_status,evidence_note
+api-gateway/src/test/java/com/hometracker/api_gateway/filter/GatewaySecurityFilterTest.java,8,in-process reactive unit/component,MockServerWebExchange and mock filter chain,FRESH_PASS,8 passed offline; no socket created
+alert-service/src/test/java/com/hometracker/alert_service/AlertServiceApplicationTests.java,1,application-context,Spring Boot context and test integrations,NOT_RUN,Historical report exists only
+alert-service/src/test/java/com/hometracker/alert_service/client/AlertContextClientInternalAuthenticationTest.java,2,component client contract,MockRestServiceServer intercepts RestTemplate,NOT_RUN,Historical report exists only
+alert-service/src/test/java/com/hometracker/alert_service/controller/AlertControllerAuthorizationTest.java,4,web-slice component,@WebMvcTest with mocked service,NOT_RUN,Historical report exists only
+alert-service/src/test/java/com/hometracker/alert_service/service/AlertServiceDeduplicationTest.java,5,pure unit,Mockito doubles for repository email context and metrics,NOT_RUN,Historical report exists only
+device-service/src/test/java/com/hometracker/device_service/DeviceServiceApplicationTests.java,2,application-context,Spring Boot context plus test persistence settings,NOT_RUN,Historical report exists only
+device-service/src/test/java/com/hometracker/device_service/controller/DeviceControllerPrivateCallerTest.java,5,standalone controller component,MockMvc standalone plus mocks,NOT_RUN,Historical report exists only
+device-service/src/test/java/com/hometracker/device_service/security/OwnershipVerifierTest.java,3,pure unit,MockHttpServletRequest only,NOT_RUN,Historical report exists only
+ingestion-service/src/test/java/com/hometracker/ingestion_service/IngestionServiceApplicationTests.java,1,application-context,Spring Boot context and test settings,NOT_RUN,Historical report exists only
+ingestion-service/src/test/java/com/hometracker/ingestion_service/controller/IngestionControllerAuthorizationTest.java,2,standalone controller component,MockMvc standalone plus mocked ingestion service,NOT_RUN,Historical report exists only
+ingestion-service/src/test/java/com/hometracker/ingestion_service/security/IngestionAuthorizationServiceTest.java,7,component client contract,MockRestServiceServer intercepts RestTemplate,NOT_RUN,Historical report exists only
+ingestion-service/src/test/java/com/hometracker/ingestion_service/service/IngestionServiceAuthorizationTest.java,2,pure unit,Mockito Kafka template and authorization service,NOT_RUN,Historical report exists only
+ingestion-service/src/test/java/com/hometracker/ingestion_service/simulation/ParallelDataSimulatorAuthorizationTest.java,1,pure unit,Mock RestTemplate and local executor,NOT_RUN,Historical report exists only
+insight-service/src/test/java/com/hometracker/insight_service/InsightServiceApplicationTests.java,1,application-context,Spring Boot context and dependent client settings,NOT_RUN,Historical report exists only
+insight-service/src/test/java/com/hometracker/insight_service/client/UsageClientInternalAuthenticationTest.java,1,component client contract,MockRestServiceServer intercepts RestTemplate,NOT_RUN,Historical report exists only
+insight-service/src/test/java/com/hometracker/insight_service/controller/InsightControllerAuthorizationTest.java,4,standalone controller component,MockMvc standalone and Mockito,NOT_RUN,Historical report exists only
+insight-service/src/test/java/com/hometracker/insight_service/service/BillCalculationServiceTest.java,7,pure unit,No external dependency,NOT_RUN,Historical report exists only
+insight-service/src/test/java/com/hometracker/insight_service/service/InsightServiceTest.java,4,pure unit,Mockito usage client and AI model,NOT_RUN,Historical report exists only
+usage-service/src/test/java/com/hometracker/usage_service/UsageServiceApplicationTests.java,1,application-context,Spring Boot context and test settings,NOT_RUN,Historical report exists only
+usage-service/src/test/java/com/hometracker/usage_service/client/DeviceClientInternalAuthenticationTest.java,2,component client contract,MockRestServiceServer intercepts RestTemplate,NOT_RUN,Historical report exists only
+usage-service/src/test/java/com/hometracker/usage_service/client/UserClientInternalAuthenticationTest.java,1,component client contract,MockRestServiceServer intercepts RestTemplate,NOT_RUN,Historical report exists only
+usage-service/src/test/java/com/hometracker/usage_service/controller/UsageControllerAuthorizationTest.java,6,web-slice component,@WebMvcTest plus mocks,NOT_RUN,Historical report exists only
+usage-service/src/test/java/com/hometracker/usage_service/security/UsageAccessVerifierTest.java,4,pure unit,MockHttpServletRequest only,NOT_RUN,Historical report exists only
+usage-service/src/test/java/com/hometracker/usage_service/service/UsageKafkaFailureRecoveryTest.java,2,broker-backed component integration,EmbeddedKafka and Spring context,NOT_RUN_SAFETY,Excluded because it initializes a local broker
+usage-service/src/test/java/com/hometracker/usage_service/service/UsageServiceInfluxWriteTest.java,2,pure unit,Mockito Influx client and Kafka template,NOT_RUN,Historical report exists only
+user-service/src/test/java/com/hometracker/user_service/UserServiceApplicationTests.java,2,application-context,Spring Boot context and test persistence settings,NOT_RUN,Historical report exists only
+user-service/src/test/java/com/hometracker/user_service/controller/UserControllerPrivateCallerTest.java,4,standalone controller component,MockMvc standalone plus mocks,NOT_RUN,Historical report exists only
+user-service/src/test/java/com/hometracker/user_service/security/OwnershipVerifierTest.java,3,pure unit,MockHttpServletRequest only,NOT_RUN,Historical report exists only
+ml-service/tests/test_api.py,4,mixed unit and in-process API route tests,FastAPI TestClient for two route tests,NOT_RUN_SAFETY,Endpoint invocation excluded
+ml-service/tests/test_kafka_reconnect.py,4,mock-based component,Patched Kafka classes and local doubles,BLOCKED_DEPENDENCY,Fresh import blocked because kafka package is absent
+ml-service/tests/test_refit_controlled_runtime.py,5,pure unit,In-memory model double and state,FRESH_PASS,5 passed offline
+ml-service/tests/test_refit_kafka_worker.py,5,mock-based component,Fake consumer producer and engine,BLOCKED_DEPENDENCY,Fresh import blocked because kafka package is absent
+ml-service/training/test_train_refit_controlled.py,5,pure unit,In-memory pandas data and model double,FRESH_PASS,5 passed offline
+real_data_replay/test_replay_stream.py,2,mixed unit and loopback HTTP,One test starts ThreadingHTTPServer,FRESH_PARTIAL,1 safe timestamp test passed; retry test not run
+tools/performance/k6-ingestion.js,0,load/e2e,Authenticated HTTP POSTs and optional Docker k6,NOT_RUN_SAFETY,No load test executed

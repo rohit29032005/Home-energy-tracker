@@ -1,0 +1,26 @@
+.git/
+.github/
+.idea/
+.m2/
+**/target/
+**/node_modules/
+frontend/dist/
+*.log
+/data/
+/datasets/
+*.7z
+*.zip
+.env
+.env.*
+!.env.example
+!.env.production.example
+/real_data_replay/replay.env
+/real_data_replay/device-map.json
+/real_data_replay/logs/
+
+# Optional controlled-REFIT experiment artifacts can be unavailable on a
+# workstation. Keep the deployable baseline Random Forest model in the build
+# context while preventing inaccessible experimental directories from blocking
+# the full ML service image build.
+/ml-service/models/refit-controlled-v1/
+/ml-service/models/refit-controlled-v1.1/

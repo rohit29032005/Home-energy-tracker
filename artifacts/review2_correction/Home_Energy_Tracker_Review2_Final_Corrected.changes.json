@@ -1,0 +1,43 @@
+[
+  {
+    "paragraph": 11,
+    "operation": "removed_misplaced_citation",
+    "removed": " [13], [15]"
+  },
+  {
+    "paragraph": 13,
+    "operation": "removed_misplaced_citation",
+    "removed": " [1], [3]"
+  },
+  {
+    "paragraph": 14,
+    "operation": "removed_misplaced_citation",
+    "removed": " [1], [2]"
+  },
+  {
+    "paragraph": 15,
+    "operation": "removed_misplaced_citation",
+    "removed": " [11], [12]"
+  },
+  {
+    "paragraph": 17,
+    "operation": "removed_misplaced_citation",
+    "removed": " [4], [8]"
+  },
+  {
+    "paragraph": 19,
+    "operation": "removed_misplaced_citation",
+    "removed": " [1]–[3], [5]–[7]"
+  },
+  {
+    "paragraph": 44,
+    "operation": "removed_misplaced_citation",
+    "removed": " [4], [8]–[10]"
+  },
+  {
+    "paragraph": 139,
+    "operation": "removed_honorific_from_verified_author_entry",
+    "old": "[11] Dr. Karthika K, Thrupthi Chandana G, Taahani Sheikh, Sankeerthana, and Umme, “Smart Energy Monitoring System,” International Journal of Innovative Research in Information Security, vol. 11, no. 9, Oct. 2025, doi: 10.26562/ijiris.2025.v1109.15.",
+    "new": "[11] Karthika K, Thrupthi Chandana G, Taahani Sheikh, Sankeerthana, and Umme, “Smart Energy Monitoring System,” International Journal of Innovative Research in Information Security, vol. 11, no. 9, Oct. 2025, doi: 10.26562/ijiris.2025.v1109.15."
+  }
+]

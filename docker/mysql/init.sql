@@ -1,2 +1,4 @@
-CREATE DATABASE IF NOT EXISTS home_energy_tracker;
-USE home_energy_tracker;
+-- Intentionally empty.
+-- The user-service Flyway migrations are the sole authority for the shared
+-- Home Energy Tracker schema and demo seed data. This file is retained only
+-- to make that ownership explicit for developers inspecting docker/mysql.

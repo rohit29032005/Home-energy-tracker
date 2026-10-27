@@ -1,0 +1,2 @@
+# This replay tool intentionally uses Python's standard library only.
+# No pip installation is required.

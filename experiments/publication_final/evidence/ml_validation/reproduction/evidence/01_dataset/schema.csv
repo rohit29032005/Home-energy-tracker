@@ -1,0 +1,9 @@
+column,dtype
+Timestamp,object
+Electricity_Consumed,float64
+Temperature,float64
+Humidity,float64
+Wind_Speed,float64
+Avg_Past_Consumption,float64
+Anomaly_Label,object
+_parsed_timestamp,datetime64[ns]

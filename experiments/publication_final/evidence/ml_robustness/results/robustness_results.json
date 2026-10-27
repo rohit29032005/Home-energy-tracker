@@ -1,0 +1,173 @@
+{
+  "experiment_id": "publication_final_experiment_1_ml_input_robustness",
+  "classification": "newly_generated_offline_input_and_distribution_check",
+  "execution_boundary": [
+    "No ASGI server, HTTP request, Kafka worker, Docker command, database, volume, credential, or existing model artifact was used.",
+    "The in-process store loaded the newly reproduced artifact and disabled Kafka and REFIT experimental branches by environment variables before import.",
+    "Synthetic Wokwi-mode values are controlled interface inputs, not real household observations."
+  ],
+  "input": {
+    "dataset_sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588",
+    "model_directory": "experiments\\publication_final\\evidence\\ml_validation\\reproduction\\model",
+    "model_version": "random_forest-csv-20261015T080547Z",
+    "decision_threshold": 0.31000000000000005
+  },
+  "training_feature_ranges": {
+    "Electricity_Consumed": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Temperature": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Humidity": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Wind_Speed": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Avg_Past_Consumption": {
+      "min": 0.0,
+      "max": 1.0000000000000002
+    }
+  },
+  "wokwi_documented_energy_ranges_kwh": {
+    "eco": [
+      1.0,
+      6.0
+    ],
+    "heavy": [
+      8.0,
+      20.0
+    ],
+    "alert_test": [
+      26.0,
+      40.0
+    ]
+  },
+  "wokwi_controlled_predictions": [
+    {
+      "case": "eco_min",
+      "energyConsumed": 1.0,
+      "outside_training_electricity_range": false,
+      "anomaly": true,
+      "anomalyProbability": 0.827228,
+      "imputedFeatures": [
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption"
+      ]
+    },
+    {
+      "case": "eco_max",
+      "energyConsumed": 6.0,
+      "outside_training_electricity_range": true,
+      "anomaly": true,
+      "anomalyProbability": 0.827228,
+      "imputedFeatures": [
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption"
+      ]
+    },
+    {
+      "case": "heavy_min",
+      "energyConsumed": 8.0,
+      "outside_training_electricity_range": true,
+      "anomaly": true,
+      "anomalyProbability": 0.827228,
+      "imputedFeatures": [
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption"
+      ]
+    },
+    {
+      "case": "heavy_max",
+      "energyConsumed": 20.0,
+      "outside_training_electricity_range": true,
+      "anomaly": true,
+      "anomalyProbability": 0.827228,
+      "imputedFeatures": [
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption"
+      ]
+    },
+    {
+      "case": "alert_min",
+      "energyConsumed": 26.0,
+      "outside_training_electricity_range": true,
+      "anomaly": true,
+      "anomalyProbability": 0.827228,
+      "imputedFeatures": [
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption"
+      ]
+    },
+    {
+      "case": "alert_max",
+      "energyConsumed": 40.0,
+      "outside_training_electricity_range": true,
+      "anomaly": true,
+      "anomalyProbability": 0.827228,
+      "imputedFeatures": [
+        "Temperature",
+        "Humidity",
+        "Wind_Speed",
+        "Avg_Past_Consumption"
+      ]
+    }
+  ],
+  "input_validation": [
+    {
+      "case": "zero_energy_accepted",
+      "expected": "accept",
+      "observed": "accept",
+      "passed": true,
+      "timestamp": "2026-10-15T00:00:00+00:00"
+    },
+    {
+      "case": "negative_energy_rejected",
+      "expected": "reject",
+      "observed": "reject",
+      "passed": true,
+      "validation_error_count": 1
+    },
+    {
+      "case": "missing_device_rejected",
+      "expected": "reject",
+      "observed": "reject",
+      "passed": true,
+      "validation_error_count": 1
+    },
+    {
+      "case": "unexpected_field_rejected",
+      "expected": "reject",
+      "observed": "reject",
+      "passed": true,
+      "validation_error_count": 1
+    },
+    {
+      "case": "naive_timestamp_normalized_utc",
+      "expected": "accept",
+      "observed": "accept",
+      "passed": true,
+      "timestamp": "2026-10-15T00:00:00+00:00"
+    }
+  ],
+  "interpretation": [
+    "The range comparison establishes an interface-scale mismatch for energyConsumed only; it does not prove field-model behavior.",
+    "The outputs are not model-accuracy measurements because the Wokwi values have no ground-truth anomaly labels.",
+    "Missing contextual values are reported by the code path as imputed, rather than silently treated as observed measurements."
+  ]
+}

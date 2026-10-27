@@ -1,0 +1,54 @@
+{
+  "experiment_id": "publication_final_experiment_1_supervised_baseline_validation",
+  "classification": "newly_generated_offline_validation",
+  "executed_at_utc": "2026-10-15T08:05:43Z",
+  "scope": "Validate and reproduce the legacy supervised smart-meter Random Forest and logistic-regression baselines from a copied local CSV.",
+  "safety_boundaries": [
+    "No Docker command, container operation, HTTP request, application endpoint, Kafka action, persistent volume, or secret was used.",
+    "The repository dataset, source code, installed model artefacts, and historical evidence were read only.",
+    "All generated models, figures, analysis files, and Matplotlib cache are under this isolated evidence directory."
+  ],
+  "input": {
+    "source_path": "smart_meter_data.csv",
+    "copied_path": "input/smart_meter_data.csv",
+    "size_bytes": 619684,
+    "sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588",
+    "copy_hash_matches_source": true
+  },
+  "executor": {
+    "python_path": ".venv\\Scripts\\python.exe",
+    "reason_for_executor": "The bundled document-analysis Python runtime did not include scikit-learn. The pre-existing repository virtual environment contained the pinned project ML dependencies; no packages were installed or changed.",
+    "environment_record": "analysis/execution_environment.json"
+  },
+  "commands": [
+    {
+      "step": 1,
+      "purpose": "Schema, label, split, fingerprint-overlap, and static feature-contract validation of the copied CSV.",
+      "command": ".\\.venv\\Scripts\\python.exe experiments\\publication_final\\evidence\\ml_validation\\analysis\\validate_supervised_baseline.py --dataset experiments\\publication_final\\evidence\\ml_validation\\input\\smart_meter_data.csv --output experiments\\publication_final\\evidence\\ml_validation\\analysis --historical-evidence-root evidence",
+      "exit_code": 0
+    },
+    {
+      "step": 2,
+      "purpose": "Offline reproduction of the current supervised baseline in an isolated output directory.",
+      "command": "$env:PYTHONDONTWRITEBYTECODE='1'; $env:MPLCONFIGDIR=(Join-Path (Resolve-Path -LiteralPath 'experiments\\publication_final\\evidence\\ml_validation\\reproduction') 'matplotlib-cache'); .\\.venv\\Scripts\\python.exe ml-service\\training\\train.py --dataset experiments\\publication_final\\evidence\\ml_validation\\input\\smart_meter_data.csv --model-dir experiments\\publication_final\\evidence\\ml_validation\\reproduction\\model --evidence-root experiments\\publication_final\\evidence\\ml_validation\\reproduction\\evidence",
+      "exit_code": 0,
+      "stdout": "raw_outputs/training_stdout.log"
+    },
+    {
+      "step": 3,
+      "purpose": "Compare the new metrics with the historical evidence after reproduction.",
+      "command": ".\\.venv\\Scripts\\python.exe experiments\\publication_final\\evidence\\ml_validation\\analysis\\validate_supervised_baseline.py --dataset experiments\\publication_final\\evidence\\ml_validation\\input\\smart_meter_data.csv --output experiments\\publication_final\\evidence\\ml_validation\\analysis --historical-evidence-root evidence --reproduction-evidence-root experiments\\publication_final\\evidence\\ml_validation\\reproduction\\evidence",
+      "exit_code": 0
+    }
+  ],
+  "non_executed": [
+    {
+      "item": "REFIT controlled-perturbation training",
+      "reason": "Its labelled input and controlled-artifact directories were access-restricted. The task forbade bypassing access restrictions and did not authorize using a substitute dataset."
+    },
+    {
+      "item": "ML HTTP/TestClient tests",
+      "reason": "The task explicitly prohibited invoking endpoints."
+    }
+  ]
+}

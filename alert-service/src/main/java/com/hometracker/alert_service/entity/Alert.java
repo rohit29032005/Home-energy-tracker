@@ -24,6 +24,13 @@ public class Alert {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userId;
+    private Long deviceId;
+    private String message;
+    private String alertType;
+    private String deduplicationKey;
+    private double threshold;
+    private double energyConsumed;
+    private String email;
     private LocalDateTime createdAt;
     private boolean sent;
 }

@@ -1,0 +1,44 @@
+{
+  "model_version": "random_forest-csv-20261015T080547Z",
+  "selected_model": "random_forest",
+  "features": [
+    "Electricity_Consumed",
+    "Temperature",
+    "Humidity",
+    "Wind_Speed",
+    "Avg_Past_Consumption",
+    "Hour",
+    "DayOfWeek",
+    "ConsumptionDeviation"
+  ],
+  "feature_defaults": {
+    "Electricity_Consumed": 0.378522951530735,
+    "Temperature": 0.5222973556474515,
+    "Humidity": 0.49570190163932004,
+    "Wind_Speed": 0.4660851881585455,
+    "Avg_Past_Consumption": 0.46512662841006613
+  },
+  "decision_threshold": 0.31000000000000005,
+  "selection_criterion": "validation F1; test metrics are reported but not used as the primary selection criterion",
+  "split_strategy": "chronological 70% train, 15% validation, 15% held-out test",
+  "random_seed": 42,
+  "training_rows": 3500,
+  "validation_rows": 750,
+  "test_rows": 750,
+  "test_metrics": {
+    "model": "random_forest",
+    "decision_threshold": 0.31000000000000005,
+    "validation_f1": 0.9148936170212766,
+    "test_precision": 0.8809523809523809,
+    "test_recall": 0.925,
+    "test_f1": 0.9024390243902439,
+    "test_roc_auc": 0.9974295774647887,
+    "test_pr_auc": 0.9485317975626696
+  },
+  "model_parameters": {
+    "n_estimators": 300,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced_subsample",
+    "random_state": 42
+  }
+}

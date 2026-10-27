@@ -1,0 +1,60 @@
+﻿[
+    {
+        "case":  "valid-user-owned-profile",
+        "expected_status":  200,
+        "observed_status":  200,
+        "passed":  true,
+        "response":  "{\"id\":1,\"name\":\"Demo\",\"surname\":\"User\",\"email\":\"alex.j@example.com\",\"address\":\"123 Smart Energy St\",\"alerting\":true,\"energyAlertingThreshold\":25.0}"
+    },
+    {
+        "case":  "missing-jwt",
+        "expected_status":  401,
+        "observed_status":  401,
+        "passed":  true,
+        "response":  "The remote server returned an error: (401) Unauthorized."
+    },
+    {
+        "case":  "invalid-jwt",
+        "expected_status":  401,
+        "observed_status":  401,
+        "passed":  true,
+        "response":  "The remote server returned an error: (401) Unauthorized."
+    },
+    {
+        "case":  "wrong-user-profile",
+        "expected_status":  403,
+        "observed_status":  403,
+        "passed":  true,
+        "response":  "The remote server returned an error: (403) Forbidden."
+    },
+    {
+        "case":  "wrong-user-device-list",
+        "expected_status":  403,
+        "observed_status":  403,
+        "passed":  true,
+        "response":  "The remote server returned an error: (403) Forbidden."
+    },
+    {
+        "case":  "admin-user-list",
+        "expected_status":  200,
+        "observed_status":  200,
+        "passed":  true,
+        "response":  "[{\"id\":1,\"name\":\"Demo\",\"surname\":\"User\",\"email\":\"alex.j@example.com\",\"address\":\"123 Smart Energy St\",\"alerting\":true,\"energyAlertingThreshold\":25.0},{\"id\":2,\"name\":\"Sarah Miller\",\"surname\":\"Miller\",\"email\":\"sarah.m@example.com\",\"address\":\"456 Solar Avenue\",\"alerting\":true,\"energyAlertingThreshold\":120.0},{\"id\":3,\"name\":\"Demo Household\",\"surname\":\"Household\",\"email\":\"demo@hometracker.io\",\"address\":\"789 Eco Lane\",\"alerting\":true,\"energyAlertingThreshold\":50.0},{\"id\":4,\"name\":\"Review2 Analytics 20260930-215401\",\"surname\":\"Verification\",\"email\":\"review2.analytics.20260930-215401@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":999999.0},{\"id\":5,\"name\":\"Review2 Alert 20260930-215401\",\"surname\":\"Verification\",\"email\":\"review2.alert.20260930-215401@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":0.1},{\"id\":6,\"name\":\"Review2 Analytics 20260930-215503\",\"surname\":\"Verification\",\"email\":\"review2.analytics.20260930-215503@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":999999.0},{\"id\":7,\"name\":\"Review2 Alert 20260930-215503\",\"surname\":\"Verification\",\"email\":\"review2.alert.20260930-215503@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":0.1},{\"id\":8,\"name\":\"Review2 Analytics 20261001-002032\",\"surname\":\"Verification\",\"email\":\"review2.analytics.20261001-002032@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":999999.0},{\"id\":9,\"name\":\"Review2 Alert 20261001-002032\",\"surname\":\"Verification\",\"email\":\"review2.alert.20261001-002032@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":0.1},{\"id\":10,\"name\":\"Review2 Analytics 20261004-040724\",\"surname\":\"Verification\",\"email\":\"review2.analytics.20261004-040724@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":999999.0},{\"id\":11,\"name\":\"Review2 Analytics 20261004-040753\",\"surname\":\"Verification\",\"email\":\"review2.analytics.20261004-040753@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":999999.0},{\"id\":12,\"name\":\"Review2 Alert 20261004-040753\",\"surname\":\"Verification\",\"email\":\"review2.alert.20261004-040753@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":0.1},{\"id\":13,\"name\":\"Review2 Analytics 20261005-214002\",\"surname\":\"Verification\",\"email\":\"review2.analytics.20261005-214002@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":999999.0},{\"id\":14,\"name\":\"Review2 Alert 20261005-214002\",\"surname\":\"Verification\",\"email\":\"review2.alert.20261005-214002@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":0.1},{\"id\":15,\"name\":\"Review2 Analytics 20261005-214326\",\"surname\":\"Verification\",\"email\":\"review2.analytics.20261005-214326@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":999999.0},{\"id\":16,\"name\":\"Review2 Alert 20261005-214326\",\"surname\":\"Verification\",\"email\":\"review2.alert.20261005-214326@example.test\",\"address\":\"Controlled local verification\",\"alerting\":false,\"energyAlertingThreshold\":0.1}]"
+    },
+    {
+        "case":  "machine-token-ingestion",
+        "expected_status":  201,
+        "observed_status":  201,
+        "passed":  true,
+        "response":  [
+
+                     ]
+    },
+    {
+        "case":  "expired-jwt",
+        "expected_status":  401,
+        "observed_status":  401,
+        "passed":  true,
+        "response":  "The remote server returned an error: (401) Unauthorized."
+    }
+]

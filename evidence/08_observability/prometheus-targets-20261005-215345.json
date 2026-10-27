@@ -1,0 +1,199 @@
+﻿{
+    "status":  "success",
+    "data":  {
+                 "activeTargets":  [
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "api-gateway:8080",
+                                                                    "__metrics_path__":  "/actuator/prometheus",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "api-gateway"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "api-gateway:8080",
+                                                          "job":  "api-gateway"
+                                                      },
+                                           "scrapePool":  "api-gateway",
+                                           "scrapeUrl":  "http://api-gateway:8080/actuator/prometheus",
+                                           "globalUrl":  "http://api-gateway:8080/actuator/prometheus",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-10-05T16:23:42.452771367Z",
+                                           "lastScrapeDuration":  0.095514261,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "user-service:8081",
+                                                                    "__metrics_path__":  "/actuator/prometheus",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "java-services"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "user-service:8081",
+                                                          "job":  "java-services"
+                                                      },
+                                           "scrapePool":  "java-services",
+                                           "scrapeUrl":  "http://user-service:8081/actuator/prometheus",
+                                           "globalUrl":  "http://user-service:8081/actuator/prometheus",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-10-05T16:23:37.311247185Z",
+                                           "lastScrapeDuration":  0.046381601,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "device-service:8082",
+                                                                    "__metrics_path__":  "/actuator/prometheus",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "java-services"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "device-service:8082",
+                                                          "job":  "java-services"
+                                                      },
+                                           "scrapePool":  "java-services",
+                                           "scrapeUrl":  "http://device-service:8082/actuator/prometheus",
+                                           "globalUrl":  "http://device-service:8082/actuator/prometheus",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-10-05T16:23:42.928463142Z",
+                                           "lastScrapeDuration":  0.029257514,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "ingestion-service:8083",
+                                                                    "__metrics_path__":  "/actuator/prometheus",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "java-services"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "ingestion-service:8083",
+                                                          "job":  "java-services"
+                                                      },
+                                           "scrapePool":  "java-services",
+                                           "scrapeUrl":  "http://ingestion-service:8083/actuator/prometheus",
+                                           "globalUrl":  "http://ingestion-service:8083/actuator/prometheus",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-10-05T16:23:41.684972082Z",
+                                           "lastScrapeDuration":  0.084598952,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "usage-service:8084",
+                                                                    "__metrics_path__":  "/actuator/prometheus",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "java-services"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "usage-service:8084",
+                                                          "job":  "java-services"
+                                                      },
+                                           "scrapePool":  "java-services",
+                                           "scrapeUrl":  "http://usage-service:8084/actuator/prometheus",
+                                           "globalUrl":  "http://usage-service:8084/actuator/prometheus",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-10-05T16:23:38.028480522Z",
+                                           "lastScrapeDuration":  0.05700716,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "alert-service:8085",
+                                                                    "__metrics_path__":  "/actuator/prometheus",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "java-services"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "alert-service:8085",
+                                                          "job":  "java-services"
+                                                      },
+                                           "scrapePool":  "java-services",
+                                           "scrapeUrl":  "http://alert-service:8085/actuator/prometheus",
+                                           "globalUrl":  "http://alert-service:8085/actuator/prometheus",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-10-05T16:23:35.506688212Z",
+                                           "lastScrapeDuration":  0.07212312,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "insight-service:8086",
+                                                                    "__metrics_path__":  "/actuator/prometheus",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "java-services"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "insight-service:8086",
+                                                          "job":  "java-services"
+                                                      },
+                                           "scrapePool":  "java-services",
+                                           "scrapeUrl":  "http://insight-service:8086/actuator/prometheus",
+                                           "globalUrl":  "http://insight-service:8086/actuator/prometheus",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-10-05T16:23:38.492059508Z",
+                                           "lastScrapeDuration":  0.0289864,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       },
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "ml-inference-service:8090",
+                                                                    "__metrics_path__":  "/metrics",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "ml-inference-service"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "ml-inference-service:8090",
+                                                          "job":  "ml-inference-service"
+                                                      },
+                                           "scrapePool":  "ml-inference-service",
+                                           "scrapeUrl":  "http://ml-inference-service:8090/metrics",
+                                           "globalUrl":  "http://ml-inference-service:8090/metrics",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-10-05T16:23:37.375225614Z",
+                                           "lastScrapeDuration":  0.051720192,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       }
+                                   ],
+                 "droppedTargets":  [
+
+                                    ],
+                 "droppedTargetCounts":  {
+                                             "api-gateway":  0,
+                                             "java-services":  0,
+                                             "ml-inference-service":  0
+                                         }
+             }
+}

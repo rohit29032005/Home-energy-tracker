@@ -1,0 +1,7 @@
+case,energyConsumed,outside_training_electricity_range,anomaly,anomalyProbability,imputedFeatures
+eco_min,1.0,False,True,0.827228,"['Temperature', 'Humidity', 'Wind_Speed', 'Avg_Past_Consumption']"
+eco_max,6.0,True,True,0.827228,"['Temperature', 'Humidity', 'Wind_Speed', 'Avg_Past_Consumption']"
+heavy_min,8.0,True,True,0.827228,"['Temperature', 'Humidity', 'Wind_Speed', 'Avg_Past_Consumption']"
+heavy_max,20.0,True,True,0.827228,"['Temperature', 'Humidity', 'Wind_Speed', 'Avg_Past_Consumption']"
+alert_min,26.0,True,True,0.827228,"['Temperature', 'Humidity', 'Wind_Speed', 'Avg_Past_Consumption']"
+alert_max,40.0,True,True,0.827228,"['Temperature', 'Humidity', 'Wind_Speed', 'Avg_Past_Consumption']"

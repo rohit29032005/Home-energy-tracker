@@ -1,0 +1,231 @@
+# Task 4C: static-only isolated REFIT deployment preparation.
+#
+# This file is intentionally NOT a runtime authorization. It creates no
+# resources until an explicitly approved future `docker compose up` command is
+# run. Do not point any variable below at the existing development or
+# production deployment.
+name: refit-task4c
+
+services:
+  mysql:
+    image: mysql:8.3.0
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${REFIT_MYSQL_ROOT_PASSWORD:?Set REFIT_MYSQL_ROOT_PASSWORD in an untracked runtime environment file}"
+      MYSQL_DATABASE: "${REFIT_MYSQL_DATABASE:-refit_experiment}"
+      MYSQL_USER: "${REFIT_MYSQL_APP_USER:-refit_experiment_app}"
+      MYSQL_PASSWORD: "${REFIT_MYSQL_APP_PASSWORD:?Set REFIT_MYSQL_APP_PASSWORD in an untracked runtime environment file}"
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p\"$${MYSQL_ROOT_PASSWORD}\" --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    expose:
+      - "3306"
+    volumes:
+      - refit-task4c-mysql-data:/var/lib/mysql
+    networks:
+      - refit-task4c-network
+
+  kafka:
+    # Reuses the repository's current image reference. Pin an approved digest
+    # before any runtime deployment; Task 4C does not pull or build images.
+    image: apache/kafka:latest
+    restart: "no"
+    environment:
+      KAFKA_NODE_ID: "1"
+      # Fresh 22-character KRaft cluster identifier; never reuse the current
+      # development or production cluster identifier.
+      KAFKA_CLUSTER_ID: "RefitTask4cClusterId01"
+      KAFKA_PROCESS_ROLES: "broker,controller"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LISTENERS: "PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:9092"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "PLAINTEXT"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: "1"
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: "0"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_NUM_PARTITIONS: "1"
+    expose:
+      - "9092"
+    volumes:
+      - refit-task4c-kafka-data:/var/lib/kafka/data
+    networks:
+      - refit-task4c-network
+
+  influxdb:
+    image: influxdb:2.7
+    restart: "no"
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: "setup"
+      DOCKER_INFLUXDB_INIT_USERNAME: "${REFIT_INFLUX_ADMIN_USERNAME:-refit_experiment_admin}"
+      DOCKER_INFLUXDB_INIT_PASSWORD: "${REFIT_INFLUX_ADMIN_PASSWORD:?Set REFIT_INFLUX_ADMIN_PASSWORD in an untracked runtime environment file}"
+      DOCKER_INFLUXDB_INIT_ORG: "${REFIT_INFLUX_ORG:-refit_experiment}"
+      DOCKER_INFLUXDB_INIT_BUCKET: "${REFIT_INFLUX_BUCKET:-refit_experiment_usage}"
+      DOCKER_INFLUXDB_INIT_RETENTION: "30d"
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: "${REFIT_INFLUX_ADMIN_TOKEN:?Set REFIT_INFLUX_ADMIN_TOKEN in an untracked runtime environment file}"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8086/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    expose:
+      - "8086"
+    volumes:
+      - refit-task4c-influx-data:/var/lib/influxdb2
+    networks:
+      - refit-task4c-network
+
+  user-service:
+    build:
+      context: ../../user-service
+      dockerfile: Dockerfile
+    restart: "no"
+    environment:
+      PORT: "8081"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/${REFIT_MYSQL_DATABASE:-refit_experiment}?useSSL=false"
+      MYSQL_USER: "${REFIT_MYSQL_APP_USER:-refit_experiment_app}"
+      MYSQL_PASSWORD: "${REFIT_MYSQL_APP_PASSWORD:?Set REFIT_MYSQL_APP_PASSWORD in an untracked runtime environment file}"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT_INTERNAL_GATEWAY_TOKEN:?Set REFIT_INTERNAL_GATEWAY_TOKEN in an untracked runtime environment file}"
+      INTERNAL_SERVICE_TOKEN: "${REFIT_INTERNAL_SERVICE_TOKEN:?Set REFIT_INTERNAL_SERVICE_TOKEN in an untracked runtime environment file}"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    expose:
+      - "8081"
+    networks:
+      - refit-task4c-network
+
+  device-service:
+    build:
+      context: ../../device-service
+      dockerfile: Dockerfile
+    restart: "no"
+    environment:
+      PORT: "8082"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/${REFIT_MYSQL_DATABASE:-refit_experiment}?useSSL=false"
+      MYSQL_USER: "${REFIT_MYSQL_APP_USER:-refit_experiment_app}"
+      MYSQL_PASSWORD: "${REFIT_MYSQL_APP_PASSWORD:?Set REFIT_MYSQL_APP_PASSWORD in an untracked runtime environment file}"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT_INTERNAL_GATEWAY_TOKEN:?Set REFIT_INTERNAL_GATEWAY_TOKEN in an untracked runtime environment file}"
+      INTERNAL_SERVICE_TOKEN: "${REFIT_INTERNAL_SERVICE_TOKEN:?Set REFIT_INTERNAL_SERVICE_TOKEN in an untracked runtime environment file}"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    expose:
+      - "8082"
+    networks:
+      - refit-task4c-network
+
+  ingestion-service:
+    build:
+      context: ../../ingestion-service
+      dockerfile: Dockerfile
+    restart: "no"
+    environment:
+      PORT: "8083"
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+      # No simulator, replay, or event generator is enabled in this composition.
+      SIMULATION_ENABLED: "false"
+      INGESTION_AUTH_REQUIRED: "true"
+      DEVICE_SERVICE_URL: "http://device-service:8082/api/v1/device"
+      IOT_INGESTION_DEVICE_TOKENS: "${REFIT_IOT_INGESTION_DEVICE_TOKENS:?Set the approved H1/H2/H4 deviceId token mapping only after device provisioning approval}"
+      IOT_INGESTION_LEGACY_GLOBAL_TOKEN_ENABLED: "false"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT_INTERNAL_GATEWAY_TOKEN:?Set REFIT_INTERNAL_GATEWAY_TOKEN in an untracked runtime environment file}"
+    depends_on:
+      kafka:
+        condition: service_started
+      device-service:
+        condition: service_started
+    expose:
+      - "8083"
+    networks:
+      - refit-task4c-network
+
+  usage-service:
+    build:
+      context: ../../usage-service
+      dockerfile: Dockerfile
+    restart: "no"
+    environment:
+      PORT: "8084"
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+      INFLUX_URL: "http://influxdb:8086"
+      INFLUX_TOKEN: "${REFIT_INFLUX_ADMIN_TOKEN:?Set REFIT_INFLUX_ADMIN_TOKEN in an untracked runtime environment file}"
+      INFLUX_ORG: "${REFIT_INFLUX_ORG:-refit_experiment}"
+      INFLUX_BUCKET: "${REFIT_INFLUX_BUCKET:-refit_experiment_usage}"
+      DEVICE_SERVICE_URL: "http://device-service:8082/api/v1/device"
+      USER_SERVICE_URL: "http://user-service:8081/api/v1/user"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT_INTERNAL_GATEWAY_TOKEN:?Set REFIT_INTERNAL_GATEWAY_TOKEN in an untracked runtime environment file}"
+      INTERNAL_SERVICE_TOKEN: "${REFIT_INTERNAL_SERVICE_TOKEN:?Set REFIT_INTERNAL_SERVICE_TOKEN in an untracked runtime environment file}"
+    depends_on:
+      kafka:
+        condition: service_started
+      influxdb:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      device-service:
+        condition: service_started
+    expose:
+      - "8084"
+    networks:
+      - refit-task4c-network
+
+  api-gateway:
+    build:
+      context: ../../api-gateway
+      dockerfile: Dockerfile
+    restart: "no"
+    ports:
+      # The only host exposure. Binding to loopback keeps the experiment API
+      # unavailable to the LAN; Task 4C verified that current Compose files do
+      # not declare port 18080 and no listener occupied it at inspection time.
+      - "127.0.0.1:${REFIT_GATEWAY_HOST_PORT:-18080}:8080"
+    environment:
+      PORT: "8080"
+      USER_SERVICE_URL: "http://user-service:8081"
+      DEVICE_SERVICE_URL: "http://device-service:8082"
+      INGESTION_SERVICE_URL: "http://ingestion-service:8083"
+      USAGE_SERVICE_URL: "http://usage-service:8084"
+      # These source-level routes cannot be removed without code changes. They
+      # intentionally fail closed inside the gateway container because Alert
+      # and Insight are outside the approved Task 4C service boundary.
+      ALERT_SERVICE_URL: "http://127.0.0.1:9"
+      INSIGHT_SERVICE_URL: "http://127.0.0.1:9"
+      SECURITY_ENABLED: "true"
+      # Required future values must identify a separate, approved OIDC/Keycloak
+      # deployment. Never use the existing dev issuer or JWK endpoint.
+      KEYCLOAK_ISSUER_URI: "${REFIT_KEYCLOAK_ISSUER_URI:?Set an isolated REFIT OIDC issuer URI before runtime deployment}"
+      KEYCLOAK_JWK_SET_URI: "${REFIT_KEYCLOAK_JWK_SET_URI:?Set an isolated REFIT OIDC JWK-set URI before runtime deployment}"
+      IOT_INGESTION_DEVICE_TOKENS: "${REFIT_IOT_INGESTION_DEVICE_TOKENS:?Set the approved H1/H2/H4 deviceId token mapping only after device provisioning approval}"
+      INTERNAL_GATEWAY_TOKEN: "${REFIT_INTERNAL_GATEWAY_TOKEN:?Set REFIT_INTERNAL_GATEWAY_TOKEN in an untracked runtime environment file}"
+    depends_on:
+      user-service:
+        condition: service_started
+      device-service:
+        condition: service_started
+      ingestion-service:
+        condition: service_started
+      usage-service:
+        condition: service_started
+    networks:
+      - refit-task4c-network
+
+networks:
+  refit-task4c-network:
+    name: refit-task4c-network
+    driver: bridge
+
+volumes:
+  refit-task4c-mysql-data:
+    name: refit-task4c-mysql-data
+  refit-task4c-kafka-data:
+    name: refit-task4c-kafka-data
+  refit-task4c-influx-data:
+    name: refit-task4c-influx-data

@@ -1,0 +1,10 @@
+component,test_framework,tests,failures,errors,skipped,validation_source,execution_date
+api-gateway,JUnit,3,0,0,0,GatewaySecurityFilterTest,2026-10-04
+user-service,JUnit,3,0,0,2,Surefire XML report,2026-10-04
+device-service,JUnit,3,0,0,1,Surefire XML report,2026-10-04
+ingestion-service,JUnit,1,0,0,0,Surefire XML report,2026-10-04
+usage-service,JUnit,1,0,0,0,Surefire XML report,2026-10-04
+alert-service,JUnit,5,0,0,0,Surefire XML report,2026-10-04
+insight-service,JUnit,12,0,0,0,Surefire XML report,2026-10-04
+ml-service,pytest,3,0,0,0,pytest output,2026-10-04
+TOTAL,combined,31,0,0,3,Current local validation,2026-10-04

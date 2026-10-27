@@ -6,6 +6,8 @@ import com.hometracker.user_service.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Slf4j
 @Service
 public class UserService {
@@ -35,6 +37,12 @@ public class UserService {
         return userRepository.findById(id)
                 .map(this::toDto)
                 .orElse(null);
+    }
+
+    public List<UserDto> getAllUsers() {
+        return userRepository.findAll().stream()
+                .map(this::toDto)
+                .toList();
     }
 
     public void updateUser(Long id, UserDto dto) {

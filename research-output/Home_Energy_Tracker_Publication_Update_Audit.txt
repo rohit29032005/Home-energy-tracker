@@ -1,0 +1,2 @@
+Companion audit document generated: C:\Users\anju2\Desktop\Home-Energy-Tracker\research-output\Home_Energy_Tracker_Publication_Update_Audit.docx
+Source master was preserved. The updated manuscript contains current verified baseline ML functionality, historical-result boundaries, and disabled REFIT status.

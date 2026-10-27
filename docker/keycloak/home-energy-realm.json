@@ -1,0 +1,102 @@
+{
+  "realm": "home-energy",
+  "enabled": true,
+  "accessTokenLifespan": 30,
+  "displayName": "Home Energy Tracker (development)",
+  "roles": {
+    "realm": [
+      {"name": "USER", "description": "May access the assigned household only."},
+      {"name": "ADMIN", "description": "May administer development household records."}
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "home-energy-dashboard",
+      "name": "Home Energy Dashboard",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/*"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "attributes": {"pkce.code.challenge.method": "S256"},
+      "protocolMappers": [
+        {
+          "name": "home-energy-user-id",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "homeEnergyUserId",
+            "claim.name": "home_energy_user_id",
+            "jsonType.label": "long",
+            "access.token.claim": "true",
+            "id.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
+      "clientId": "home-energy-cli",
+      "name": "Home Energy CLI Test Client",
+      "publicClient": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "protocol": "openid-connect",
+      "protocolMappers": [
+        {
+          "name": "home-energy-user-id",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "homeEnergyUserId",
+            "claim.name": "home_energy_user_id",
+            "jsonType.label": "long",
+            "access.token.claim": "true",
+            "id.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "demo-user",
+      "email": "demo@hometracker.local",
+      "firstName": "Demo",
+      "lastName": "User",
+      "enabled": true,
+      "emailVerified": true,
+      "requiredActions": [],
+      "attributes": {"homeEnergyUserId": ["1"]},
+      "realmRoles": ["USER"],
+      "credentials": [{"type": "password", "value": "DemoUser-ChangeMe-2026!", "temporary": false}]
+    },
+    {
+      "username": "demo-user-two",
+      "email": "demo-user-two@hometracker.local",
+      "firstName": "Demo",
+      "lastName": "Household Two",
+      "enabled": true,
+      "emailVerified": true,
+      "requiredActions": [],
+      "attributes": {"homeEnergyUserId": ["2"]},
+      "realmRoles": ["USER"],
+      "credentials": [{"type": "password", "value": "DemoUserTwo-ChangeMe-2026!", "temporary": false}]
+    },
+    {
+      "username": "demo-admin",
+      "email": "demo-admin@hometracker.local",
+      "firstName": "Demo",
+      "lastName": "Administrator",
+      "enabled": true,
+      "emailVerified": true,
+      "requiredActions": [],
+      "realmRoles": ["ADMIN", "USER"],
+      "credentials": [{"type": "password", "value": "DemoAdmin-ChangeMe-2026!", "temporary": false}]
+    }
+  ]
+}

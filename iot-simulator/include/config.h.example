@@ -1,0 +1,12 @@
+#pragma once
+
+// Wokwi for VS Code reaches the local machine through host.wokwi.internal.
+// Keep the API Gateway running locally on port 8080 before starting Wokwi.
+constexpr char WIFI_SSID[] = "Wokwi-GUEST";
+constexpr char WIFI_PASSWORD[] = "";
+constexpr char INGESTION_URL[] =
+    "http://host.wokwi.internal:8080/api/v1/ingestion";
+// Match WOKWI_INGESTION_TOKEN in the local Compose environment. Do not commit
+// your actual local token in config.h.
+#define HOME_ENERGY_INGESTION_DEVICE_TOKEN "replace-with-local-wokwi-token"
+constexpr long DEVICE_ID = 1;

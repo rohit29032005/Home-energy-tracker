@@ -1,0 +1,5 @@
+Selected model: random_forest
+Selection criterion: validation F1
+Validation F1: 0.914894
+Decision threshold: 0.31
+Class imbalance handling: class weights only; no resampling.

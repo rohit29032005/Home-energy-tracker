@@ -1,0 +1,96 @@
+name: Home Energy Tracker CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # ------------------------------------------------------------------
+  # Job 1: Test & Build Spring Boot Microservices
+  # ------------------------------------------------------------------
+  backend-ci:
+    name: Backend Microservices CI (Java 17)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service:
+          - api-gateway
+          - user-service
+          - device-service
+          - ingestion-service
+          - usage-service
+          - alert-service
+          - insight-service
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build and Test ${{ matrix.service }}
+        run: |
+          cd ${{ matrix.service }}
+          mvn -B -ntp test
+
+  # ------------------------------------------------------------------
+  # Job 2: Build & Validate React Frontend
+  # ------------------------------------------------------------------
+  frontend-ci:
+    name: Frontend Dashboard CI (Node 20)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install & Build Frontend
+        run: |
+          cd frontend
+          npm ci
+          npm run build
+
+  # ------------------------------------------------------------------
+  # Job 3: Docker Compose Configuration Check
+  # ------------------------------------------------------------------
+  docker-build-check:
+    name: Validate Docker Compose Production Config
+    needs: [backend-ci, frontend-ci]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Validate production Compose configuration
+        run: |
+          docker compose --env-file .env.production.example -f docker-compose.prod.yml config --quiet
+
+  # ------------------------------------------------------------------
+  # Job 4: Deployment Guidance Notice (Runs on main push)
+  # ------------------------------------------------------------------
+  deployment-guidance:
+    name: Azure Deployment Guidance
+    needs: docker-build-check
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Output deployment readiness notice
+        run: |
+          echo "CI validation completed; no infrastructure deployment is performed by this workflow."
+          echo "For an Azure VM deployment, configure production secrets and follow docs/08-azure-vm-deployment-guide.md."

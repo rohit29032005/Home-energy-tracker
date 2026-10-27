@@ -1,9 +1,11 @@
 package com.hometracker.ingestion_service.simulation;
 
 import com.hometracker.ingestion_service.dto.EnergyUsageDto;
+import com.hometracker.ingestion_service.security.IngestionAuthorizationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,6 +19,7 @@ import java.util.Random;
 
 @Slf4j
 @Component
+@ConditionalOnProperty(name = "simulation.enabled", havingValue = "true")
 public class ContinuousDataSimulator implements CommandLineRunner {
 
     private final RestTemplate restTemplate = new RestTemplate();
@@ -27,6 +30,12 @@ public class ContinuousDataSimulator implements CommandLineRunner {
 
     @Value("${simulation.endpoint}")
     private String ingestionEndpoint;
+
+    @Value("${simulation.device-id:1}")
+    private long simulatedDeviceId;
+
+    @Value("${simulation.device-token:}")
+    private String deviceToken;
 
 
     @Override
@@ -39,7 +48,7 @@ public class ContinuousDataSimulator implements CommandLineRunner {
     public void sendMockData() {
         for (int i = 0; i < requestsPerInterval; i++) {
             EnergyUsageDto dto = EnergyUsageDto.builder()
-                    .deviceId(random.nextLong(1, 6))
+                    .deviceId(simulatedDeviceId)
                     .energyConsumed(Math.round(random.nextDouble(0.0, 2.0) * 100.0) / 100.0)
                     .timestamp(LocalDateTime.now()
                             .atZone(ZoneId.systemDefault()).toInstant())
@@ -48,6 +57,9 @@ public class ContinuousDataSimulator implements CommandLineRunner {
             try {
                 HttpHeaders headers = new HttpHeaders();
                 headers.setContentType(MediaType.APPLICATION_JSON);
+                if (deviceToken != null && !deviceToken.isBlank()) {
+                    headers.set(IngestionAuthorizationService.DEVICE_TOKEN_HEADER, deviceToken);
+                }
 
                 HttpEntity<EnergyUsageDto> request = new HttpEntity<>(dto, headers);
                 restTemplate.postForEntity(ingestionEndpoint, request, Void.class);

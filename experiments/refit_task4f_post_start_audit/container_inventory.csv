@@ -1,0 +1,37 @@
+scope,container_name,image,state,status_summary,exit_code,compose_project,compose_service,published_ports,audit_classification
+existing_home_energy_tracker,ml-inference-service,home-energy-tracker-ml-inference-service,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,ml-inference-service,8090/tcp,existing stack stopped
+existing_home_energy_tracker,home-energy-frontend,home-energy-tracker-frontend,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,frontend,"0.0.0.0:3000->80/tcp",existing stack stopped
+existing_home_energy_tracker,grafana,grafana/grafana:11.2.0,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,grafana,"0.0.0.0:3001->3000/tcp",existing stack stopped
+existing_home_energy_tracker,prometheus,prom/prometheus:v2.54.1,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,prometheus,"0.0.0.0:9090->9090/tcp",existing stack stopped
+existing_home_energy_tracker,alert-service,local-image-sha256-332c6e91cada,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,alert-service,8085/tcp,existing stack stopped
+existing_home_energy_tracker,keycloak,quay.io/keycloak/keycloak:26.0.7,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,keycloak,"0.0.0.0:8180->8080/tcp; 8443/tcp; 9000/tcp",existing stack stopped
+existing_home_energy_tracker,api-gateway,local-image-sha256-edf85f4b9a0d,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,api-gateway,"0.0.0.0:8080->8080/tcp",existing stack stopped
+existing_home_energy_tracker,insight-service,local-image-sha256-a5b1a8b0732e,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,insight-service,8086/tcp,existing stack stopped
+existing_home_energy_tracker,ingestion-service,local-image-sha256-0db213553e67,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,ingestion-service,8083/tcp,existing stack stopped
+existing_home_energy_tracker,usage-service,local-image-sha256-32b03e5353d7,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,usage-service,8084/tcp,existing stack stopped
+existing_home_energy_tracker,device-service,local-image-sha256-30c4d4700334,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,device-service,8082/tcp,existing stack stopped
+existing_home_energy_tracker,user-service,local-image-sha256-822c47ecf609,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,user-service,8081/tcp,existing stack stopped
+existing_home_energy_tracker,mailpit,axllent/mailpit:latest,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,mailpit,"0.0.0.0:1025->1025/tcp; 0.0.0.0:8025->8025/tcp",existing stack stopped
+existing_home_energy_tracker,influxdb,influxdb:2.7,exited,"Exited at common 2026-10-14T15:31:52Z lifecycle timestamp",255,home-energy-tracker,influxdb,"0.0.0.0:8072->8086/tcp",existing stack stopped
+existing_home_energy_tracker,kafka-ui,ghcr.io/kafbat/kafka-ui:latest,running,"Up during audit; broker dependency not available",,home-energy-tracker,kafka-ui,"0.0.0.0:8070->8080/tcp",running but degraded
+existing_home_energy_tracker,kafka,apache/kafka:latest,exited,"Exited 2026-10-11T21:41:52Z; OOMKilled=true",137,home-energy-tracker,kafka,,existing stack Kafka blocker
+existing_home_energy_tracker,mysql,mysql:8.3.0,running,"Up during audit; Docker healthcheck=healthy",,home-energy-tracker,mysql,"0.0.0.0:3306->3306/tcp",running healthy infrastructure only
+other_compose_project,trustid_postgres,postgres:15-alpine,exited,"Exited before this audit",255,trustid,postgres,"0.0.0.0:5433->5432/tcp",unrelated stopped container
+other_compose_project,trustid_redis,redis:7-alpine,exited,"Exited before this audit",255,trustid,redis,"0.0.0.0:6379->6379/tcp",unrelated stopped container
+other_compose_project,trustcircle-db,postgres:15-alpine,exited,"Exited before this audit",255,her,db,"0.0.0.0:5433->5432/tcp",unrelated stopped container
+unlabelled_other,academic-redis,redis:alpine,exited,"Exited before this audit",255,,,"0.0.0.0:6379->6379/tcp",unrelated stopped container
+unlabelled_other,boring_knuth,qdrant/qdrant,created,"Created but not running",128,,,,unrelated created container
+unlabelled_other,gracious_chandrasekhar,qdrant/qdrant,exited,"Exited before this audit",255,,,"0.0.0.0:6333->6333/tcp; 6334/tcp",unrelated stopped container
+unlabelled_other,eloquent_knuth,qdrant/qdrant,exited,"Exited before this audit",143,,,,unrelated stopped container
+unlabelled_other,angry_murdock,qdrant/qdrant,exited,"Exited before this audit",130,,,,unrelated stopped container
+unlabelled_other,awesome_darwin,qdrant/qdrant,exited,"Exited before this audit",130,,,,unrelated stopped container
+unlabelled_other,compassionate_tu,qdrant/qdrant,created,"Created but not running",128,,,,unrelated created container
+unlabelled_other,bold_euler,qdrant/qdrant,exited,"Exited before this audit",130,,,,unrelated stopped container
+unlabelled_other,sharp_dhawan,qdrant/qdrant,exited,"Exited before this audit",143,,,,unrelated stopped container
+unlabelled_other,sharp_wozniak,qdrant/qdrant,exited,"Exited before this audit",143,,,,unrelated stopped container
+unlabelled_other,magical_noether,qdrant/qdrant,exited,"Exited before this audit",130,,,,unrelated stopped container
+unlabelled_other,unruffled_williamson,qdrant/qdrant,exited,"Exited before this audit",130,,,,unrelated stopped container
+unlabelled_other,tender_jepsen,qdrant/qdrant,created,"Created but not running",128,,,,unrelated created container
+unlabelled_other,vigilant_allen,qdrant/qdrant,exited,"Exited before this audit",130,,,,unrelated stopped container
+unlabelled_other,hopeful_bell,qdrant/qdrant,exited,"Exited before this audit",130,,,,unrelated stopped container
+unlabelled_other,frosty_chebyshev,qdrant/qdrant,exited,"Exited before this audit",130,,,,unrelated stopped container

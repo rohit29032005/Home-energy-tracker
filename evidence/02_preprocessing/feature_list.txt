@@ -1,0 +1,8 @@
+Electricity_Consumed
+Temperature
+Humidity
+Wind_Speed
+Avg_Past_Consumption
+Hour
+DayOfWeek
+ConsumptionDeviation

@@ -1,0 +1,78 @@
+{
+  "evidence_scope": "Offline component-test discovery and limited self-contained execution",
+  "audit_date": "2026-10-15",
+  "safety_boundary": {
+    "docker_lifecycle": "not invoked",
+    "network_endpoints": "not invoked",
+    "kafka_broker": "not invoked",
+    "database_or_volume_access": "not invoked",
+    "credentials_or_secrets": "not inspected or recorded",
+    "event_replay_or_training": "not invoked"
+  },
+  "fresh_successful_commands": [
+    {
+      "id": "gateway_security_filters",
+      "command": "mvn -o -B -Dtest=GatewaySecurityFilterTest test",
+      "test_count": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 1.334,
+      "classification": "in-process component test with mock reactive request/exchange objects",
+      "result": "PASS"
+    },
+    {
+      "id": "refit_runtime_and_trainer",
+      "command": "python -m unittest -v tests.test_refit_controlled_runtime training.test_train_refit_controlled",
+      "test_count": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 0.046,
+      "classification": "pure in-memory unit tests",
+      "result": "PASS"
+    },
+    {
+      "id": "replay_timestamp_helper",
+      "command": "python -m unittest -v real_data_replay.test_replay_stream.ReplayStreamTest.test_current_timestamps_are_monotonic_per_device",
+      "test_count": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 0.0,
+      "classification": "pure standard-library unit test",
+      "result": "PASS"
+    }
+  ],
+  "fresh_total": {
+    "tests": 19,
+    "passed": 19,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "blocked_test_modules": [
+    {
+      "modules": [
+        "ml-service/tests/test_refit_kafka_worker.py",
+        "ml-service/tests/test_kafka_reconnect.py"
+      ],
+      "blocker": "ModuleNotFoundError: No module named 'kafka'",
+      "classification": "mock-based component tests; not executed because the local offline interpreter lacks the declared Kafka client dependency",
+      "remediation_gate": "Use an approved isolated development environment with the declared dependency available; do not install packages during this read-only evidence task."
+    }
+  ],
+  "historical_surefire_inventory": {
+    "suite_count": 28,
+    "reported_tests": 87,
+    "reported_failures": 0,
+    "reported_errors": 0,
+    "reported_skipped": 3,
+    "provenance": "pre-existing artifacts observed read-only; not fresh execution evidence"
+  },
+  "limitations": [
+    "No end-to-end test, live HTTP request, broker-backed test, database test, alert delivery test, load test, or REFIT replay was run.",
+    "A Maven invocation wrote test reports to an existing service target directory despite an attempted build-directory override; no further Maven test command was issued.",
+    "Fresh results do not establish deployment health or research-model performance."
+  ]
+}

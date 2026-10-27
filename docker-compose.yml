@@ -4,16 +4,19 @@ services:
     container_name: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: home_energy_tracker
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-local_root_password}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-home_energy_tracker}
+      MYSQL_USER: ${MYSQL_USER:-hometracker_app}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-hometracker_local_password}
     ports:
       - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-local_root_password}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
     volumes:
-      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
       - db-data:/var/lib/mysql
-      - db-data:/var/log/mysql
-
-
 
   kafka:
     container_name: kafka
@@ -21,71 +24,32 @@ services:
     ports:
       - "9092:9092"  # Internal listener (Docker network)
       - "9094:9094"  # External listener (host machine)
-
     environment:
-      ############################################
-      # KRaft Metadata & Node Identity
-      ############################################
-      # Unique ID for this Kafka node
       KAFKA_NODE_ID: 1
-      # Unique Kafka cluster identifier (required for KRaft mode)
       KAFKA_CLUSTER_ID: 'energy-tracker-cluster-1'
-      # Node roles — this instance will act as BOTH a broker and controller
       KAFKA_PROCESS_ROLES: 'broker,controller'
-
-      ############################################
-      # Controller Quorum Configuration (Raft)
-      ############################################
-      # List of controller nodes that form the Raft quorum
       KAFKA_CONTROLLER_QUORUM_VOTERS: '1@kafka:9093'
-      # Listener name used by controllers for internal Raft communication
       KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
-
-      ############################################
-      # Network Listeners (Internal, External & Controller)
-      ############################################
-      # Define all listener endpoints for this Kafka node
       KAFKA_LISTENERS: >
         PLAINTEXT://0.0.0.0:9092,
         EXTERNAL://0.0.0.0:9094,
         CONTROLLER://0.0.0.0:9093
-
-      # What each listener advertises to connecting clients
-      # Internal (Docker containers): kafka:9092
-      # External (host machine): localhost:9094
       KAFKA_ADVERTISED_LISTENERS: >
         PLAINTEXT://kafka:9092,
         EXTERNAL://localhost:9094
-
-      # Maps listener names to their security protocols
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: >
         CONTROLLER:PLAINTEXT,
         PLAINTEXT:PLAINTEXT,
         EXTERNAL:PLAINTEXT
-
-      # Which listener brokers should use for internal communication
       KAFKA_INTER_BROKER_LISTENER_NAME: 'PLAINTEXT'
-
-      ############################################
-      #  Single-Node Cluster Safety Settings
-      #    (because replication >1 would break)
-      ############################################
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-
-      ############################################
-      #  Broker Defaults & Quality-of-Life Settings
-      ############################################
-      # Speed up consumer group startup
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
-      # Auto-create topics if they don't already exist
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
-      # Default number of partitions per topic
       KAFKA_NUM_PARTITIONS: 1
-
     volumes:
-      - ./docker/kafka_data:/var/lib/kafka/data
+      - kafka-data:/var/lib/kafka/data
 
   kafka-ui:
     container_name: kafka-ui
@@ -93,10 +57,11 @@ services:
     ports:
       - "8070:8080"
     depends_on:
-      - kafka
+      kafka:
+        condition: service_started
     environment:
       KAFKA_CLUSTERS_0_NAME: local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092  # Use internal Docker network name
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
       DYNAMIC_CONFIG_ENABLED: 'true'
     restart: unless-stopped
 
@@ -105,17 +70,21 @@ services:
     container_name: influxdb
     ports:
       - "8072:8086"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8086/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
     environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup
-      - DOCKER_INFLUXDB_INIT_USERNAME=admin
-      - DOCKER_INFLUXDB_INIT_PASSWORD=admin123
-      - DOCKER_INFLUXDB_INIT_ORG=hometracker
-      - DOCKER_INFLUXDB_INIT_BUCKET=usage-bucket
+      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUX_USER:-admin}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUX_PASSWORD:-local_influx_password}
+      - DOCKER_INFLUXDB_INIT_ORG=${INFLUX_ORG:-hometracker}
+      - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUX_BUCKET:-usage-bucket}
       - DOCKER_INFLUXDB_INIT_RETENTION=1w
-      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-token
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${INFLUX_TOKEN:-local-influx-admin-token}
     volumes:
-      - ./influxdb_data:/var/lib/influxdb2
-
+      - influx-data:/var/lib/influxdb2
 
   mailpit:
     image: axllent/mailpit:latest
@@ -124,7 +93,260 @@ services:
       - "8025:8025"
       - "1025:1025"
 
+  # Development identity provider. The imported realm contains only documented
+  # non-production demo accounts and roles; replace all defaults before release.
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0.7
+    container_name: keycloak
+    command: start-dev --import-realm
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-local_keycloak_admin_password}
+      KC_HEALTH_ENABLED: "true"
+    ports:
+      - "8180:8080"
+    volumes:
+      - ./docker/keycloak:/opt/keycloak/data/import:ro
+
+  # Application Microservices
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    expose:
+      - "8081"
+    environment:
+      PORT: 8081
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/home_energy_tracker
+      MYSQL_USER: ${MYSQL_USER:-hometracker_app}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-hometracker_local_password}
+      INTERNAL_GATEWAY_TOKEN: ${INTERNAL_GATEWAY_TOKEN:-local-gateway-to-ingestion-token-change-me}
+      INTERNAL_SERVICE_TOKEN: ${INTERNAL_SERVICE_TOKEN:-local-internal-service-token-change-me}
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  device-service:
+    build: ./device-service
+    container_name: device-service
+    expose:
+      - "8082"
+    environment:
+      PORT: 8082
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/home_energy_tracker
+      MYSQL_USER: ${MYSQL_USER:-hometracker_app}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-hometracker_local_password}
+      INTERNAL_GATEWAY_TOKEN: ${INTERNAL_GATEWAY_TOKEN:-local-gateway-to-ingestion-token-change-me}
+      INTERNAL_SERVICE_TOKEN: ${INTERNAL_SERVICE_TOKEN:-local-internal-service-token-change-me}
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  ingestion-service:
+    build: ./ingestion-service
+    container_name: ingestion-service
+    expose:
+      - "8083"
+    environment:
+      PORT: 8083
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SIMULATION_ENDPOINT: http://ingestion-service:8083/api/v1/ingestion
+      SIMULATION_ENABLED: ${SIMULATION_ENABLED:-false}
+      SIMULATION_REQUESTS_PER_INTERVAL: ${SIMULATION_REQUESTS_PER_INTERVAL:-10}
+      SIMULATION_INTERVAL_MS: ${SIMULATION_INTERVAL_MS:-60000}
+      SIMULATION_PARALLEL_THREADS: ${SIMULATION_PARALLEL_THREADS:-1}
+      SIMULATION_DEVICE_ID: ${SIMULATION_DEVICE_ID:-1}
+      SIMULATION_DEVICE_TOKEN: ${SIMULATION_DEVICE_TOKEN:-${WOKWI_INGESTION_TOKEN:-local-wokwi-ingestion-token-change-me}}
+      INGESTION_AUTH_REQUIRED: ${INGESTION_AUTH_REQUIRED:-true}
+      DEVICE_SERVICE_URL: http://device-service:8082/api/v1/device
+      # Each simulator credential is explicitly bound to its device ID. The
+      # default preserves the existing single Wokwi device-1 demonstration.
+      IOT_INGESTION_DEVICE_TOKENS: ${IOT_INGESTION_DEVICE_TOKENS:-1:${WOKWI_INGESTION_TOKEN:-local-wokwi-ingestion-token-change-me}}
+      IOT_INGESTION_LEGACY_GLOBAL_TOKEN_ENABLED: ${IOT_INGESTION_LEGACY_GLOBAL_TOKEN_ENABLED:-false}
+      WOKWI_INGESTION_TOKEN: ${WOKWI_INGESTION_TOKEN:-local-wokwi-ingestion-token-change-me}
+      # Shared only with api-gateway for JWT-originated telemetry; never pass
+      # this secret to Wokwi or the frontend.
+      INTERNAL_GATEWAY_TOKEN: ${INTERNAL_GATEWAY_TOKEN:-local-gateway-to-ingestion-token-change-me}
+    depends_on:
+      kafka:
+        condition: service_started
+      device-service:
+        condition: service_started
+
+  ml-inference-service:
+    build:
+      context: .
+      dockerfile: ml-service/Dockerfile
+    container_name: ml-inference-service
+    expose:
+      - "8090"
+    environment:
+      KAFKA_ENABLED: "true"
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      KAFKA_MAX_PROCESSING_ATTEMPTS: ${KAFKA_MAX_PROCESSING_ATTEMPTS:-3}
+      KAFKA_CONNECTION_RETRY_SECONDS: ${KAFKA_CONNECTION_RETRY_SECONDS:-5}
+      # Prevent a single online inference request from oversubscribing a
+      # constrained Docker Desktop host. Production can override after sizing.
+      ML_MODEL_N_JOBS: ${ML_MODEL_N_JOBS:-1}
+      # Separate, opt-in controlled REFIT replay path. It never consumes the
+      # Wokwi energy-usage topic or emits into the legacy alert topic. Keep it
+      # disabled by default until its separately provisioned artifacts are
+      # available; baseline inference remains enabled.
+      REFIT_CONTROLLED_EXPERIMENTAL_ENABLED: ${REFIT_CONTROLLED_EXPERIMENTAL_ENABLED:-false}
+      REFIT_CONTROLLED_KAFKA_ENABLED: ${REFIT_CONTROLLED_KAFKA_ENABLED:-false}
+      REFIT_CONTROLLED_INPUT_TOPIC: ${REFIT_CONTROLLED_INPUT_TOPIC:-refit-controlled-replay}
+      REFIT_CONTROLLED_OUTPUT_TOPIC: ${REFIT_CONTROLLED_OUTPUT_TOPIC:-refit-controlled-anomaly-results}
+      REFIT_CONTROLLED_FAILURE_TOPIC: ${REFIT_CONTROLLED_FAILURE_TOPIC:-refit-controlled-anomaly-failures}
+      LOG_LEVEL: ${ML_LOG_LEVEL:-INFO}
+    depends_on:
+      kafka:
+        condition: service_started
+
+  usage-service:
+    build: ./usage-service
+    container_name: usage-service
+    expose:
+      - "8084"
+    environment:
+      PORT: 8084
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      INFLUX_URL: http://influxdb:8086
+      INFLUX_TOKEN: ${INFLUX_TOKEN:-local-influx-admin-token}
+      INFLUX_ORG: ${INFLUX_ORG:-hometracker}
+      INFLUX_BUCKET: ${INFLUX_BUCKET:-usage-bucket}
+      DEVICE_SERVICE_URL: http://device-service:8082/api/v1/device
+      USER_SERVICE_URL: http://user-service:8081/api/v1/user
+      INTERNAL_GATEWAY_TOKEN: ${INTERNAL_GATEWAY_TOKEN:-local-gateway-to-ingestion-token-change-me}
+      INTERNAL_SERVICE_TOKEN: ${INTERNAL_SERVICE_TOKEN:-local-internal-service-token-change-me}
+    depends_on:
+      kafka:
+        condition: service_started
+      influxdb:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      device-service:
+        condition: service_started
+
+  alert-service:
+    build: ./alert-service
+    container_name: alert-service
+    expose:
+      - "8085"
+    environment:
+      PORT: 8085
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/home_energy_tracker
+      MYSQL_USER: ${MYSQL_USER:-hometracker_app}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-hometracker_local_password}
+      MAIL_HOST: mailpit
+      MAIL_PORT: 1025
+      DEVICE_SERVICE_URL: http://device-service:8082/api/v1/device
+      USER_SERVICE_URL: http://user-service:8081/api/v1/user
+      INTERNAL_GATEWAY_TOKEN: ${INTERNAL_GATEWAY_TOKEN:-local-gateway-to-ingestion-token-change-me}
+      INTERNAL_SERVICE_TOKEN: ${INTERNAL_SERVICE_TOKEN:-local-internal-service-token-change-me}
+      ALERT_DEDUPLICATION_ENABLED: ${ALERT_DEDUPLICATION_ENABLED:-true}
+      ALERT_DEDUPLICATION_WINDOW_MINUTES: ${ALERT_DEDUPLICATION_WINDOW_MINUTES:-15}
+    depends_on:
+      kafka:
+        condition: service_started
+      mysql:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
+
+  insight-service:
+    build: ./insight-service
+    container_name: insight-service
+    expose:
+      - "8086"
+    environment:
+      PORT: 8086
+      USAGE_SERVICE_URL: http://usage-service:8084/api/v1/usage
+      INTERNAL_GATEWAY_TOKEN: ${INTERNAL_GATEWAY_TOKEN:-local-gateway-to-ingestion-token-change-me}
+      INTERNAL_SERVICE_TOKEN: ${INTERNAL_SERVICE_TOKEN:-local-internal-service-token-change-me}
+    depends_on:
+      usage-service:
+        condition: service_started
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      USER_SERVICE_URL: http://user-service:8081
+      DEVICE_SERVICE_URL: http://device-service:8082
+      INGESTION_SERVICE_URL: http://ingestion-service:8083
+      USAGE_SERVICE_URL: http://usage-service:8084
+      ALERT_SERVICE_URL: http://alert-service:8085
+      INSIGHT_SERVICE_URL: http://insight-service:8086
+      SECURITY_ENABLED: ${SECURITY_ENABLED:-true}
+      # The public issuer matches browser-issued tokens. JWKs are retrieved
+      # through the Docker network to avoid resolving localhost inside a container.
+      KEYCLOAK_ISSUER_URI: ${KEYCLOAK_ISSUER_URI:-http://localhost:8180/realms/home-energy}
+      KEYCLOAK_JWK_SET_URI: ${KEYCLOAK_JWK_SET_URI:-http://keycloak:8080/realms/home-energy/protocol/openid-connect/certs}
+      WOKWI_INGESTION_TOKEN: ${WOKWI_INGESTION_TOKEN:-local-wokwi-ingestion-token-change-me}
+      IOT_INGESTION_DEVICE_TOKENS: ${IOT_INGESTION_DEVICE_TOKENS:-1:${WOKWI_INGESTION_TOKEN:-local-wokwi-ingestion-token-change-me}}
+      INTERNAL_GATEWAY_TOKEN: ${INTERNAL_GATEWAY_TOKEN:-local-gateway-to-ingestion-token-change-me}
+    depends_on:
+      user-service:
+        condition: service_started
+      device-service:
+        condition: service_started
+      ingestion-service:
+        condition: service_started
+      usage-service:
+        condition: service_started
+      alert-service:
+        condition: service_started
+      insight-service:
+        condition: service_started
+      keycloak:
+        condition: service_started
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: home-energy-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      api-gateway:
+        condition: service_started
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    depends_on:
+      api-gateway:
+        condition: service_started
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    container_name: grafana
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-local_grafana_admin_password}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./docker/grafana/provisioning:/etc/grafana/provisioning:ro
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      prometheus:
+        condition: service_started
 
 volumes:
   db-data:
   kafka-data:
+  influx-data:
+  prometheus-data:
+  grafana-data:

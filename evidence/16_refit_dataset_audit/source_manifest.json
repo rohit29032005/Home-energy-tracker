@@ -1,0 +1,62 @@
+{
+  "task": "Task 1 \u2014 Download + Dataset Selection",
+  "source": {
+    "university_landing_page": "https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements-cleaned/",
+    "annotation_landing_page": "https://pureportal.strath.ac.uk/en/datasets/annotated-load-anomalies-from-the-refit-dataset/",
+    "zenodo_record": "https://zenodo.org/records/5063428",
+    "zenodo_doi": "https://doi.org/10.5281/zenodo.5063428",
+    "licence": "CC BY 4.0, as displayed by the official Zenodo record",
+    "scope": "Only locally available checksum-verified cleaned-house CSVs are profiled."
+  },
+  "expected_zenodo_md5": {
+    "CLEAN_House1.csv": "f5336d80c700f866af0d997ea8d39146",
+    "CLEAN_House2.csv": "13957fd139bf8f6ba8bceea36e85bb3d",
+    "CLEAN_House3.csv": "ab6e34ea386eb4563bfcb9762619dc8f",
+    "CLEAN_House4.csv": "efbfab2b04a61fbf7595422f15cacfb1",
+    "CLEAN_House5.csv": "03938c844fdb09d787eb637bcf65f956",
+    "CLEAN_House11.csv": "5b41bae97ab28871fcfe5167b41c0347"
+  },
+  "local_files": [
+    {
+      "filename": "CLEAN_House1.csv",
+      "size_bytes": 400840083,
+      "md5": "f5336d80c700f866af0d997ea8d39146",
+      "sha256": "15b8c60c0bf32f1fccfafae81a9bb04e1a24937cfb29840d5b955310df25ff30",
+      "published_md5_matches": true
+    },
+    {
+      "filename": "CLEAN_House2.csv",
+      "size_bytes": 325391201,
+      "md5": "13957fd139bf8f6ba8bceea36e85bb3d",
+      "sha256": "5e3b8b30734070692bb6ac12504a26f5a1394aabe050199a1f7b7c5f88065561",
+      "published_md5_matches": true
+    },
+    {
+      "filename": "CLEAN_House3.csv",
+      "size_bytes": 407273065,
+      "md5": "ab6e34ea386eb4563bfcb9762619dc8f",
+      "sha256": "3694186fd607a779d90dc34f834db908c152a86cfb0fd32e4bf009d86e444e97",
+      "published_md5_matches": true
+    },
+    {
+      "filename": "CLEAN_House4.csv",
+      "size_bytes": 395763806,
+      "md5": "efbfab2b04a61fbf7595422f15cacfb1",
+      "sha256": "a231e256a0c600a09c9f67103f665a55595b85b3cd54176aa9b503aa98153b41",
+      "published_md5_matches": true
+    },
+    {
+      "filename": "CLEAN_House11.csv",
+      "size_bytes": 255832544,
+      "md5": "5b41bae97ab28871fcfe5167b41c0347",
+      "sha256": "e06bff467bf771191610670f2b6ae3f71acfad7aad37f1a16e0163305cdda113",
+      "published_md5_matches": true
+    }
+  ],
+  "not_verified": [
+    "Full 20-house archive content and per-house metrics outside locally available files.",
+    "Raw-versus-cleaned transformation footprint.",
+    "Official anomaly CSV schema, timestamps, label counts, and aggregate alignment.",
+    "Human-readable DateTime timezone offset; UNIX time is used only for chronological ordering."
+  ]
+}

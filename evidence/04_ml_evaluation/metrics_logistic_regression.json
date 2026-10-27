@@ -1,0 +1,10 @@
+{
+  "model": "logistic_regression",
+  "decision_threshold": 0.28,
+  "validation_f1": 0.11320754716981132,
+  "test_precision": 0.05333333333333334,
+  "test_recall": 1.0,
+  "test_f1": 0.10126582278481013,
+  "test_roc_auc": 0.42285211267605627,
+  "test_pr_auc": 0.05970960130755262
+}

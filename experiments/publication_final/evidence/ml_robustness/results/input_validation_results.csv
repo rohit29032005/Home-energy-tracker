@@ -1,0 +1,6 @@
+case,expected,observed,passed,timestamp,validation_error_count
+zero_energy_accepted,accept,accept,True,2026-10-15T00:00:00+00:00,
+negative_energy_rejected,reject,reject,True,,1.0
+missing_device_rejected,reject,reject,True,,1.0
+unexpected_field_rejected,reject,reject,True,,1.0
+naive_timestamp_normalized_utc,accept,accept,True,2026-10-15T00:00:00+00:00,

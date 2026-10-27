@@ -1,4 +1,4 @@
-CREATE TABLE `device` (
+CREATE TABLE IF NOT EXISTS `device` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255),
   `type` VARCHAR(50),

@@ -1,0 +1,9 @@
+column,missing_values
+Timestamp,0
+Electricity_Consumed,0
+Temperature,0
+Humidity,0
+Wind_Speed,0
+Avg_Past_Consumption,0
+Anomaly_Label,0
+_parsed_timestamp,0

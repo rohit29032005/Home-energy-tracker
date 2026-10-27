@@ -1,0 +1,28 @@
+{
+  "features": [
+    "Electricity_Consumed",
+    "Temperature",
+    "Humidity",
+    "Wind_Speed",
+    "Avg_Past_Consumption",
+    "Hour",
+    "DayOfWeek",
+    "ConsumptionDeviation"
+  ],
+  "split_strategy": "chronological 70% train, 15% validation, 15% held-out test",
+  "class_imbalance_handling": "class weights applied during training; no resampling was used",
+  "random_seed": 42,
+  "candidate_models": {
+    "logistic_regression": {
+      "class_weight": "balanced",
+      "max_iter": 1000,
+      "random_state": 42
+    },
+    "random_forest": {
+      "n_estimators": 300,
+      "min_samples_leaf": 2,
+      "class_weight": "balanced_subsample",
+      "random_state": 42
+    }
+  }
+}

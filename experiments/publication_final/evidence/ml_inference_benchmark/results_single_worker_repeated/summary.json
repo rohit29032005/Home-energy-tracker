@@ -1,0 +1,49 @@
+{
+  "experiment_id": "publication_final_experiment_3_offline_ml_inference_latency",
+  "classification": "newly_generated_offline_microbenchmark",
+  "execution_boundary": [
+    "No Docker command, HTTP request, application endpoint, Kafka action, database, volume, credential, or existing model artifact was used.",
+    "The benchmark loaded only the newly reproduced model under experiments/publication_final.",
+    "Values are in-process local inference measurements, not service or end-to-end HTTP latency."
+  ],
+  "input": {
+    "dataset_sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588",
+    "model_sha256": "22f66d7dd3f5d0bd282620e05ece6b28bb33c6a4964d1b3758608088f52f592e",
+    "total_held_out_rows": 750,
+    "held_out_rows": 100,
+    "row_selection": "evenly spaced chronological held-out sample",
+    "features": [
+      "Electricity_Consumed",
+      "Temperature",
+      "Humidity",
+      "Wind_Speed",
+      "Avg_Past_Consumption",
+      "Hour",
+      "DayOfWeek",
+      "ConsumptionDeviation"
+    ],
+    "repetitions": 3,
+    "sample_count": 300,
+    "worker_mode": "in_memory_single_worker"
+  },
+  "latency_ms": {
+    "mean": 98.71873866666667,
+    "median": 96.3318,
+    "p95": 129.67978500000004,
+    "p99": 152.31238799999997,
+    "min": 62.4944,
+    "max": 176.0805
+  },
+  "batch": {
+    "runs": 3,
+    "rows_per_run": 100,
+    "mean_seconds": 0.17054843333333333,
+    "median_seconds": 0.1703676,
+    "mean_rows_per_second": 586.3437033429213
+  },
+  "environment": {
+    "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "logical_cpu_count": 8
+  }
+}

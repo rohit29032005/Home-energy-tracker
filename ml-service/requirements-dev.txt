@@ -1,0 +1,6 @@
+# Development, training, and test dependencies. The serving image installs
+# requirements.txt only, so production inference does not carry test tooling.
+-r requirements.txt
+matplotlib==3.11.2
+pytest==8.4.2
+httpx==0.28.1

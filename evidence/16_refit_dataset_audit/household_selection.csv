@@ -1,0 +1,6 @@
+household,source_filename,selection_status,selection_reason,best_window_start_utc,best_window_end_utc,best_window_coverage,best_window_missing_fraction,best_window_max_gap_seconds,best_window_native_cadence_share
+1,CLEAN_House1.csv,SELECTED,ELIGIBLE: checksum-valid source file with at least one 14-day window satisfying every pre-registered gate.,2014-10-01T00:00:02Z,2014-10-15T00:00:02Z,1.0,0.008571428571428572,275,0.9597169651799534
+2,CLEAN_House2.csv,SELECTED,ELIGIBLE: checksum-valid source file with at least one 14-day window satisfying every pre-registered gate.,2014-10-01T00:00:03Z,2014-10-15T00:00:03Z,1.0,0.004193121693121693,270,0.9563689585804921
+3,CLEAN_House3.csv,SELECTED,ELIGIBLE: checksum-valid source file with at least one 14-day window satisfying every pre-registered gate.,2014-10-01T00:00:01Z,2014-10-15T00:00:01Z,1.0,0.007916666666666667,392,0.9597567169816236
+4,CLEAN_House4.csv,SELECTED,ELIGIBLE: checksum-valid source file with at least one 14-day window satisfying every pre-registered gate.,2015-04-22T00:00:02Z,2015-05-06T00:00:02Z,1.0,0.005813492063492063,863,0.9930016716149797
+11,CLEAN_House11.csv,SELECTED,ELIGIBLE: checksum-valid source file with at least one 14-day window satisfying every pre-registered gate.,2015-04-17T00:00:04Z,2015-05-01T00:00:04Z,1.0,0.001970899470899471,789,0.9878941343785771

@@ -1,0 +1,11 @@
+{
+  "mapping_name": "logical-local-seed-demo-mapping",
+  "warning": "This is a logical replay map only. These seeded appliance names are not REFIT appliance labels. Verify that the target device IDs exist before any --execute run; prefer dedicated aggregate-meter devices for a research replay.",
+  "household_to_device_id": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "11": 5
+  }
+}

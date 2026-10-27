@@ -16,6 +16,7 @@ import com.hometracker.usage_service.dto.UsageDto;
 import com.hometracker.usage_service.dto.UserDto;
 import com.hometracker.usage_service.model.Device;
 import com.hometracker.usage_service.model.DeviceEnergy;
+import com.hometracker.usage_service.exception.InfluxWriteException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -59,12 +60,19 @@ public class UsageService {
 
     @KafkaListener(topics = "energy-usage", groupId = "usage-service")
     public void energyUsageEvent(EnergyUsageEvent energyUsageEvent) {
-        // log.info("Received energy usage event: {}", energyUsageEvent);
-        Point point = Point.measurement("energy_usage")
-                .addTag("deviceId", String.valueOf(energyUsageEvent.deviceId()))
-                .addField("energyConsumed", energyUsageEvent.energyConsumed())
-                .time(energyUsageEvent.timestamp(), WritePrecision.MS);
-        influxDBClient.getWriteApiBlocking().writePoint(influxBucket, influxOrg, point);
+        try {
+            Point point = Point.measurement("energy_usage")
+                    .addTag("deviceId", String.valueOf(energyUsageEvent.deviceId()))
+                    .addField("energyConsumed", energyUsageEvent.energyConsumed())
+                    .time(energyUsageEvent.timestamp() != null ? energyUsageEvent.timestamp() : Instant.now(), WritePrecision.MS);
+            influxDBClient.getWriteApiBlocking().writePoint(influxBucket, influxOrg, point);
+        } catch (Exception e) {
+            log.error("Unable to persist energy-usage event for device {} to InfluxDB", 
+                    energyUsageEvent.deviceId(), e);
+            // Do not acknowledge the Kafka record here. The listener error
+            // handler applies bounded retries and then uses energy-usage.DLT.
+            throw new InfluxWriteException("Unable to persist energy usage event", e);
+        }
     }
 
     @Scheduled(cron = "*/10 * * * * *")

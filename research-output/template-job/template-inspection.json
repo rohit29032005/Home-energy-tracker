@@ -1,0 +1,1979 @@
+{
+  "reference": "C:\\Users\\anju2\\Downloads\\project documentation.docx",
+  "sha256": "d2a5d7158a565fac1592ae64d5024350a5d6f346a88d56986529f0c70ad862cc",
+  "paragraph_count": 40,
+  "sections": [
+    {
+      "page_width": "8.50 in",
+      "page_height": "11.00 in",
+      "left_margin": "1.00 in",
+      "right_margin": "1.00 in",
+      "top_margin": "1.00 in",
+      "bottom_margin": "1.00 in",
+      "header_distance": "0.49 in",
+      "footer_distance": "0.49 in",
+      "first_page_header": [
+        ""
+      ],
+      "header": [
+        ""
+      ],
+      "footer": [
+        ""
+      ],
+      "different_first_page": false
+    }
+  ],
+  "styles": {
+    "Normal": {
+      "font": null,
+      "size": "12.0 pt",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "000000",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "8.0 pt",
+      "line_spacing": "1.15",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 1": {
+      "font": null,
+      "size": "14.0 pt",
+      "bold": true,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "12.0 pt",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 2": {
+      "font": null,
+      "size": "unset",
+      "bold": true,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 3": {
+      "font": null,
+      "size": "unset",
+      "bold": true,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "8.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 4": {
+      "font": null,
+      "size": "unset",
+      "bold": true,
+      "italic": true,
+      "caps": null,
+      "color": "4F81BD",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "0.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 5": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "243F60",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "0.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 6": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": true,
+      "caps": null,
+      "color": "243F60",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "0.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 7": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": true,
+      "caps": null,
+      "color": "404040",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "0.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 8": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "4F81BD",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "0.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Heading 9": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": true,
+      "caps": null,
+      "color": "404040",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "0.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Header": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "0.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Footer": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "0.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "No Spacing": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Title": {
+      "font": null,
+      "size": "16.0 pt",
+      "bold": true,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "15.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Subtitle": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": true,
+      "caps": null,
+      "color": "4F81BD",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "List Paragraph": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "0.50 in",
+      "first_line_indent": "unset"
+    },
+    "Body Text": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Body Text 2": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "2.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Body Text 3": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "List": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "0.25 in",
+      "first_line_indent": "-0.25 in"
+    },
+    "List 2": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "0.50 in",
+      "first_line_indent": "-0.25 in"
+    },
+    "List 3": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "0.75 in",
+      "first_line_indent": "-0.25 in"
+    },
+    "List Bullet": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "List Bullet 2": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "List Bullet 3": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "List Number": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "List Number 2": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "List Number 3": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "List Continue": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "0.25 in",
+      "first_line_indent": "unset"
+    },
+    "List Continue 2": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "0.50 in",
+      "first_line_indent": "unset"
+    },
+    "List Continue 3": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "0.75 in",
+      "first_line_indent": "unset"
+    },
+    "macro": {
+      "font": "Courier",
+      "size": "10.0 pt",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Quote": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": true,
+      "caps": null,
+      "color": "000000",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Caption": {
+      "font": null,
+      "size": "9.0 pt",
+      "bold": true,
+      "italic": null,
+      "caps": null,
+      "color": "4F81BD",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Intense Quote": {
+      "font": null,
+      "size": "unset",
+      "bold": true,
+      "italic": true,
+      "caps": null,
+      "color": "4F81BD",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "14.0 pt",
+      "line_spacing": "None",
+      "left_indent": "0.65 in",
+      "first_line_indent": "unset"
+    },
+    "TOC Heading": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    },
+    "Normal (Web)": {
+      "font": null,
+      "size": "unset",
+      "bold": null,
+      "italic": null,
+      "caps": null,
+      "color": "auto",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset"
+    }
+  },
+  "paragraphs": [
+    {
+      "index": 1,
+      "style": "Title",
+      "text": "Title",
+      "alignment": "CENTER (1)",
+      "space_before": "unset",
+      "space_after": "8.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Title",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "style": "Normal",
+      "text": "Name1, Syamasudha Veeragandham2",
+      "alignment": "CENTER (1)",
+      "space_before": "unset",
+      "space_after": "3.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "N",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "ame",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "1",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": ", Syamasudha Veeragandham",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "2",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "style": "Normal",
+      "text": "1,2School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, Tamil Nadu, India \u2013 632014",
+      "alignment": "CENTER (1)",
+      "space_before": "unset",
+      "space_after": "3.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "1,2",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, Tamil Nadu, India \u2013 632014",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "style": "Normal",
+      "text": "Email: 1@vitstudent.ac.in, 2syamasudha.v@vit.ac.in",
+      "alignment": "CENTER (1)",
+      "space_before": "unset",
+      "space_after": "3.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Email: ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "1",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": ", ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "2",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "style": "Normal",
+      "text": "2 Corresponding author",
+      "alignment": "CENTER (1)",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "2",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": " Corresponding author",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "style": "Heading 1",
+      "text": "Abstract   ",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Abstract",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "   ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "style": "Normal",
+      "text": "One page and not exceeding 300 words ",
+      "alignment": "CENTER (1)",
+      "space_before": "5.7 pt",
+      "space_after": "unset",
+      "line_spacing": "1.3875",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "One page and not exceeding 300 words ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "style": "Normal",
+      "text": "",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 9,
+      "style": "Normal",
+      "text": "",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 10,
+      "style": "Normal",
+      "text": "Keywords:                          8 words",
+      "alignment": "JUSTIFY (3)",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Keywords: ",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "000000"
+        },
+        {
+          "text": "                         ",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "000000"
+        },
+        {
+          "text": "8 words",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "style": "Heading 1",
+      "text": "1. Introduction",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "1. Introduction",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "style": "Normal",
+      "text": "  Min 10 paragraphs, each para address one unique aim with proper citation.",
+      "alignment": "JUSTIFY (3)",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "  ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "000000"
+        },
+        {
+          "text": "Min",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": " 10 paragraphs, each ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "para address",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": " one unique aim with proper citation.",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "style": "Normal",
+      "text": "  Background, Motivation, Scope of the work\u2026etc",
+      "alignment": "JUSTIFY (3)",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "  Background, Motivation, ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "Scope of the ",
+          "font": null,
+          "size": "13.0 pt",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "work\u2026",
+          "font": null,
+          "size": "13.0 pt",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "etc",
+          "font": null,
+          "size": "13.0 pt",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "style": "Normal",
+      "text": "1.1 Research Objectives ",
+      "alignment": "JUSTIFY (3)",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "1.1",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": " ",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "R",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "esearch ",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "O",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "bjectives ",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "style": "Normal",
+      "text": "   3-4 Research Objectives",
+      "alignment": "None",
+      "space_before": "6.0 pt",
+      "space_after": "2.0 pt",
+      "line_spacing": "None",
+      "left_indent": "0.50 in",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "   ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "3-4 ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "Research Objectives",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "style": "Normal",
+      "text": "",
+      "alignment": "CENTER (1)",
+      "space_before": "3.0 pt",
+      "space_after": "3.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 17,
+      "style": "Normal",
+      "text": "",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "0.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 18,
+      "style": "Heading 1",
+      "text": "2. Related Work",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "2. Related Work",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "style": "Normal",
+      "text": "Min 10 paragraphs, each para address one unique aim with proper citation.",
+      "alignment": "JUSTIFY (3)",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Min ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "10 paragraphs, each ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "para address",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": " one unique aim with proper citation.",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "style": "Normal",
+      "text": "",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 21,
+      "style": "Normal",
+      "text": "Table 1: Representative prior works and their relationship . ",
+      "alignment": "CENTER (1)",
+      "space_before": "3.0 pt",
+      "space_after": "10.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Table 1: Representative prior works and their ",
+          "font": null,
+          "size": "10.5 pt",
+          "bold": null,
+          "italic": true,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "relationship ",
+          "font": null,
+          "size": "10.5 pt",
+          "bold": null,
+          "italic": true,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": ".",
+          "font": null,
+          "size": "10.5 pt",
+          "bold": null,
+          "italic": true,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": " ",
+          "font": null,
+          "size": "10.5 pt",
+          "bold": null,
+          "italic": true,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "style": "Heading 1",
+      "text": "Gaps",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Gaps",
+          "font": null,
+          "size": "unset",
+          "bold": false,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "style": "Normal",
+      "text": "Problem Statement",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Problem Statement",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "style": "Heading 1",
+      "text": "3. Materials and Methods",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "3. Materials and Methods",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "style": "Normal",
+      "text": " Dataset, System Architecture, Circuite diagram, real hardware image, Flowchart, equations, Algorithms, metrics, datasplit..etc ",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": " ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "Dataset, System Architecture, ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "Circuite",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": " diagram, real hardware image, Flowchart, equations, Algorithms, metrics, ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "datasplit",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "..",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "etc",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": " ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "style": "Heading 1",
+      "text": "4. Experimental Results and Discussion",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "4. Experimental Results and Discussion",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "style": "Normal",
+      "text": "Experimentenal conditions, Garphs, tables, test cases, Fault-Handling Mechanism, Performance Comparison tables, Expected vs Actual Results\u2026etc",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Experimentenal",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": " conditions, ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "Garphs",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": ", tables, test cases, ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "Fault-Handling Mechanism",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": ", ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "Performance Comparison",
+          "font": null,
+          "size": "unset",
+          "bold": false,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": " ",
+          "font": null,
+          "size": "unset",
+          "bold": true,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "tables, ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "Expected vs Actual Results",
+          "font": null,
+          "size": "unset",
+          "bold": false,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "\u2026",
+          "font": null,
+          "size": "unset",
+          "bold": false,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        },
+        {
+          "text": "etc",
+          "font": null,
+          "size": "unset",
+          "bold": false,
+          "italic": null,
+          "underline": null,
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "style": "Heading 1",
+      "text": "5. Limitations and Future Work",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "5. Limitations and Future Work",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "style": "Normal",
+      "text": "",
+      "alignment": "None",
+      "space_before": "unset",
+      "space_after": "0.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 30,
+      "style": "Heading 1",
+      "text": "6. Conclusion",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "6. Conclusion",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "style": "Heading 1",
+      "text": "",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 32,
+      "style": "Heading 1",
+      "text": "CRediT authorship contribution statement",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "CRediT",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": " authorship contribution statement",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "style": "Heading 1",
+      "text": "",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 34,
+      "style": "Heading 1",
+      "text": "Funding Statement",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Funding Statement",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "style": "Normal",
+      "text": "The author declares that no funding, grants, or external support were received during the development of this work.",
+      "alignment": "JUSTIFY (3)",
+      "space_before": "unset",
+      "space_after": "6.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "The author declare",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "s",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": " that no funding, grants, or external support were received during the development of this ",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": "work",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        },
+        {
+          "text": ".",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "style": "Heading 1",
+      "text": "Declaration of competing interest",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Declaration of competing interest",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "style": "Normal",
+      "text": "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.",
+      "alignment": "JUSTIFY (3)",
+      "space_before": "unset",
+      "space_after": "6.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in t",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "style": "Heading 1",
+      "text": "Data Availability",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "Data Availability",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "style": "Normal",
+      "text": "",
+      "alignment": "JUSTIFY (3)",
+      "space_before": "unset",
+      "space_after": "unset",
+      "line_spacing": "None",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": []
+    },
+    {
+      "index": 40,
+      "style": "Heading 1",
+      "text": "References",
+      "alignment": "None",
+      "space_before": "10.0 pt",
+      "space_after": "4.0 pt",
+      "line_spacing": "1.0",
+      "left_indent": "unset",
+      "first_line_indent": "unset",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "runs": [
+        {
+          "text": "References",
+          "font": null,
+          "size": "unset",
+          "bold": null,
+          "italic": null,
+          "underline": null,
+          "color": "auto"
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "index": 1,
+      "rows": 7,
+      "columns": 4,
+      "style": "Table Grid",
+      "alignment": "CENTER (1)",
+      "autofit": true,
+      "sample": [
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "media": [],
+  "package_parts": [
+    {
+      "path": "word/header1.xml",
+      "size": 2552
+    },
+    {
+      "path": "word/footer1.xml",
+      "size": 2553
+    },
+    {
+      "path": "word/theme/theme1.xml",
+      "size": 7643
+    },
+    {
+      "path": "customXml/item1.xml",
+      "size": 260
+    },
+    {
+      "path": "customXml/itemProps1.xml",
+      "size": 341
+    },
+    {
+      "path": "word/numbering.xml",
+      "size": 9512
+    },
+    {
+      "path": "word/styles.xml",
+      "size": 338296
+    },
+    {
+      "path": "customXml/_rels/item1.xml.rels",
+      "size": 296
+    }
+  ]
+}

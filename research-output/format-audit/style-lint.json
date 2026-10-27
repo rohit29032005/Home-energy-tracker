@@ -1,0 +1,168 @@
+{
+  "input": "C:\\Users\\anju2\\Desktop\\Advance_java_research\\version-1.1aHome_Energy_Tracker-publication.docx",
+  "fonts_by_char_count": {},
+  "direct_run_formatting_runs": 187,
+  "direct_paragraph_formatting_paragraphs": 86,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 3,
+      "text": "\n      4Corresponding author",
+      "style": "Normal"
+    },
+    {
+      "para_index": 8,
+      "text": "I. INTRODUCTION",
+      "style": "Normal"
+    },
+    {
+      "para_index": 12,
+      "text": "II. RELATED WORK AND RESEARCH GAP",
+      "style": "Normal"
+    },
+    {
+      "para_index": 13,
+      "text": "A. Existing Approaches",
+      "style": "Normal"
+    },
+    {
+      "para_index": 16,
+      "text": "B. Research Gap and Contribution",
+      "style": "Normal"
+    },
+    {
+      "para_index": 18,
+      "text": "III. PROPOSED SYSTEM AND METHODOLOGY",
+      "style": "Normal"
+    },
+    {
+      "para_index": 19,
+      "text": "A. Architecture and Telemetry Path",
+      "style": "Normal"
+    },
+    {
+      "para_index": 26,
+      "text": "B. Deterministic Insight and Alert Methods",
+      "style": "Normal"
+    },
+    {
+      "para_index": 33,
+      "text": "\n\nTABLE I",
+      "style": "Normal"
+    },
+    {
+      "para_index": 37,
+      "text": "C. Operational Workflow",
+      "style": "Normal"
+    },
+    {
+      "para_index": 43,
+      "text": "IV. IMPLEMENTATION AND FUNCTIONAL VERIFICATION",
+      "style": "Normal"
+    },
+    {
+      "para_index": 44,
+      "text": "A. Implementation Environment",
+      "style": "Normal"
+    },
+    {
+      "para_index": 47,
+      "text": "\n\nTABLE II",
+      "style": "Normal"
+    },
+    {
+      "para_index": 51,
+      "text": "B. Verification Procedure",
+      "style": "Normal"
+    },
+    {
+      "para_index": 56,
+      "text": "V. RESULTS AND DISCUSSION",
+      "style": "Normal"
+    },
+    {
+      "para_index": 57,
+      "text": "A. Functional Results",
+      "style": "Normal"
+    },
+    {
+      "para_index": 60,
+      "text": "\n\nTABLE III",
+      "style": "Normal"
+    },
+    {
+      "para_index": 64,
+      "text": "B. Interpretation and Evidence Boundaries",
+      "style": "Normal"
+    },
+    {
+      "para_index": 68,
+      "text": "VI. LIMITATIONS AND FUTURE WORK",
+      "style": "Normal"
+    },
+    {
+      "para_index": 71,
+      "text": "VII. CONCLUSION",
+      "style": "Normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 1,
+        "text": "A Microservices-Based Home Energy Tracker for Real-Time Monitoring, Intelligent Alerting, and AI-Driven Energy Insights",
+        "style": "Title"
+      },
+      {
+        "para_index": 2,
+        "text": "                         Rohit Shrivastava1 , Anshika Rai2 , Harsh Gupta3 , Syamasudha Veeragandham4\n        1,2,3,4Scho",
+        "style": "Normal"
+      },
+      {
+        "para_index": 3,
+        "text": "\n      4Corresponding author",
+        "style": "Normal"
+      },
+      {
+        "para_index": 4,
+        "text": "",
+        "style": "Normal"
+      },
+      {
+        "para_index": 6,
+        "text": "Abstract - Residential energy-monitoring platforms require a traceable route from device telemetry to actionable feedbac",
+        "style": "Normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "A Microservices-Based Home Energy Tracker for Real-Time Monitoring, Intelligent ",
+        "style": "Title"
+      },
+      {
+        "para_index": 2,
+        "run_text": "                         Rohit Shrivastava",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "run_text": "1 ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "run_text": ", Anshika Rai",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "run_text": "2 ",
+        "style": "Normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

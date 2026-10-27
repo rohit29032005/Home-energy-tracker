@@ -1,0 +1,55 @@
+{
+  "task": "Task 2 — REFIT Data Cleaning and Energy Normalization",
+  "input_directory": "data/refit/raw/zenodo_5063428",
+  "task1_selection_file": "evidence/16_refit_dataset_audit/household_selection.csv",
+  "output_directory": "experiments/refit_task2_energy_normalization/artifacts",
+  "required_columns": [
+    "Time",
+    "Unix",
+    "Aggregate",
+    "Issues"
+  ],
+  "column_mapping": {
+    "human_time": "Time",
+    "unix_time": "Unix",
+    "aggregate_power": "Aggregate",
+    "source_issues": "Issues"
+  },
+  "expected_source_md5": {
+    "CLEAN_House1.csv": "f5336d80c700f866af0d997ea8d39146",
+    "CLEAN_House2.csv": "13957fd139bf8f6ba8bceea36e85bb3d",
+    "CLEAN_House3.csv": "ab6e34ea386eb4563bfcb9762619dc8f",
+    "CLEAN_House4.csv": "efbfab2b04a61fbf7595422f15cacfb1",
+    "CLEAN_House11.csv": "5b41bae97ab28871fcfe5167b41c0347"
+  },
+  "cohorts": {
+    "primary": [1, 2, 4],
+    "solar_sensitivity": [3, 11]
+  },
+  "sampling": {
+    "nominal_interval_seconds": 8,
+    "native_interval_min_seconds": 7,
+    "native_interval_max_seconds": 9,
+    "maximum_integratable_interval_seconds": 16,
+    "estimated_missing_slot_method": "max(0, round(delta_seconds / 8) - 1)"
+  },
+  "normalization": {
+    "source_measurement": "whole-house active power in watts",
+    "source_is_interval_energy": false,
+    "energy_method": "left_rectangle_sample_hold_using_aggregate_power_at_interval_start",
+    "formula": "estimated_interval_energy_kwh = interval_start_aggregate_power_w * interval_seconds / 3600000",
+    "long_gap_policy": "Exclude a cross-gap interval when delta_seconds > 16; do not interpolate, fill, cap duration, or synthesize energy.",
+    "negative_power_policy": "Retain the raw value in the exclusion log; exclude it from additive interval-energy output as unresolved.",
+    "outlier_policy": "IQR diagnostic flag only; do not clip or remove a valid aggregate measurement.",
+    "source_issues_policy": "Preserve verbatim as a context flag; do not use as anomaly label or automatic exclusion."
+  },
+  "output_files": {
+    "primary_cleaned": "cleaned_primary_cohort.csv",
+    "solar_cleaned": "cleaned_solar_sensitivity_cohort.csv",
+    "quality_report": "per_household_quality_report.csv",
+    "interval_report": "timestamp_interval_report.csv",
+    "summary": "preprocessing_summary.md",
+    "excluded_log": "excluded_records_log.csv",
+    "manifest": "data_manifest.json"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "available": true,
+  "classification": "newly_generated_reproduction_comparison",
+  "comparison": {
+    "exact_numeric_reproduction": true,
+    "max_abs_error_by_metric": {
+      "decision_threshold": 0.0,
+      "test_f1": 0.0,
+      "test_pr_auc": 0.0,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_roc_auc": 0.0,
+      "validation_f1": 0.0
+    },
+    "same_columns": true,
+    "same_model_order": true,
+    "same_rows": true
+  },
+  "metrics": [
+    {
+      "decision_threshold": 0.28,
+      "model": "logistic_regression",
+      "test_f1": 0.1012658227848101,
+      "test_pr_auc": 0.0597096013075526,
+      "test_precision": 0.0533333333333333,
+      "test_recall": 1.0,
+      "test_roc_auc": 0.4228521126760562,
+      "validation_f1": 0.1132075471698113
+    },
+    {
+      "decision_threshold": 0.31,
+      "model": "random_forest",
+      "test_f1": 0.902439024390244,
+      "test_pr_auc": 0.9485317975626696,
+      "test_precision": 0.8809523809523809,
+      "test_recall": 0.925,
+      "test_roc_auc": 0.9974295774647888,
+      "validation_f1": 0.9148936170212766
+    }
+  ]
+}

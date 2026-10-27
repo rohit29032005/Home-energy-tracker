@@ -1,0 +1,12 @@
+apiVersion: 1
+
+providers:
+  - name: home-energy-tracker
+    orgId: 1
+    folder: Home Energy Tracker
+    type: file
+    disableDeletion: true
+    updateIntervalSeconds: 30
+    allowUiUpdates: false
+    options:
+      path: /etc/grafana/provisioning/dashboards/json

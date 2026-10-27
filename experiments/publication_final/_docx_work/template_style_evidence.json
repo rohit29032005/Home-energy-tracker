@@ -1,0 +1,171 @@
+{
+  "input": "C:\\Users\\anju2\\Desktop\\Home-Energy-Tracker\\research-output\\Home_Energy_Tracker_Final_Verified_Research_Paper.docx",
+  "fonts_by_char_count": {
+    "Times New Roman": 30198,
+    "Courier New": 929
+  },
+  "direct_run_formatting_runs": 257,
+  "direct_paragraph_formatting_paragraphs": 182,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 2,
+      "text": "Rohit Shrivastava, Anshika Rai, Harsh Gupta, and Syamasudha Veeragandham",
+      "style": "Normal"
+    },
+    {
+      "para_index": 123,
+      "text": "Layer",
+      "style": "Normal"
+    },
+    {
+      "para_index": 124,
+      "text": "Implemented component(s)",
+      "style": "Normal"
+    },
+    {
+      "para_index": 125,
+      "text": "Role in this study",
+      "style": "Normal"
+    },
+    {
+      "para_index": 144,
+      "text": "Item",
+      "style": "Normal"
+    },
+    {
+      "para_index": 145,
+      "text": "Recorded configuration",
+      "style": "Normal"
+    },
+    {
+      "para_index": 146,
+      "text": "Scope",
+      "style": "Normal"
+    },
+    {
+      "para_index": 162,
+      "text": "Characteristic",
+      "style": "Normal"
+    },
+    {
+      "para_index": 163,
+      "text": "Verified value",
+      "style": "Normal"
+    },
+    {
+      "para_index": 178,
+      "text": "Model",
+      "style": "Normal"
+    },
+    {
+      "para_index": 179,
+      "text": "Configuration",
+      "style": "Normal"
+    },
+    {
+      "para_index": 180,
+      "text": "Threshold selection",
+      "style": "Normal"
+    },
+    {
+      "para_index": 187,
+      "text": "Model",
+      "style": "Normal"
+    },
+    {
+      "para_index": 188,
+      "text": "Threshold",
+      "style": "Normal"
+    },
+    {
+      "para_index": 189,
+      "text": "Precision",
+      "style": "Normal"
+    },
+    {
+      "para_index": 190,
+      "text": "Recall",
+      "style": "Normal"
+    },
+    {
+      "para_index": 191,
+      "text": "F1",
+      "style": "Normal"
+    },
+    {
+      "para_index": 192,
+      "text": "ROC-AUC",
+      "style": "Normal"
+    },
+    {
+      "para_index": 193,
+      "text": "PR-AUC",
+      "style": "Normal"
+    },
+    {
+      "para_index": 208,
+      "text": "Case",
+      "style": "Normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 1,
+        "text": "An Event-Driven Microservices Home Energy Tracker with Gateway Authentication and ML-Based Anomaly Detection",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "text": "Rohit Shrivastava, Anshika Rai, Harsh Gupta, and Syamasudha Veeragandham",
+        "style": "Normal"
+      },
+      {
+        "para_index": 3,
+        "text": "School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, Tamil Nadu, India",
+        "style": "Normal"
+      },
+      {
+        "para_index": 4,
+        "text": "rohit.lalbahadur2023@vitstudent.ac.in; anshika.rai2023@vitstudent.ac.in; harsh.gupta2023@vitstudent.ac.in; syamasudha.v@",
+        "style": "Normal"
+      },
+      {
+        "para_index": 5,
+        "text": "Abstract\u2014Residential energy applications require a verifiable path from telemetry ingestion to historical storage, user-",
+        "style": "Normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "An Event-Driven Microservices Home Energy Tracker with Gateway Authentication an",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "run_text": "Rohit Shrivastava, Anshika Rai, Harsh Gupta, and Syamasudha Veeragandham",
+        "style": "Normal"
+      },
+      {
+        "para_index": 3,
+        "run_text": "School of Computer Science and Engineering, Vellore Institute of Technology, Vel",
+        "style": "Normal"
+      },
+      {
+        "para_index": 4,
+        "run_text": "rohit.lalbahadur2023@vitstudent.ac.in; anshika.rai2023@vitstudent.ac.in; harsh.g",
+        "style": "Normal"
+      },
+      {
+        "para_index": 5,
+        "run_text": "Abstract\u2014",
+        "style": "Normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

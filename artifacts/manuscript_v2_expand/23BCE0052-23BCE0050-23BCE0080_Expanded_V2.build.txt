@@ -1,0 +1,6 @@
+Output: C:\Users\anju2\Desktop\Home-Energy-Tracker\artifacts\manuscript_v2_expand\23BCE0052-23BCE0050-23BCE0080_Expanded_V2.docx
+SHA-256: 18c07af7a57107c8e3ef9f20095b562e00e6d3b02a4257e8cdb91664f3e0f9f5
+Approximate words including table cells: 13222
+Objectives: 4
+Research gaps: 3
+Tables: 6

@@ -1,0 +1,83 @@
+﻿{
+    "evidenceType":  "Controlled local end-to-end functional verification",
+    "runId":  "review2-20261005-213816-6168390b",
+    "startedAtUtc":  "2026-10-05T16:08:16.7026245Z",
+    "baseUrl":  "http://127.0.0.1:8080/api/v1",
+    "authentication":  {
+                           "keycloakRealm":  "home-energy",
+                           "setupActor":  "demo-admin",
+                           "telemetryActor":  "machine-token"
+                       },
+    "testBoundary":  "Synthetic REST telemetry was submitted through the same ingestion endpoint used by the Wokwi ESP32 simulator. Values are not calibrated physical-meter measurements.",
+    "expectedAnalytics":  {
+                              "totalUsageKwh":  1.5,
+                              "currentEstimatedCost":  0.18,
+                              "dailyRateKwh":  0.5,
+                              "projectedMonthlyKwh":  15,
+                              "projectedMonthlyCost":  11.8,
+                              "rankingPercent":  100,
+                              "standbyBaselineWatts":  4.17,
+                              "standbyDailyKwh":  0.1,
+                              "standbyMonthlyKwh":  3,
+                              "standbyMonthlyCost":  0.36,
+                              "standbyRisk":  "LOW"
+                          },
+    "gatewayHealth":  {
+                          "status":  "UP",
+                          "components":  {
+                                             "discoveryComposite":  {
+                                                                        "description":  "Discovery Client not initialized",
+                                                                        "status":  "UNKNOWN",
+                                                                        "components":  {
+                                                                                           "discoveryClient":  {
+                                                                                                                   "description":  "Discovery Client not initialized",
+                                                                                                                   "status":  "UNKNOWN"
+                                                                                                               }
+                                                                                       }
+                                                                    },
+                                             "diskSpace":  {
+                                                               "status":  "UP",
+                                                               "details":  {
+                                                                               "total":  1081101176832,
+                                                                               "free":  1003633549312,
+                                                                               "threshold":  10485760,
+                                                                               "path":  "/app/.",
+                                                                               "exists":  true
+                                                                           }
+                                                           },
+                                             "ping":  {
+                                                          "status":  "UP"
+                                                      },
+                                             "reactiveDiscoveryClients":  {
+                                                                              "description":  "Discovery Client not initialized",
+                                                                              "status":  "UNKNOWN",
+                                                                              "components":  {
+                                                                                                 "Simple Reactive Discovery Client":  {
+                                                                                                                                          "description":  "Discovery Client not initialized",
+                                                                                                                                          "status":  "UNKNOWN"
+                                                                                                                                      }
+                                                                                             }
+                                                                          },
+                                             "refreshScope":  {
+                                                                  "status":  "UP"
+                                                              },
+                                             "ssl":  {
+                                                         "status":  "UP",
+                                                         "details":  {
+                                                                         "validChains":  [
+
+                                                                                         ],
+                                                                         "invalidChains":  [
+
+                                                                                           ]
+                                                                     }
+                                                     }
+                                         }
+                      },
+    "error":  {
+                  "message":  "The remote server returned an error: (401) Unauthorized.",
+                  "type":  "System.Net.WebException"
+              },
+    "completedAtUtc":  "2026-10-05T16:08:17.9150523Z",
+    "overallPassed":  false
+}

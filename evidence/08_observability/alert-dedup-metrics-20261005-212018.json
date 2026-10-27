@@ -1,0 +1,20 @@
+﻿{
+    "status":  "success",
+    "data":  {
+                 "resultType":  "vector",
+                 "result":  [
+                                {
+                                    "metric":  {
+                                                   "__name__":  "home_energy_alerts_suppressed_total",
+                                                   "alert_type":  "ML_ANOMALY",
+                                                   "instance":  "alert-service:8085",
+                                                   "job":  "java-services"
+                                               },
+                                    "value":  [
+                                                  1791215418.965,
+                                                  "1"
+                                              ]
+                                }
+                            ]
+             }
+}

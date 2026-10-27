@@ -6,6 +6,10 @@ import lombok.Builder;
 public record InsightDto(
         Long userId,
         String tips,
-        double energyUsage
+        double energyUsage,
+        double estimatedCost,
+        double projectedMonthlyCost,
+        boolean isAiGenerated,
+        String standbyRiskLevel
 ) {
 }

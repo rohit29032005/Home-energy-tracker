@@ -1,0 +1,58 @@
+{
+  "classification": "mixed_historical_and_new_evidence_inventory",
+  "legacy_supervised_baseline": {
+    "dataset": {
+      "path": "smart_meter_data.csv",
+      "status": "verified_read_only_source_and_copied_for_validation",
+      "size_bytes": 619684,
+      "sha256": "d48df940fd29444fb9222fc0b59cfde632e147ccd1d49dc7bed9d5f9dc88f588"
+    },
+    "training_script": {
+      "path": "ml-service/training/train.py",
+      "status": "read_only_static_inspection_and_offline_execution_against_copied_input",
+      "sha256": "ec76c333e6f24cb0128e9df3368af9af2fc87b08b25a10b0a6047b31ff9f3136"
+    },
+    "installed_model": {
+      "model_path": "ml-service/models/anomaly_model.joblib",
+      "status": "read_only_hash_inventory; not deserialized",
+      "size_bytes": 3835698,
+      "sha256": "22f66d7dd3f5d0bd282620e05ece6b28bb33c6a4964d1b3758608088f52f592e"
+    },
+    "installed_metadata": {
+      "path": "ml-service/models/model_metadata.json",
+      "status": "read_only_metadata inspection",
+      "sha256": "f8c4babd12761ffe64848493d2badb94b5fe4514a2b4411691ac65e43011de35",
+      "matches_historical_training_metadata_hash": true
+    }
+  },
+  "new_reproduction": {
+    "model_path": "reproduction/model/anomaly_model.joblib",
+    "model_sha256": "22f66d7dd3f5d0bd282620e05ece6b28bb33c6a4964d1b3758608088f52f592e",
+    "matches_installed_model_binary": true,
+    "evaluation_path": "reproduction/evidence/04_ml_evaluation/model_comparison.csv",
+    "evaluation_sha256": "972f439785b889d6ca6f664c4e45d39155f938922a1872ecad64f030180d2202",
+    "matches_historical_evaluation_binary": true,
+    "metadata_difference": "Only model_version differs because it contains the new UTC training timestamp. All other metadata fields match the installed metadata."
+  },
+  "refit_controlled_pipeline": {
+    "training_script": {
+      "path": "ml-service/training/train_refit_controlled.py",
+      "status": "read_only_static inspection only",
+      "sha256": "3b1862b630438a1520622145d3086055be804c6c5cb1e0eb2aa25329ff906f49"
+    },
+    "labelled_input": {
+      "path": "data/refit/labeled-verified/anomaly_dataset.csv",
+      "status": "ACCESS_RESTRICTED; not read and not substituted"
+    },
+    "controlled_model_and_evidence_directories": {
+      "paths": [
+        "ml-service/models/refit-controlled-v1",
+        "ml-service/models/refit-controlled-v1.1",
+        "evidence/18_refit_controlled_ml",
+        "evidence/18_refit_controlled_ml_v1_1"
+      ],
+      "status": "Directory entries exist but contents were not accessible to this task process. No model or result was asserted from those contents."
+    },
+    "semantic_boundary_from_source": "The controlled pipeline is explicitly a controlled-synthetic-perturbation benchmark and must not be reported as real-world appliance-fault classification."
+  }
+}

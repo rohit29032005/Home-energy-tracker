@@ -1,0 +1,7 @@
+service,report_modified_local,tests,failures,errors,skipped,source
+user-service,2026-10-04T02:15:24+05:30,2,0,0,2,current local-Maven test run
+device-service,2026-10-04T02:16:06+05:30,2,0,0,1,current local-Maven test run
+ingestion-service,2026-10-04T02:16:41+05:30,1,0,0,0,current local-Maven test run
+usage-service,2026-10-01T00:34:55+05:30,1,0,0,0,pre-existing Surefire report; not rerun in this baseline attempt
+alert-service,2026-10-01T00:35:32+05:30,1,0,0,0,pre-existing Surefire report; not rerun in this baseline attempt
+insight-service,2026-10-01T00:35:59+05:30,12,0,0,0,pre-existing Surefire reports; not rerun in this baseline attempt
